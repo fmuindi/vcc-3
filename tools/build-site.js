@@ -17,19 +17,29 @@ const IK = (name) => `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),
   onCampus: IK('DSC01815.jpg'),
-  online: IK('DSC02739.jpg'),
+  // Client-supplied Unsplash image, used as-is (not an ImageKit asset).
+  online: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   cohort: IK('DSC03220.jpg'),
-  whyValor1: IK('DSC03821.jpg'),
-  whyValor2: IK('DSC03832.jpg'),
-  testimonial: IK('DSC03837.jpg'),
-  prog1: IK('DSC03880.jpg'),
-  prog2: IK('DSC03895.jpg'),
-  prog3: IK('DSC03901.jpg'),
+  whyValorMain: IK('VCC.Graduation.2026-383.jpg'),
+  whyValor2: IK('DSC01068.jpg'),
+  whyValor3: IK('DSC00941.jpg'),
+  testimonial: IK('DSC03901.jpg'),
+  prog1: IK('DSC00837.jpg'),
+  prog2: IK('A7301807.jpg'),
+  prog3: IK('DSC09572.jpg'),
   prog4: IK('DSC05427.jpg'),
   prog5: IK('DSC08674.jpg'),
-  gallery1: IK('DSC09572.jpg'),
-  gallery2: IK('VCC.Graduation.2026-383.jpg'),
   social: IK('WEB.png'),
+  gallery: [
+    IK('DSC03837.jpg'),
+    IK('DSC03895.jpg'),
+    IK('DSC02739.jpg'),
+    IK('DSC03220.jpg'),
+    IK('DSC03821.jpg'),
+    IK('DSC03832.jpg'),
+    IK('DSC03880.jpg'),
+    IK('A7301737pl.jpg'),
+  ],
 };
 
 // ---------- Navigation (from docs/BUILD_BRIEF.md, section 2) ----------

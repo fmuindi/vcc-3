@@ -8,6 +8,11 @@ const PROGRAMS = [
   { img: IMG.prog5, title: 'Biblical Studies', alt: 'Students in biblical studies class' },
 ];
 
+const GALLERY_CAPTIONS = [
+  'Campus community', 'Worship gathering', 'Student life', 'Students together',
+  'Campus life', 'Community fellowship', 'Ministry team', 'Student fellowship',
+];
+
 const programCard = (p) => `      <a href="academics-degree-programs.html" style="position:relative;height:300px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,14,13,.3);color:#fff">
         <img src="${p.img}" alt="${p.alt}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.9),rgba(16,14,13,0) 62%)"></div>
@@ -79,10 +84,11 @@ const HOME_BODY = `  <section id="top" style="position:relative;min-height:100sv
         <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">ABHE</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">Accredited</div></div>
       </div>
     </div>
-    <div data-reveal="" class="about-collage" style="position:relative;height:560px">
-      <div style="position:absolute;top:0;right:0;width:74%;height:63%;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)"><img src="${IMG.whyValor1}" alt="Valor students together" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div style="position:absolute;bottom:0;left:0;width:56%;height:50%;border-radius:20px;overflow:hidden;border:8px solid #FAF5EE;box-shadow:0 24px 60px rgba(16,14,13,.24);animation:vfloat 7s ease-in-out infinite"><img src="${IMG.whyValor2}" alt="Campus community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div style="position:absolute;left:52%;top:52%;width:118px;height:118px;border-radius:50%;background:#E01B2E;color:#fff;display:grid;place-items:center;text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.3;box-shadow:0 16px 40px rgba(224,27,46,.4)">Since<br>1990</div>
+    <div data-reveal="" class="about-collage" style="position:relative;height:600px">
+      <div style="position:absolute;top:0;right:0;width:68%;height:58%;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)"><img src="${IMG.whyValorMain}" alt="Valor graduation 2026" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;left:0;top:16%;width:min(120px,18%);height:min(120px,18%);border-radius:50%;background:#E01B2E;color:#fff;display:grid;place-items:center;text-align:center;font-size:clamp(8px,2.2vw,11px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;box-shadow:0 16px 40px rgba(224,27,46,.4)">Since<br>1990</div>
+      <div style="position:absolute;bottom:0;left:0;width:46%;height:40%;border-radius:20px;overflow:hidden;border:8px solid #FAF5EE;box-shadow:0 24px 60px rgba(16,14,13,.24);animation:vfloat 7s ease-in-out infinite"><img src="${IMG.whyValor2}" alt="Valor students" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;bottom:0;right:0;width:40%;height:34%;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(16,14,13,.22)"><img src="${IMG.whyValor3}" alt="Campus community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     </div>
   </section>
 
@@ -117,10 +123,7 @@ ${PROGRAMS.map(programCard).join('\n')}
       <a data-reveal="" href="student-life.html" style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:4px" style-hover="color:#E01B2E">Student life →</a>
     </div>
     <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="${IMG.gallery1}" alt="Students on campus" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="${IMG.gallery2}" alt="Graduation 2026" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="${IMG.prog3}" alt="Missions outreach" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="${IMG.cohort}" alt="Students together" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
+${GALLERY_CAPTIONS.map((alt, i) => `      <div data-reveal="" ${i % 2 === 1 ? 'class="gallery-offset" ' : ''}style="border-radius:16px;overflow:hidden;aspect-ratio:3/4${i % 2 === 1 ? ';margin-top:34px' : ''}"><img src="${IMG.gallery[i]}" alt="${alt}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>`).join('\n')}
     </div>
   </section>
 
