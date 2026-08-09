@@ -85,10 +85,10 @@ const HOME_BODY = `  <section id="top" style="position:relative;min-height:100sv
       </div>
     </div>
     <div data-reveal="" class="about-collage" style="position:relative;height:600px">
-      <div style="position:absolute;top:0;right:0;width:68%;height:58%;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)"><img src="${IMG.whyValorMain}" alt="Valor graduation 2026" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div style="position:absolute;left:0;top:16%;width:min(120px,18%);height:min(120px,18%);border-radius:50%;background:#E01B2E;color:#fff;display:grid;place-items:center;text-align:center;font-size:clamp(8px,2.2vw,11px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;box-shadow:0 16px 40px rgba(224,27,46,.4)">Since<br>1990</div>
-      <div style="position:absolute;bottom:0;left:0;width:46%;height:40%;border-radius:20px;overflow:hidden;border:8px solid #FAF5EE;box-shadow:0 24px 60px rgba(16,14,13,.24);animation:vfloat 7s ease-in-out infinite"><img src="${IMG.whyValor2}" alt="Valor students" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      <div style="position:absolute;bottom:0;right:0;width:40%;height:34%;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(16,14,13,.22)"><img src="${IMG.whyValor3}" alt="Campus community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:0;right:0;width:68%;height:56%;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)"><img src="${IMG.whyValorMain}" alt="Valor graduation 2026" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;left:4%;top:16%;width:min(120px,20%);height:min(120px,20%);border-radius:50%;background:#E01B2E;color:#fff;display:grid;place-items:center;text-align:center;font-size:clamp(8px,2.2vw,11px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;box-shadow:0 16px 40px rgba(224,27,46,.4)">Since<br>1990</div>
+      <div style="position:absolute;bottom:0;left:0;width:47%;height:38%;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(16,14,13,.22)"><img src="${IMG.whyValor2}" alt="Valor students" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;bottom:0;right:0;width:47%;height:38%;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(16,14,13,.22)"><img src="${IMG.whyValor3}" alt="Campus community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     </div>
   </section>
 
