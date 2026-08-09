@@ -9,7 +9,10 @@ const FONT_FACE_CSS = fs.readFileSync(path.join(__dirname, 'fontface.html'), 'ut
 
 // ---------- Content sources ----------
 const LOGO = 'assets/images/valor-logo-white.png'; // downloaded + downscaled from the S3 original for performance
-const HERO_VIDEO = 'https://ik.imagekit.io/vddpcxj7e/valor/valor_hero_video_background.mp4?tr=w-1200';
+// Lower width + quality than the client's original link (tr=w-1200) so the
+// hero video downloads and starts playing faster — ImageKit transforms this
+// on the fly server-side, so the browser fetches a smaller file directly.
+const HERO_VIDEO = 'https://ik.imagekit.io/vddpcxj7e/valor/valor_hero_video_background.mp4?tr=w-960,q-50';
 const IK = (name) => `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q-auto,w-1200`;
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),
@@ -177,6 +180,8 @@ const BASE_STYLE = `<style>
   @keyframes vspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
   @keyframes vpulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:0;transform:scale(1.9)}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
+  .site-header{transition:background .25s ease,box-shadow .25s ease}
+  .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
   .nav-item{position:relative;display:flex;align-items:center;gap:3px}
   .nav-item-row{display:flex;align-items:center;gap:3px}
   .submenu-toggle{display:none;background:none;border:none;color:inherit;font-size:11px;cursor:pointer;padding:4px}
@@ -222,6 +227,17 @@ class Component extends DCLogic {
     this.reveal();
     this.counters();
     this.menu();
+    this.stickyHeader();
+  }
+  stickyHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    const onScroll = () => {
+      if (window.scrollY > 30) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
   menu() {
     const btn = document.getElementById('menu-toggle');
@@ -300,6 +316,7 @@ ${RESOURCE_MAP_SCRIPT}
 <meta property="og:title" content="${escapeHtml(title)}">
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:image" content="${socialImage || IMG.social}">
+<link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="${IMG.heroPoster}" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fcb01a3d-49b1-4f6f-a634-7c16cd1ea3a9.woff2" crossorigin="anonymous">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/4f4c1e77-709d-474f-bf96-392753485ee5.woff2" crossorigin="anonymous">
