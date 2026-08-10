@@ -19,10 +19,11 @@ const programCard = (p) => `      <a href="academics-degree-programs.html" style
         <div style="position:absolute;left:22px;right:22px;bottom:20px"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;line-height:1.05;color:#FAF5EE">${p.title}</div></div>
       </a>`;
 
-const HOME_BODY = `  <section id="top" style="position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D">
+const HOME_BODY = `  <section id="top" class="hero-section" style="position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D">
     <video src="${HERO_VIDEO}" autoplay="" muted="" loop="" playsinline="" poster="${IMG.heroPoster}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62"></video>
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.35) 45%,rgba(16,14,13,.95) 100%)"></div>
     <div class="hero-inner" style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 72px">
+      <div data-reveal="" style="font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:14px">Valor Christian College</div>
       <h1 data-reveal="" class="hero-title" style="margin:0;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(42px,7.5vw,110px);line-height:.92;letter-spacing:-.03em;text-wrap:balance">Where world<br>changers <span style="color:#E01B2E">are made.</span></h1>
       <p data-reveal="" class="hero-copy" style="margin:22px 0 0;max-width:56ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.82)">College is more than a degree — it's discovering who God has called you to become, and being equipped to lead wherever He opens the door.</p>
       <div data-reveal="" class="hero-ctas" style="display:flex;gap:12px;max-width:560px;margin-top:30px">
