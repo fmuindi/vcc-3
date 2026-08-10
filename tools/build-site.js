@@ -142,13 +142,14 @@ function renderHeader() {
           </div>`;
   }).join('\n          ');
 
-  return `  <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:28px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
-    <a href="index.html" style="flex:none"><img src="${LOGO}" alt="Valor Christian College" style="display:block;height:40px;width:auto"></a>
-    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="menu-toggle-btn">☰</button>
+  return `  <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:20px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
+    <a href="index.html" style="flex:none"><img src="${LOGO}" alt="Valor Christian College" class="site-logo" style="display:block;height:40px;width:auto"></a>
     <nav id="site-nav" style="display:flex;gap:22px;margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">
           ${items}
     </nav>
-    <a href="admissions-apply-now.html" class="header-apply" style="flex:none;background:#E01B2E;color:#fff;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:13px 24px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.45);transition:transform .18s ease,background .18s ease" style-hover="transform:translateY(-2px) scale(1.03);background:#F02338;color:#fff">Apply Now</a>
+    <a href="admissions.html" class="header-request-info" style="flex:none;background:#FAF5EE;color:#100E0D;font-size:13px;font-weight:700;padding:13px 20px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Request Info</a>
+    <a href="student-life-portal.html" class="header-student-portal" style="flex:none;background:#E01B2E;color:#fff;font-size:13px;font-weight:700;padding:13px 20px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.45);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Student Portal</a>
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="menu-toggle-btn">☰</button>
   </header>`;
 }
 
@@ -206,12 +207,12 @@ const BASE_STYLE = `<style>
     .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
     .hero-section{align-items:center!important}
     .hero-inner{text-align:center;padding-bottom:0!important}
-    .hero-copy{margin-left:auto!important;margin-right:auto!important}
     .hero-ctas{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
     .hero-cta-btn{font-size:11px!important;padding:15px 6px!important;letter-spacing:.02em!important}
-    .site-header{padding:14px 20px!important;gap:14px!important}
-    .menu-toggle-btn{display:block!important;margin-left:auto!important}
-    .header-apply{padding:10px 16px!important;font-size:12px!important}
+    .site-header{padding:12px 14px!important;gap:8px!important}
+    .site-logo{height:26px!important}
+    .menu-toggle-btn{display:block!important;margin-left:0!important;font-size:19px!important;padding:2px!important}
+    .header-request-info,.header-student-portal{padding:8px 10px!important;font-size:10.5px!important}
     #site-nav{position:fixed!important;top:64px;left:0;right:0;margin-left:0!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;background:#100E0D;max-height:0;overflow:auto;transition:max-height .3s ease}
     #site-nav.open{max-height:calc(100vh - 64px)}
     #site-nav>.nav-item{display:flex;flex-direction:column;align-items:stretch;width:100%}
