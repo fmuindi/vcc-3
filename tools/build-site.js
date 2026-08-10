@@ -200,7 +200,14 @@ const BASE_STYLE = `<style>
   .dropdown a{display:block;padding:10px 20px;font-size:12.5px;letter-spacing:.03em;text-transform:none;color:rgba(250,245,238,.85)!important;white-space:nowrap}
   .dropdown a:hover{color:#fff!important;background:rgba(224,27,46,.16)}
   .nav-portal-link{color:#FF8A93!important;font-weight:700!important}
+  .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
+  .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
   @media (max-width:860px){
+    .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
+    .hero-inner{text-align:center}
+    .hero-copy{margin-left:auto!important;margin-right:auto!important}
+    .hero-ctas{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
+    .hero-cta-btn{font-size:11px!important;padding:15px 6px!important;letter-spacing:.02em!important}
     .site-header{padding:14px 20px!important;gap:14px!important}
     .menu-toggle-btn{display:block!important;margin-left:auto!important}
     .header-apply{padding:10px 16px!important;font-size:12px!important}
@@ -344,6 +351,8 @@ ${BASE_STYLE}
 <div id="top" style="background:#FAF5EE;overflow-x:hidden">
 
 ${renderHeader()}
+
+<a href="admissions-apply-now.html" class="floating-apply">Apply</a>
 
 ${bodyHtml}
 

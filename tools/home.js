@@ -22,16 +22,13 @@ const programCard = (p) => `      <a href="academics-degree-programs.html" style
 const HOME_BODY = `  <section id="top" style="position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D">
     <video src="${HERO_VIDEO}" autoplay="" muted="" loop="" playsinline="" poster="${IMG.heroPoster}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62"></video>
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.35) 45%,rgba(16,14,13,.95) 100%)"></div>
-    <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 72px">
-      <div data-reveal="" style="display:inline-flex;align-items:center;gap:10px;background:rgba(250,245,238,.12);backdrop-filter:blur(6px);border:1px solid rgba(250,245,238,.28);color:#FAF5EE;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border-radius:999px;margin-bottom:22px">
-        <span style="position:relative;display:inline-flex;width:8px;height:8px"><span style="position:absolute;inset:0;border-radius:50%;background:#E01B2E;animation:vpulse 1.8s ease-out infinite"></span><span style="position:absolute;inset:0;border-radius:50%;background:#E01B2E"></span></span>
-        Fall '26 enrollment is open
-      </div>
-      <h1 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(42px,7.5vw,110px);line-height:.92;letter-spacing:-.03em;text-wrap:balance">A place where world<br>changers <span style="color:#E01B2E">are made.</span></h1>
-      <p data-reveal="" style="margin:22px 0 0;max-width:56ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.82)">College is more than a degree — it's discovering who God has called you to become. At Valor you'll be challenged academically, strengthened spiritually, and equipped to lead wherever God opens the door.</p>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:30px">
-        <a data-reveal="" href="admissions-apply-now.html" style="background:#E01B2E;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:19px 34px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-3px);background:#F02338;color:#fff">Apply now</a>
-        <a data-reveal="" href="admissions.html" style="border:1.5px solid rgba(250,245,238,.5);color:#FAF5EE;font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:18px 30px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(250,245,238,.14);color:#FAF5EE">Request information</a>
+    <div class="hero-inner" style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 72px">
+      <h1 data-reveal="" class="hero-title" style="margin:0;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(42px,7.5vw,110px);line-height:.92;letter-spacing:-.03em;text-wrap:balance">Where world<br>changers <span style="color:#E01B2E">are made.</span></h1>
+      <p data-reveal="" class="hero-copy" style="margin:22px 0 0;max-width:56ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.82)">College is more than a degree — it's discovering who God has called you to become, and being equipped to lead wherever He opens the door.</p>
+      <div data-reveal="" class="hero-ctas" style="display:flex;gap:12px;max-width:560px;margin-top:30px">
+        <a href="academics-degree-programs.html" class="hero-cta-btn" style="flex:1;text-align:center;border:1.5px solid rgba(250,245,238,.55);color:#FAF5EE;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:17px 16px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(250,245,238,.14);color:#FAF5EE">On Campus</a>
+        <a href="academics-degree-programs.html" class="hero-cta-btn" style="flex:1;text-align:center;border:1.5px solid rgba(250,245,238,.55);color:#FAF5EE;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:17px 16px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(250,245,238,.14);color:#FAF5EE">Online</a>
+        <a href="academics-degree-programs.html" class="hero-cta-btn" style="flex:1;text-align:center;border:1.5px solid rgba(250,245,238,.55);color:#FAF5EE;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:17px 16px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(250,245,238,.14);color:#FAF5EE">Cohort</a>
       </div>
     </div>
   </section>
