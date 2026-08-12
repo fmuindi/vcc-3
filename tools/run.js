@@ -3,6 +3,7 @@ const path = require('path');
 const { renderPage, ROOT, IMG } = require('./build-site');
 const { HOME_BODY } = require('./home');
 const { PAGES, placeholderBody } = require('./placeholders');
+const { studentLifeGallery } = require('./studentLife');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -17,11 +18,12 @@ write('index.html', renderPage({
 }));
 
 PAGES.forEach((p) => {
+  const extra = p.href === 'student-life.html' ? '\n\n' + studentLifeGallery() : '';
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,
     socialImage: IMG.social,
-    bodyHtml: placeholderBody(p),
+    bodyHtml: placeholderBody(p) + extra,
   }));
 });
 

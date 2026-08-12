@@ -8,11 +8,6 @@ const PROGRAMS = [
   { img: IMG.prog5, title: 'Biblical Studies', alt: 'Students in biblical studies class' },
 ];
 
-const GALLERY_CAPTIONS = [
-  'Campus community', 'Worship gathering', 'Student life', 'Students together',
-  'Campus life', 'Community fellowship', 'Ministry team', 'Student fellowship',
-];
-
 const programCard = (p) => `      <a href="academics-degree-programs.html" style="position:relative;height:300px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,14,13,.3);color:#fff">
         <img src="${p.img}" alt="${p.alt}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.9),rgba(16,14,13,0) 62%)"></div>
@@ -34,17 +29,19 @@ const HOME_BODY = `  <section id="top" class="hero-section" style="position:rela
   </section>
 
   <section id="pathways" style="max-width:1320px;margin:0 auto;padding:96px 32px 40px">
-    <div style="text-align:center;max-width:720px;margin:0 auto 40px">
+    <div style="text-align:center;max-width:640px;margin:0 auto 28px">
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Choose Your Path</div>
-      <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Study the way that fits your calling.</h2>
+      <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Called. Equipped. Sent.</h2>
+      <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.68)">Valor is where faith comes alive and purpose becomes clear. Through biblical teaching, Spirit-filled community, and hands-on ministry, you'll grow in your calling and leave equipped to impact the world for Christ.</p>
     </div>
+    <div data-reveal="" style="text-align:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(16,14,13,.45);margin-bottom:24px">On Campus <span style="color:#E01B2E">|</span> Online <span style="color:#E01B2E">|</span> Cohort</div>
     <div class="pathways-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
       <a href="academics-degree-programs.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;color:#fff" style-hover="color:#fff">
         <img src="${IMG.onCampus}" alt="Students on the Valor campus" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,.1) 55%)"></div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:#FAF5EE;margin-bottom:8px">On Campus</div>
-          <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(250,245,238,.75)">Live and learn in daily community, chapel, and hands-on ministry.</p>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(250,245,238,.75)">Experience the community.</p>
         </div>
       </a>
       <a href="academics-degree-programs.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;color:#fff" style-hover="color:#fff">
@@ -52,7 +49,7 @@ const HOME_BODY = `  <section id="top" class="hero-section" style="position:rela
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,.1) 55%)"></div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:#FAF5EE;margin-bottom:8px">Online</div>
-          <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(250,245,238,.75)">Earn your degree from anywhere with Spirit-filled coursework built around your schedule.</p>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(250,245,238,.75)">Learn from anywhere.</p>
         </div>
       </a>
       <a href="academics-degree-programs.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;color:#fff" style-hover="color:#fff">
@@ -60,20 +57,22 @@ const HOME_BODY = `  <section id="top" class="hero-section" style="position:rela
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,.1) 55%)"></div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:#FAF5EE;margin-bottom:8px">Cohort</div>
-          <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(250,245,238,.75)">Grow with a small group of students journeying through the program together.</p>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(250,245,238,.75)">Learn together. Grow together.</p>
         </div>
       </a>
     </div>
-    <div style="text-align:center;margin-top:34px">
-      <a data-reveal="" href="academics-degree-programs.html" style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:4px" style-hover="color:#E01B2E">Want more info about our degree programs? →</a>
+    <div style="text-align:center;max-width:520px;margin:52px auto 0">
+      <h3 data-reveal="" style="margin:0 0 10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#100E0D">Not sure which path is right for you?</h3>
+      <p data-reveal="" style="margin:0 0 24px;font-size:15px;line-height:1.6;color:rgba(16,14,13,.65)">Explore our degree programs and find where your calling can take you.</p>
+      <a data-reveal="" href="academics-degree-programs.html" style="display:inline-block;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Explore Degree Programs</a>
     </div>
   </section>
 
   <section id="why-valor" class="about-grid" style="max-width:1320px;margin:0 auto;padding:96px 32px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center">
     <div>
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:18px">Why Valor</div>
-      <h2 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Faith, family, and a future worth pursuing.</h2>
-      <p data-reveal="" style="margin:0 0 30px;font-size:17px;line-height:1.6;color:rgba(16,14,13,.72);max-width:56ch">Everything at Valor is built around one goal: helping you discover and fulfill your calling — through Spirit-filled community, hands-on ministry, and biblically grounded academics.</p>
+      <h2 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Faith. Purpose. A Future Worth Pursuing.</h2>
+      <p data-reveal="" style="margin:0 0 30px;font-size:17px;line-height:1.6;color:rgba(16,14,13,.72);max-width:56ch">Everything at Valor is centered around helping you discover who God has called you to become—through Spirit-filled community, hands-on ministry, and biblically grounded academics.</p>
       <div class="stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-top:1px solid rgba(16,14,13,.12);padding-top:26px">
         <div data-reveal=""><div data-count="36" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">36</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">Years</div></div>
         <div data-reveal=""><div data-count="50" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">50</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">States</div></div>
@@ -89,13 +88,30 @@ const HOME_BODY = `  <section id="top" class="hero-section" style="position:rela
     </div>
   </section>
 
-  <section style="position:relative;margin-top:40px;padding:120px 32px;background:#100E0D;overflow:hidden">
+  <section data-reveal="" style="position:relative;margin-top:40px;padding:120px 32px;background:#100E0D;overflow:hidden">
     <img src="${IMG.testimonial}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3">
     <div style="position:absolute;inset:0;background:radial-gradient(60% 90% at 20% 30%,rgba(224,27,46,.35),rgba(16,14,13,.88))"></div>
-    <blockquote data-reveal="" style="position:relative;max-width:1000px;margin:0 auto;text-align:center">
-      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"Valor is not a place to be, but a place to <span style="color:#E01B2E">become</span>."</div>
-      <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Elder Thomas Bender · Professor</footer>
-    </blockquote>
+    <div style="position:relative;max-width:1000px;margin:0 auto">
+      <div class="quote-stage">
+        <blockquote class="quote-slide is-active" style="margin:0;text-align:center">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"Valor is not a place to be, but a place to <span style="color:#E01B2E">become</span>."</div>
+          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Elder Thomas Bender · Professor</footer>
+        </blockquote>
+        <blockquote class="quote-slide" style="margin:0;text-align:center">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"This place doesn't just teach the Word — it puts it in your <span style="color:#E01B2E">hands</span>."</div>
+          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Grace Coleman · Class of 2024</footer>
+        </blockquote>
+        <blockquote class="quote-slide" style="margin:0;text-align:center">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"I came to Valor unsure of my calling. I left <span style="color:#E01B2E">equipped</span> to walk in it."</div>
+          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Marcus Whitfield · Youth Pastor, Alumnus</footer>
+        </blockquote>
+      </div>
+      <div class="quote-dots">
+        <button aria-label="Show quote 1" class="is-active"></button>
+        <button aria-label="Show quote 2"></button>
+        <button aria-label="Show quote 3"></button>
+      </div>
+    </div>
   </section>
 
   <section id="programs" style="max-width:1320px;margin:0 auto;padding:80px 32px 40px">
@@ -108,19 +124,6 @@ const HOME_BODY = `  <section id="top" class="hero-section" style="position:rela
     </div>
     <div class="programs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
 ${PROGRAMS.map(programCard).join('\n')}
-    </div>
-  </section>
-
-  <section id="life" style="max-width:1320px;margin:0 auto;padding:80px 32px 40px">
-    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px">
-      <div>
-        <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Life at Valor</div>
-        <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1;letter-spacing:-.03em;color:#100E0D">A tight-knit, Spirit-filled community.</h2>
-      </div>
-      <a data-reveal="" href="student-life.html" style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:4px" style-hover="color:#E01B2E">Student life →</a>
-    </div>
-    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-${GALLERY_CAPTIONS.map((alt, i) => `      <div data-reveal="" ${i % 2 === 1 ? 'class="gallery-offset" ' : ''}style="border-radius:16px;overflow:hidden;aspect-ratio:3/4${i % 2 === 1 ? ';margin-top:34px' : ''}"><img src="${IMG.gallery[i]}" alt="${alt}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>`).join('\n')}
     </div>
   </section>
 

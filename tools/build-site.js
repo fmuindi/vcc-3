@@ -16,13 +16,13 @@ const HERO_VIDEO = 'https://ik.imagekit.io/vddpcxj7e/valor/valor_hero_video_back
 const IK = (name) => `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q-auto,w-1200`;
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),
-  onCampus: IK('DSC01815.jpg'),
+  onCampus: IK('DSC08674.jpg'),
   // Client-supplied Unsplash image, used as-is (not an ImageKit asset).
   online: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  cohort: IK('DSC03220.jpg'),
+  cohort: IK('DHCOWYTE.jpg'),
   whyValorMain: IK('VCC.Graduation.2026-383.jpg'),
-  whyValor2: IK('DSC01068.jpg'),
-  whyValor3: IK('DSC00941.jpg'),
+  whyValor2: IK('A7309778_1.jpg'),
+  whyValor3: IK('A7303011.jpg'),
   testimonial: IK('DSC03901.jpg'),
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
@@ -30,7 +30,9 @@ const IMG = {
   prog4: IK('DSC05427.jpg'),
   prog5: IK('DSC08674.jpg'),
   social: IK('WEB.png'),
-  gallery: [
+  // Student Life gallery: the original 8 + the images swapped in elsewhere on the
+  // site today + one new addition, all requested to live on student-life.html.
+  studentLifeGallery: [
     IK('DSC03837.jpg'),
     IK('DSC03895.jpg'),
     IK('DSC02739.jpg'),
@@ -39,6 +41,11 @@ const IMG = {
     IK('DSC03832.jpg'),
     IK('DSC03880.jpg'),
     IK('A7301737pl.jpg'),
+    IK('DSC08674.jpg'),
+    IK('DHCOWYTE.jpg'),
+    IK('A7309778_1.jpg'),
+    IK('A7303011.jpg'),
+    IK('DSC09620_1.jpg'),
   ],
 };
 
@@ -143,7 +150,7 @@ function renderHeader() {
   }).join('\n          ');
 
   return `  <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:20px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
-    <a href="index.html" style="flex:none"><img src="${LOGO}" alt="Valor Christian College" class="site-logo" style="display:block;height:40px;width:auto"></a>
+    <a href="index.html" style="flex:none"><img src="${LOGO}" alt="Valor Christian College" class="site-logo" style="display:block;height:56px;width:auto"></a>
     <nav id="site-nav" style="display:flex;gap:22px;margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">
           ${items}
     </nav>
@@ -203,6 +210,12 @@ const BASE_STYLE = `<style>
   .nav-portal-link{color:#FF8A93!important;font-weight:700!important}
   .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
   .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
+  .quote-stage{position:relative;min-height:200px}
+  .quote-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1s ease}
+  .quote-slide.is-active{position:relative;opacity:1;visibility:visible}
+  .quote-dots{display:flex;gap:8px;justify-content:center;margin-top:36px}
+  .quote-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(250,245,238,.3);padding:0;cursor:pointer;transition:background .2s ease,transform .2s ease}
+  .quote-dots button.is-active{background:#E01B2E;transform:scale(1.3)}
   @media (max-width:860px){
     .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
     .hero-section{align-items:center!important}
@@ -210,7 +223,7 @@ const BASE_STYLE = `<style>
     .hero-ctas{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
     .hero-cta-btn{font-size:11px!important;padding:15px 6px!important;letter-spacing:.02em!important}
     .site-header{padding:12px 14px!important;gap:8px!important}
-    .site-logo{height:26px!important}
+    .site-logo{height:34px!important}
     .menu-toggle-btn{display:block!important;margin-left:0!important;font-size:19px!important;padding:2px!important}
     .header-request-info,.header-student-portal{padding:8px 10px!important;font-size:10.5px!important}
     #site-nav{position:fixed!important;top:64px;left:0;right:0;margin-left:0!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;background:#100E0D;max-height:0;overflow:auto;transition:max-height .3s ease}
@@ -247,6 +260,27 @@ class Component extends DCLogic {
     this.counters();
     this.menu();
     this.stickyHeader();
+    this.quoteRotators();
+  }
+  quoteRotators() {
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.quote-stage').forEach(stage => {
+      const slides = Array.from(stage.querySelectorAll('.quote-slide'));
+      const dotsWrap = stage.parentElement.querySelector('.quote-dots');
+      const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('button')) : [];
+      if (slides.length < 2) return;
+      let i = 0;
+      const show = (next) => {
+        slides[i].classList.remove('is-active');
+        if (dots[i]) dots[i].classList.remove('is-active');
+        i = next;
+        slides[i].classList.add('is-active');
+        if (dots[i]) dots[i].classList.add('is-active');
+      };
+      dots.forEach((dot, idx) => dot.addEventListener('click', () => show(idx)));
+      if (reduceMotion) return;
+      setInterval(() => show((i + 1) % slides.length), 6000);
+    });
   }
   stickyHeader() {
     const header = document.querySelector('.site-header');
