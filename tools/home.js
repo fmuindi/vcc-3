@@ -15,7 +15,7 @@ const programCard = (p) => `      <a href="academics-degree-programs.html" style
       </a>`;
 
 const HOME_BODY = `  <section id="top" class="hero-section" style="position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D">
-    <video src="${HERO_VIDEO}" autoplay="" muted="" loop="" playsinline="" poster="${IMG.heroPoster}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62"></video>
+    <video src="${HERO_VIDEO}" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="${IMG.heroPoster}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62"></video>
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.35) 45%,rgba(16,14,13,.95) 100%)"></div>
     <div class="hero-inner" style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 72px">
       <div data-reveal="" style="font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:14px">Valor Christian College</div>

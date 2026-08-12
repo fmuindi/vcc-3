@@ -9,7 +9,7 @@ const FONT_FACE_CSS = fs.readFileSync(path.join(__dirname, 'fontface.html'), 'ut
 
 // ---------- Content sources ----------
 const LOGO = 'assets/images/valor-logo-white.png'; // downloaded + downscaled from the S3 original for performance
-const HERO_VIDEO = 'https://video.wixstatic.com/video/669db9_74a1023fad1f4f47a8e37fc43601806c/1080p/mp4/file.mp4';
+const HERO_VIDEO = 'https://video.wixstatic.com/video/669db9_f40c8336ac684880a7700d45d31d107c/1080p/mp4/file.mp4';
 const IK = (name) => `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q-auto,w-1200`;
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),
@@ -171,10 +171,10 @@ function renderFooter() {
         <div style="margin-bottom:20px"><img src="${LOGO}" alt="Valor Christian College" style="display:block;height:52px;width:auto"></div>
         <p style="margin:0;font-size:14px;line-height:1.6;color:rgba(250,245,238,.55);max-width:38ch">A biblically-based community of higher learning equipping Christian leaders in academic excellence, moral integrity and spiritual intensity.</p>
         <div style="display:flex;gap:10px;margin-top:22px">
-          <a href="https://www.instagram.com/valorcollege/" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;font-size:12px;font-weight:700" style-hover="background:#E01B2E;color:#fff">IG</a>
-          <a href="https://www.youtube.com/@ValorCollege" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;font-size:12px;font-weight:700" style-hover="background:#E01B2E;color:#fff">YT</a>
-          <a href="https://www.tiktok.com/@valorcollege" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;font-size:12px;font-weight:700" style-hover="background:#E01B2E;color:#fff">TT</a>
-          <a href="https://www.facebook.com/valorcollege/" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;font-size:12px;font-weight:700" style-hover="background:#E01B2E;color:#fff">FB</a>
+          <a href="https://www.instagram.com/valorcollege/" aria-label="Instagram" class="social-icon" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;transition:background .18s ease,border-color .18s ease" style-hover="background:#E01B2E;border-color:#E01B2E;color:#fff"><i class="fa-brands fa-instagram" style="font-size:16px"></i></a>
+          <a href="https://www.youtube.com/@ValorCollege" aria-label="YouTube" class="social-icon" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;transition:background .18s ease,border-color .18s ease" style-hover="background:#E01B2E;border-color:#E01B2E;color:#fff"><i class="fa-brands fa-youtube" style="font-size:16px"></i></a>
+          <a href="https://www.tiktok.com/@valorcollege" aria-label="TikTok" class="social-icon" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;transition:background .18s ease,border-color .18s ease" style-hover="background:#E01B2E;border-color:#E01B2E;color:#fff"><i class="fa-brands fa-tiktok" style="font-size:15px"></i></a>
+          <a href="https://www.facebook.com/valorcollege/" aria-label="Facebook" class="social-icon" style="display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(250,245,238,.28);color:#FAF5EE;transition:background .18s ease,border-color .18s ease" style-hover="background:#E01B2E;border-color:#E01B2E;color:#fff"><i class="fa-brands fa-facebook-f" style="font-size:15px"></i></a>
         </div>
       </div>
 ${cols}
@@ -219,10 +219,10 @@ const BASE_STYLE = `<style>
     .hero-inner{text-align:center;padding-bottom:0!important}
     .hero-ctas{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
     .hero-cta-btn{font-size:11px!important;padding:15px 6px!important;letter-spacing:.02em!important}
-    .site-header{padding:12px 14px!important;gap:8px!important}
-    .site-logo{height:34px!important}
-    .menu-toggle-btn{display:block!important;margin-left:0!important;font-size:19px!important;padding:2px!important}
-    .header-request-info,.header-student-portal{padding:8px 10px!important;font-size:10.5px!important}
+    .site-header{padding:12px 16px!important;gap:10px!important;flex-wrap:nowrap!important}
+    .site-logo{height:32px!important;flex-shrink:0}
+    .header-request-info,.header-student-portal{flex-shrink:0;white-space:nowrap;padding:9px 12px!important;font-size:10px!important;letter-spacing:.02em!important}
+    .menu-toggle-btn{display:flex!important;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto!important;width:40px;height:40px;font-size:20px!important;padding:0!important;border-radius:10px;background:rgba(250,245,238,.1)!important}
     #site-nav{position:fixed!important;top:64px;left:0;right:0;margin-left:0!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;background:#100E0D;max-height:0;overflow:auto;transition:max-height .3s ease}
     #site-nav.open{max-height:calc(100vh - 64px)}
     #site-nav>.nav-item{display:flex;flex-direction:column;align-items:stretch;width:100%}
@@ -247,6 +247,10 @@ const BASE_STYLE = `<style>
   @media (max-width:560px){
     .programs-grid,.pathways-grid{grid-template-columns:1fr!important}
     .about-collage{height:320px!important}
+    .site-header{padding:10px 14px!important;gap:8px!important}
+    .site-logo{height:28px!important}
+    .header-request-info{display:none!important}
+    .header-student-portal{padding:8px 11px!important;font-size:9.5px!important}
   }
 </style>`;
 
@@ -368,6 +372,7 @@ ${RESOURCE_MAP_SCRIPT}
 <meta property="og:image" content="${socialImage || IMG.social}">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="${IMG.heroPoster}" fetchpriority="high">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fcb01a3d-49b1-4f6f-a634-7c16cd1ea3a9.woff2" crossorigin="anonymous">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/4f4c1e77-709d-474f-bf96-392753485ee5.woff2" crossorigin="anonymous">
 <script defer src="assets/js/de7b7d31-826e-4e82-9b83-eeefcf97e7dc.js"></script>
