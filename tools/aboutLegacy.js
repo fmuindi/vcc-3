@@ -1,13 +1,14 @@
 const { IMG } = require('./build-site');
 
 const CALLOUTS = [
-  { label: 'Learn', copy: 'Biblically grounded academics' },
-  { label: 'Serve', copy: 'Hands-on ministry experience' },
-  { label: 'Lead', copy: 'Preparation for your calling' },
+  { icon: 'fa-book-open', label: 'Learn', copy: 'Biblically grounded academics' },
+  { icon: 'fa-hand-holding-heart', label: 'Serve', copy: 'Hands-on ministry experience' },
+  { icon: 'fa-compass', label: 'Lead', copy: 'Preparation for your calling' },
 ];
 
 const callout = (c) => `        <div data-reveal="" style="text-align:center;padding:26px 18px;background:rgba(16,14,13,.04);border:1px solid rgba(16,14,13,.12);border-radius:16px">
-          <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:10px">${c.label}</div>
+          <i class="fa-solid ${c.icon}" style="font-size:22px;color:#E01B2E;margin-bottom:12px;display:block"></i>
+          <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#100E0D;margin-bottom:10px">${c.label}</div>
           <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(16,14,13,.65)">${c.copy}</p>
         </div>`;
 
@@ -18,13 +19,13 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">About &nbsp;·&nbsp; Our Legacy</div>
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(36px,6vw,84px);line-height:1;letter-spacing:-.03em;max-width:16ch;text-wrap:balance">A Legacy of Raising <span style="color:#E01B2E">World Changers.</span></h1>
       <p data-reveal="" style="margin:0;max-width:62ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Valor Christian College was born from Dr. Rod Parsley's vision to raise up Spirit-filled men and women equipped to impact the world for the Kingdom of God. Since 1990, that vision has remained at the heart of Valor — preparing students academically, spiritually, and practically to fulfill the calling God has placed on their lives.</p>
-      <a data-reveal="" href="#vision" style="display:inline-flex;align-items:center;gap:10px;margin-top:44px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.75)" style-hover="color:#FAF5EE">↓ Discover Our Story</a>
+      <a data-reveal="" href="#vision" style="display:inline-flex;align-items:center;gap:10px;margin-top:44px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.75)" style-hover="color:#FAF5EE"><i class="fa-solid fa-arrow-down"></i> Discover Our Story</a>
     </div>
   </section>
 
   <section id="vision" class="about-grid" style="max-width:1320px;margin:0 auto;padding:110px 32px 40px;display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center">
     <div data-reveal="" class="about-collage" style="height:560px;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)">
-      <img src="${IMG.testimonial}" alt="Students together at Valor Christian College" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+      <img src="${IMG.whyValorMain}" alt="Valor graduation" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
     </div>
     <div>
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:18px">The Vision</div>
@@ -66,7 +67,7 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
       <div data-reveal="" style="position:relative;height:480px;border-radius:20px;overflow:hidden;color:#fff">
         <img src="${IMG.founderPortrait}" alt="Dr. Rod Parsley, founder of Valor Christian College" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.94),rgba(16,14,13,.05) 55%)"></div>
-        <div style="position:absolute;left:24px;right:24px;bottom:24px">
+        <div style="position:absolute;left:24px;right:24px;bottom:24px;height:220px;display:flex;flex-direction:column;justify-content:flex-start">
           <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:10px">Then.</div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#FAF5EE;margin-bottom:10px">A Vision Was Born.</div>
           <p style="margin:0;font-size:14px;line-height:1.55;color:rgba(250,245,238,.8)">Valor began with a calling to build a college where students could receive a strong education while being prepared spiritually for their God-given purpose.</p>
@@ -75,16 +76,16 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
       <div data-reveal="" style="position:relative;height:480px;border-radius:20px;overflow:hidden;color:#fff">
         <img src="${IMG.studentLifeGallery[1]}" alt="Students in worship at Valor" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.94),rgba(16,14,13,.05) 55%)"></div>
-        <div style="position:absolute;left:24px;right:24px;bottom:24px">
+        <div style="position:absolute;left:24px;right:24px;bottom:24px;height:220px;display:flex;flex-direction:column;justify-content:flex-start">
           <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:10px">Now.</div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#FAF5EE;margin-bottom:10px">World Changers Are Being Made.</div>
           <p style="margin:0;font-size:14px;line-height:1.55;color:rgba(250,245,238,.8)">Today, students from different backgrounds and places come to Valor to learn, worship, serve, build lifelong relationships, and discover who God has called them to become.</p>
         </div>
       </div>
       <div data-reveal="" style="position:relative;height:480px;border-radius:20px;overflow:hidden;color:#fff">
-        <img src="${IMG.whyValorMain}" alt="Valor graduation" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <img src="${IMG.studentLifeGallery[10]}" alt="Valor students serving" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.94),rgba(16,14,13,.05) 55%)"></div>
-        <div style="position:absolute;left:24px;right:24px;bottom:24px">
+        <div style="position:absolute;left:24px;right:24px;bottom:24px;height:220px;display:flex;flex-direction:column;justify-content:flex-start">
           <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:10px">Next.</div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#FAF5EE;margin-bottom:10px">The Legacy Continues.</div>
           <p style="margin:0;font-size:14px;line-height:1.55;color:rgba(250,245,238,.8)">A new generation is being equipped to carry the Gospel into ministry, business, media, worship, missions, and every place God opens the door.</p>
@@ -94,9 +95,6 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
   </section>
 
   <section id="hands-on-ministry" class="about-grid" style="max-width:1320px;margin:0 auto;padding:40px 32px 110px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
-    <div data-reveal="" style="position:relative;width:100%;aspect-ratio:548/308;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22);background:#100E0D">
-      <iframe src="https://player.vimeo.com/video/1217768580?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="OSU Outreach VCC POST 20250411" loading="lazy"></iframe>
-    </div>
     <div>
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:18px">Built Different</div>
       <h2 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Learn It. Live It. Lead It.</h2>
@@ -104,6 +102,9 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
       <div class="pathways-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
 ${CALLOUTS.map(callout).join('\n')}
       </div>
+    </div>
+    <div data-reveal="" style="position:relative;width:100%;aspect-ratio:548/308;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22);background:#100E0D">
+      <iframe src="https://player.vimeo.com/video/1217768580?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="OSU Outreach VCC POST 20250411" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -118,7 +119,7 @@ ${CALLOUTS.map(callout).join('\n')}
       <div data-reveal="" style="font-family:'Bricolage Grotesque',cursive;font-style:italic;font-size:26px;color:#B3121F;margin-bottom:6px">Rod Parsley</div>
       <div data-reveal="" style="font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-bottom:30px">Dr. Rod Parsley · Founder &amp; Chancellor</div>
       <div data-reveal="" style="display:inline-flex;align-items:center;gap:12px;opacity:.55">
-        <span style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(16,14,13,.35);color:#100E0D;font-size:14px">▶</span>
+        <span style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(16,14,13,.35);color:#100E0D;font-size:14px"><i class="fa-solid fa-play"></i></span>
         <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#100E0D">Watch the Founder's Message<br><span style="font-weight:500;letter-spacing:.03em;text-transform:none;color:rgba(16,14,13,.55)">Coming soon</span></span>
       </div>
     </div>
