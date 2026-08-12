@@ -9,10 +9,7 @@ const FONT_FACE_CSS = fs.readFileSync(path.join(__dirname, 'fontface.html'), 'ut
 
 // ---------- Content sources ----------
 const LOGO = 'assets/images/valor-logo-white.png'; // downloaded + downscaled from the S3 original for performance
-// Lower width + quality than the client's original link (tr=w-1200) so the
-// hero video downloads and starts playing faster — ImageKit transforms this
-// on the fly server-side, so the browser fetches a smaller file directly.
-const HERO_VIDEO = 'https://ik.imagekit.io/vddpcxj7e/valor/valor_hero_video_background.mp4?tr=w-960,q-50';
+const HERO_VIDEO = 'https://video.wixstatic.com/video/669db9_74a1023fad1f4f47a8e37fc43601806c/1080p/mp4/file.mp4';
 const IK = (name) => `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q-auto,w-1200`;
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),

@@ -98,12 +98,12 @@ const HOME_BODY = `  <section id="top" class="hero-section" style="position:rela
           <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Elder Thomas Bender · Professor</footer>
         </blockquote>
         <blockquote class="quote-slide" style="margin:0;text-align:center">
-          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"This place doesn't just teach the Word — it puts it in your <span style="color:#E01B2E">hands</span>."</div>
-          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Grace Coleman · Class of 2024</footer>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,44px);line-height:1.18;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"The apex of all Christian endeavor must become to place the jewel of a <span style="color:#E01B2E">soul</span> in the crown of our Savior, that the Lamb of God slain may receive the reward of His suffering."</div>
+          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Dr. Rod Parsley · Founder</footer>
         </blockquote>
         <blockquote class="quote-slide" style="margin:0;text-align:center">
-          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"I came to Valor unsure of my calling. I left <span style="color:#E01B2E">equipped</span> to walk in it."</div>
-          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Marcus Whitfield · Youth Pastor, Alumnus</footer>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.8vw,54px);line-height:1.12;letter-spacing:-.02em;color:#FAF5EE;text-wrap:balance">"Valor is a '<span style="color:#E01B2E">School of the Spirit</span>' for the Spirit-led, Spirit-filled, Spirit-anointed life and ministry."</div>
+          <footer style="margin-top:26px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,245,238,.6)">Dr. Rod Parsley · Founder</footer>
         </blockquote>
       </div>
       <div class="quote-dots">
