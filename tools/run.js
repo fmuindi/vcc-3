@@ -4,6 +4,7 @@ const { renderPage, ROOT, IMG } = require('./build-site');
 const { HOME_BODY } = require('./home');
 const { PAGES, placeholderBody } = require('./placeholders');
 const { studentLifeGallery } = require('./studentLife');
+const { ABOUT_LEGACY_BODY } = require('./aboutLegacy');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -18,12 +19,14 @@ write('index.html', renderPage({
 }));
 
 PAGES.forEach((p) => {
-  const extra = p.href === 'student-life.html' ? '\n\n' + studentLifeGallery() : '';
+  let bodyHtml = placeholderBody(p);
+  if (p.href === 'student-life.html') bodyHtml += '\n\n' + studentLifeGallery();
+  if (p.href === 'about-our-legacy.html') bodyHtml = ABOUT_LEGACY_BODY;
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,
     socialImage: IMG.social,
-    bodyHtml: placeholderBody(p) + extra,
+    bodyHtml,
   }));
 });
 

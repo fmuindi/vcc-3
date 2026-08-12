@@ -21,6 +21,8 @@ const IMG = {
   whyValor2: IK('A7309778_1.jpg'),
   whyValor3: IK('A7303011.jpg'),
   testimonial: IK('DSC03901.jpg'),
+  // Client-supplied Wix asset: Dr. Rod Parsley portrait, used on the Our Legacy page.
+  founderPortrait: 'https://static.wixstatic.com/media/669db9_1261feb93b5c450e8a5c44d63775023a~mv2.png',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
