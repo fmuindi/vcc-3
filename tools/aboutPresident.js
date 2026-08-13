@@ -28,6 +28,22 @@ const ABOUT_PRESIDENT_BODY = `  <section id="president-hero" style="position:rel
     </div>
   </section>
 
+  <section id="scholarship" style="max-width:1320px;margin:100px auto 0;padding:0 32px">
+    <div class="about-grid" style="display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;background:#FAF5EE;border:1px solid rgba(16,14,13,.1);border-radius:24px;padding:56px">
+      <div>
+        <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Dr. Scott Camp Presidential Scholarship</div>
+        <h2 data-reveal="" style="margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.08;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Invest in your future. Bring someone with you.</h2>
+        <p data-reveal="" style="margin:0 0 28px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.7);max-width:56ch">Invite a friend to Valor Christian College and receive up to <strong>$2,500 per year</strong> toward your tuition when they apply and enroll.*</p>
+        <a data-reveal="" href="tuition-aid-scholarships.html" style="display:inline-block;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Learn More About the Scholarship</a>
+        <div data-reveal="" style="margin-top:16px;font-size:12px;color:rgba(16,14,13,.45)">*See scholarship terms for full eligibility details.</div>
+      </div>
+      <div data-reveal="" style="text-align:center;border-left:1px solid rgba(16,14,13,.12);padding-left:56px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,6vw,64px);line-height:1;color:#E01B2E">$2,500<span style="font-size:20px;font-weight:700">/yr</span></div>
+        <div style="margin-top:12px;font-size:13px;font-weight:600;letter-spacing:.04em;color:rgba(16,14,13,.6)">Toward tuition when a friend you refer applies and enrolls</div>
+      </div>
+    </div>
+  </section>
+
   <section id="president-contact" style="max-width:760px;margin:0 auto;padding:100px 32px;text-align:center">
     <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;letter-spacing:-.03em;color:#100E0D">Reach the President's Office</h2>
     <p data-reveal="" style="margin:0 0 30px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Questions for Dr. Camp or his office are always welcome.</p>
