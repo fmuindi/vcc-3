@@ -23,6 +23,8 @@ const IMG = {
   testimonial: IK('DSC03901.jpg'),
   // Client-supplied Wix asset: Dr. Rod Parsley portrait, used on the Our Legacy page.
   founderPortrait: 'https://static.wixstatic.com/media/669db9_923e883eb33649e69d98998d7befea27~mv2.png',
+  // Client-supplied Wix asset: Dr. Scott Camp portrait, used on the Meet Our Team page.
+  presidentPortrait: 'https://static.wixstatic.com/media/669db9_1261feb93b5c450e8a5c44d63775023a~mv2.png',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
