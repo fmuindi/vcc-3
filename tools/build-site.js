@@ -24,7 +24,7 @@ const IMG = {
   // Client-supplied Wix asset: Dr. Rod Parsley portrait, used on the Our Legacy page.
   founderPortrait: 'https://static.wixstatic.com/media/669db9_923e883eb33649e69d98998d7befea27~mv2.png',
   // Client-supplied Wix asset: Dr. Scott Camp portrait, used on the Meet Our Team page.
-  presidentPortrait: 'https://static.wixstatic.com/media/669db9_1261feb93b5c450e8a5c44d63775023a~mv2.png',
+  presidentPortrait: 'https://static.wixstatic.com/media/669db9_dcb1a2caeb8d4dc494e4e1fca5702d34~mv2.png',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
@@ -247,6 +247,13 @@ const BASE_STYLE = `<style>
     .gallery-offset{margin-top:0!important}
     .footer-grid{grid-template-columns:repeat(2,1fr)!important;gap:32px 24px!important}
     .footer-brand{grid-column:1/-1!important}
+    #president-hero{align-items:flex-end!important;padding-bottom:56px!important}
+    .president-hero-img{object-position:32% 22%!important}
+    .president-hero-scrim{background:linear-gradient(0deg,rgba(16,14,13,.96) 35%,rgba(16,14,13,.55) 65%,rgba(16,14,13,.15) 100%)!important}
+    .president-hero-text{justify-content:center!important}
+    .president-hero-text>div{max-width:100%!important;text-align:center!important}
+    .president-hero-text>div>div[style*="justify-content:flex-end"]{justify-content:center!important}
+    .scholarship-stat{border-left:none!important;padding-left:0!important;margin-top:36px!important}
   }
   @media (max-width:560px){
     .programs-grid,.pathways-grid{grid-template-columns:1fr!important}

@@ -258,6 +258,13 @@
     .gallery-offset{margin-top:0!important}
     .footer-grid{grid-template-columns:repeat(2,1fr)!important;gap:32px 24px!important}
     .footer-brand{grid-column:1/-1!important}
+    #president-hero{align-items:flex-end!important;padding-bottom:56px!important}
+    .president-hero-img{object-position:32% 22%!important}
+    .president-hero-scrim{background:linear-gradient(0deg,rgba(16,14,13,.96) 35%,rgba(16,14,13,.55) 65%,rgba(16,14,13,.15) 100%)!important}
+    .president-hero-text{justify-content:center!important}
+    .president-hero-text>div{max-width:100%!important;text-align:center!important}
+    .president-hero-text>div>div[style*="justify-content:flex-end"]{justify-content:center!important}
+    .scholarship-stat{border-left:none!important;padding-left:0!important;margin-top:36px!important}
   }
   @media (max-width:560px){
     .programs-grid,.pathways-grid{grid-template-columns:1fr!important}
@@ -367,17 +374,19 @@
 
 <a href="admissions-apply-now.html" class="floating-apply">Apply</a>
 
-  <section id="president-hero" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:70px">
-    <img src="https://static.wixstatic.com/media/669db9_1261feb93b5c450e8a5c44d63775023a~mv2.png" alt="Dr. Scott Camp, President of Valor Christian College" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.6">
-    <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.45) 45%,rgba(16,14,13,.97) 100%)"></div>
-    <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 80px">
-      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">About Our President</div>
-      <h1 data-reveal="" style="margin:0 0 10px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(38px,7vw,96px);line-height:1;letter-spacing:-.03em">Dr. Scott Camp</h1>
-      <div data-reveal="" style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
-        <span style="width:34px;height:1.5px;background:#E01B2E"></span>
-        <span style="font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E01B2E">President</span>
+  <section id="president-hero" style="position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:70px">
+    <img src="https://static.wixstatic.com/media/669db9_dcb1a2caeb8d4dc494e4e1fca5702d34~mv2.png" alt="Dr. Scott Camp, President of Valor Christian College" loading="eager" decoding="async" class="president-hero-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:22% 32%">
+    <div class="president-hero-scrim" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(16,14,13,0) 15%,rgba(16,14,13,.6) 48%,rgba(16,14,13,.94) 78%)"></div>
+    <div class="president-hero-text" style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px;display:flex;justify-content:flex-end">
+      <div style="max-width:540px;text-align:right">
+        <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">About Our President</div>
+        <h1 data-reveal="" style="margin:0 0 10px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(36px,6vw,80px);line-height:1;letter-spacing:-.03em">Dr. Scott Camp</h1>
+        <div data-reveal="" style="display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-bottom:26px">
+          <span style="font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E01B2E">President</span>
+          <span style="width:34px;height:1.5px;background:#E01B2E"></span>
+        </div>
+        <p data-reveal="" style="margin:0;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Bringing decades of ministry, leadership, and theological education to Valor Christian College — equipping students with a strong biblical foundation to fulfill their God-given calling.</p>
       </div>
-      <p data-reveal="" style="margin:0;max-width:58ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Bringing decades of ministry, leadership, and theological education to Valor Christian College — equipping students with a strong biblical foundation to fulfill their God-given calling.</p>
     </div>
   </section>
 
@@ -396,17 +405,19 @@
   </section>
 
   <section id="scholarship" style="max-width:1320px;margin:100px auto 0;padding:0 32px">
-    <div class="about-grid" style="display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;background:#FAF5EE;border:1px solid rgba(16,14,13,.1);border-radius:24px;padding:56px">
-      <div>
-        <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Dr. Scott Camp Presidential Scholarship</div>
-        <h2 data-reveal="" style="margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.08;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Invest in your future. Bring someone with you.</h2>
-        <p data-reveal="" style="margin:0 0 28px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.7);max-width:56ch">Invite a friend to Valor Christian College and receive up to <strong>$2,500 per year</strong> toward your tuition when they apply and enroll.*</p>
-        <a data-reveal="" href="tuition-aid-scholarships.html" style="display:inline-block;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Learn More About the Scholarship</a>
-        <div data-reveal="" style="margin-top:16px;font-size:12px;color:rgba(16,14,13,.45)">*See scholarship terms for full eligibility details.</div>
+    <div class="about-grid" style="position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;background:linear-gradient(135deg,#1a0508 0%,#4a0d15 55%,#E01B2E 100%);border-radius:28px;padding:60px;overflow:hidden;box-shadow:0 30px 80px rgba(224,27,46,.28)">
+      <div style="position:absolute;top:-130px;right:-90px;width:340px;height:340px;border:1px solid rgba(255,255,255,.14);border-radius:50%"></div>
+      <div style="position:absolute;bottom:-170px;left:-90px;width:380px;height:380px;border:1px solid rgba(255,255,255,.1);border-radius:50%"></div>
+      <div style="position:relative">
+        <div data-reveal="" style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;border-radius:999px;margin-bottom:22px"><i class="fa-solid fa-award"></i> Dr. Scott Camp Presidential Scholarship</div>
+        <h2 data-reveal="" style="margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.08;letter-spacing:-.03em;color:#fff;text-wrap:balance">Invest in your future. Bring someone with you.</h2>
+        <p data-reveal="" style="margin:0 0 28px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.82);max-width:56ch">Invite a friend to Valor Christian College and receive up to <strong style="color:#fff">$2,500 per year</strong> toward your tuition when they apply and enroll.*</p>
+        <a data-reveal="" href="tuition-aid-scholarships.html" style="display:inline-block;background:#fff;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#FAF5EE;color:#100E0D">Learn More About the Scholarship</a>
+        <div data-reveal="" style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.55)">*See scholarship terms for full eligibility details.</div>
       </div>
-      <div data-reveal="" style="text-align:center;border-left:1px solid rgba(16,14,13,.12);padding-left:56px">
-        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,6vw,64px);line-height:1;color:#E01B2E">$2,500<span style="font-size:20px;font-weight:700">/yr</span></div>
-        <div style="margin-top:12px;font-size:13px;font-weight:600;letter-spacing:.04em;color:rgba(16,14,13,.6)">Toward tuition when a friend you refer applies and enrolls</div>
+      <div data-reveal="" class="scholarship-stat" style="position:relative;text-align:center;border-left:1px solid rgba(255,255,255,.2);padding-left:56px">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(48px,6.5vw,70px);line-height:1;color:#fff">$2,500<span style="font-size:20px;font-weight:700">/yr</span></div>
+        <div style="margin-top:12px;font-size:13px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.78)">Toward tuition when a friend you refer applies and enrolls</div>
       </div>
     </div>
   </section>
