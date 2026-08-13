@@ -8,6 +8,7 @@ const { ABOUT_LEGACY_BODY } = require('./aboutLegacy');
 const { ABOUT_MEET_TEAM_BODY } = require('./aboutMeetTeam');
 const { ABOUT_PRESIDENT_BODY } = require('./aboutPresident');
 const { ABOUT_WHY_VALOR_BODY } = require('./aboutWhyValor');
+const { ABOUT_CONTACT_BODY } = require('./aboutContact');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -27,6 +28,7 @@ PAGES.forEach((p) => {
   if (p.href === 'about-our-legacy.html') bodyHtml = ABOUT_LEGACY_BODY;
   if (p.href === 'about-meet-our-team.html') bodyHtml = ABOUT_MEET_TEAM_BODY;
   if (p.href === 'about-why-valor.html') bodyHtml = ABOUT_WHY_VALOR_BODY;
+  if (p.href === 'about-contact.html') bodyHtml = ABOUT_CONTACT_BODY;
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,
