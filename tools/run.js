@@ -6,6 +6,7 @@ const { PAGES, placeholderBody } = require('./placeholders');
 const { studentLifeGallery } = require('./studentLife');
 const { ABOUT_LEGACY_BODY } = require('./aboutLegacy');
 const { ABOUT_MEET_TEAM_BODY } = require('./aboutMeetTeam');
+const { ABOUT_PRESIDENT_BODY } = require('./aboutPresident');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -32,4 +33,11 @@ PAGES.forEach((p) => {
   }));
 });
 
-console.log(`\nDone: ${PAGES.length + 1} pages written.`);
+write('about-meet-our-president.html', renderPage({
+  title: 'Dr. Scott Camp, President — Valor Christian College',
+  description: "Meet Dr. Scott Camp, President of Valor Christian College and Professor of Preaching, Missions & Evangelism.",
+  socialImage: IMG.social,
+  bodyHtml: ABOUT_PRESIDENT_BODY,
+}));
+
+console.log(`\nDone: ${PAGES.length + 2} pages written.`);

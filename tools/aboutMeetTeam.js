@@ -38,7 +38,7 @@ const card = (p) => `        <div data-reveal="" style="background:#fff;border:1
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">${p.name}</div>
           ${p.title.map((t) => `<div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">${t}</div>`).join('\n          ')}
           <a href="mailto:${p.email}" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>${p.email.replace('@', '@<wbr>')}</span></a>
-          ${p.cta ? `<a href="#president" style="display:block;margin-top:16px;text-align:center;background:#100E0D;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px;border-radius:8px" style-hover="background:#E01B2E;color:#fff">Meet Our President</a>` : ''}
+          ${p.cta ? `<a href="about-meet-our-president.html" style="display:block;margin-top:16px;text-align:center;background:#100E0D;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px;border-radius:8px" style-hover="background:#E01B2E;color:#fff">Meet Our President</a>` : ''}
         </div>`;
 
 const teamSection = ({ id, label, blurb, people, gridClass, cols, viewAllLabel }) => `  <section id="${id}" class="about-grid" style="max-width:1320px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:start">
@@ -103,21 +103,7 @@ ${teamSection({
     cols: 3,
   })}
 
-  <section id="president" class="about-grid" style="max-width:1320px;margin:60px auto 0;padding:0 32px 100px;display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center">
-    <div data-reveal="" class="about-collage" style="height:560px;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)">
-      <img src="${IMG.presidentPortrait}" alt="Dr. Scott Camp, President of Valor Christian College" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
-    </div>
-    <div>
-      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:18px">Meet Our President</div>
-      <h2 data-reveal="" style="margin:0 0 6px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Dr. Scott Camp</h2>
-      <div data-reveal="" style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:24px">President</div>
-      <p data-reveal="" style="margin:0 0 24px;font-size:16px;line-height:1.65;color:rgba(16,14,13,.72);max-width:62ch">Dr. Camp's academic achievements are a testament to his scholarly depth and dedication to theological education. He holds a Master of Arts in Theology (Summa Cum Laude) from Criswell College, a Master of Divinity from Southwestern Assemblies of God University, and a Master of Theology from Southwestern Baptist Theological Seminary.</p>
-      <p data-reveal="" style="margin:0 0 28px;font-size:16px;line-height:1.65;color:rgba(16,14,13,.72);max-width:62ch">His pursuit of knowledge has taken him to doctoral studies at Southwestern Baptist Theological Seminary, Assemblies of God Theological Seminary, Baylor University, and Southern Evangelical Seminary. In 2007, he received an honorary Doctor of Divinity from St. Thomas Christian College in Jacksonville, FL, and earned his Doctorate of Ministry from Trinity Seminary in Accra, Ghana in 2025.</p>
-      <a data-reveal="" href="mailto:camps@valorcollege.edu" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope"></i> camps@valorcollege.edu</a>
-    </div>
-  </section>
-
-  <section id="scholarship" style="max-width:1320px;margin:0 auto 100px;padding:0 32px">
+  <section id="scholarship" style="max-width:1320px;margin:80px auto 100px;padding:0 32px">
     <div class="about-grid" style="display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;background:#FAF5EE;border:1px solid rgba(16,14,13,.1);border-radius:24px;padding:56px">
       <div>
         <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Dr. Scott Camp Presidential Scholarship</div>
