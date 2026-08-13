@@ -470,6 +470,18 @@ class Component extends DCLogic {
     this.menu();
     this.stickyHeader();
     this.quoteRotators();
+    this.viewAllToggles();
+  }
+  viewAllToggles() {
+    document.querySelectorAll('[data-view-all]').forEach(btn => {
+      const items = Array.from(document.querySelectorAll('[data-more="' + btn.getAttribute('data-view-all') + '"]'));
+      if (!items.length) return;
+      btn.addEventListener('click', () => {
+        const show = items[0].style.display === 'none';
+        items.forEach(el => { el.style.display = show ? '' : 'none'; });
+        btn.textContent = show ? btn.getAttribute('data-less-label') : btn.getAttribute('data-more-label');
+      });
+    });
   }
   quoteRotators() {
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
