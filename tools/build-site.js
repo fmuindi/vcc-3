@@ -25,6 +25,12 @@ const IMG = {
   founderPortrait: 'https://static.wixstatic.com/media/669db9_923e883eb33649e69d98998d7befea27~mv2.png',
   // Client-supplied Wix asset: Dr. Scott Camp portrait, used on the Meet Our Team page.
   presidentPortrait: 'https://static.wixstatic.com/media/669db9_dcb1a2caeb8d4dc494e4e1fca5702d34~mv2.png',
+  // Client-supplied Wix assets for the Why Valor page (8 provided; 5 used across the page).
+  whyValorPageHero: 'https://static.wixstatic.com/media/669db9_e6806bfcc9704675ae9fe4c7e57cdde1~mv2.png',
+  whyValorPageCommunity: 'https://static.wixstatic.com/media/669db9_06a3df8407fb41fc962bf99323e50a05~mv2.png',
+  whyValorPageMinistry: 'https://static.wixstatic.com/media/669db9_cbec4c08493c4490aa235125c2031fbf~mv2.jpg',
+  whyValorPageAcademics: 'https://static.wixstatic.com/media/669db9_69a3fbd7575e4f1783e7333534188801~mv2.jpg',
+  whyValorPageExperience: 'https://static.wixstatic.com/media/669db9_b5b08a58b52b48548bb4b5447a7cd0c7~mv2.jpg',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
