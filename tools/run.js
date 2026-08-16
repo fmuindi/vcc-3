@@ -10,6 +10,7 @@ const { ABOUT_PRESIDENT_BODY } = require('./aboutPresident');
 const { ABOUT_WHY_VALOR_BODY } = require('./aboutWhyValor');
 const { ABOUT_CONTACT_BODY } = require('./aboutContact');
 const { ACADEMICS_DEGREE_PROGRAMS_BODY } = require('./academicsDegreePrograms');
+const { ACADEMICS_CATALOG_BODY } = require('./academicsCatalog');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -31,6 +32,7 @@ PAGES.forEach((p) => {
   if (p.href === 'about-why-valor.html') bodyHtml = ABOUT_WHY_VALOR_BODY;
   if (p.href === 'about-contact.html') bodyHtml = ABOUT_CONTACT_BODY;
   if (p.href === 'academics-degree-programs.html') bodyHtml = ACADEMICS_DEGREE_PROGRAMS_BODY;
+  if (p.href === 'academics-academic-catalog.html') bodyHtml = ACADEMICS_CATALOG_BODY;
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,
