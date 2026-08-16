@@ -222,6 +222,9 @@ const BASE_STYLE = `<style>
   .quote-slide.is-active{position:relative;opacity:1;visibility:visible}
   .quote-dots{display:flex;gap:8px;justify-content:center;margin-top:36px}
   .quote-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(250,245,238,.3);padding:0;cursor:pointer;transition:background .2s ease,transform .2s ease}
+  .contact-form input,.contact-form textarea{outline:none;transition:border-color .2s ease}
+  .contact-form input:focus,.contact-form textarea:focus{border-bottom-color:#fff}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.4)}
   .quote-dots button.is-active{background:#E01B2E;transform:scale(1.3)}
   @media (max-width:860px){
     .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
@@ -264,6 +267,7 @@ const BASE_STYLE = `<style>
     .scholarship-badge{font-size:10px!important;letter-spacing:.06em!important;padding:8px 14px!important;border-radius:12px!important;white-space:normal!important;text-align:left!important}
     .scholarship-cta{display:block!important;width:100%!important;text-align:center!important;padding:16px 20px!important;font-size:12.5px!important}
     .visit-divider{display:none!important}
+    .contact-form-grid{grid-template-columns:1fr!important;gap:28px!important}
   }
   @media (max-width:560px){
     .programs-grid,.pathways-grid{grid-template-columns:1fr!important}

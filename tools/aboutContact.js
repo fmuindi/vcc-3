@@ -140,6 +140,42 @@ ${DIRECTORY.map(directoryColumn).join('\n')}
           <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(250,245,238,.82)">Valor Christian College<br>P.O. Box 800<br>Columbus, OH 43216 0800</p>
         </div>
       </div>
+      <div data-reveal="" style="grid-column:1/-1;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35)">
+        <iframe src="https://maps.google.com/maps?q=39.890617,-82.829987&z=11&output=embed" width="100%" height="380" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Valor Christian College"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-form-section" style="background:#6E0F16;padding:100px 32px">
+    <div style="max-width:1000px;margin:0 auto">
+      <h2 data-reveal="" style="margin:0 0 56px;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);letter-spacing:.04em;text-transform:uppercase;color:#fff">Contact Form</h2>
+      <form class="contact-form" action="mailto:admissions@valorcollege.edu" method="post" enctype="text/plain">
+        <div class="contact-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-bottom:40px">
+          <div data-reveal="">
+            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">First Name*</label>
+            <input type="text" name="firstName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+          </div>
+          <div data-reveal="">
+            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Last Name*</label>
+            <input type="text" name="lastName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+          </div>
+          <div data-reveal="">
+            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Email*</label>
+            <input type="email" name="email" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+          </div>
+          <div data-reveal="">
+            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Phone*</label>
+            <input type="tel" name="phone" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+          </div>
+        </div>
+        <div data-reveal="" style="margin-bottom:44px">
+          <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Message*</label>
+          <textarea name="message" required rows="2" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif;resize:vertical"></textarea>
+        </div>
+        <div data-reveal="" style="text-align:right">
+          <button type="submit" style="background:#fff;color:#100E0D;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;border:none;border-radius:4px;cursor:pointer">Submit</button>
+        </div>
+      </form>
     </div>
   </section>`;
 
