@@ -288,6 +288,13 @@ class Component extends DCLogic {
     this.stickyHeader();
     this.quoteRotators();
     this.viewAllToggles();
+    this.muteAutoplayVideos();
+  }
+  muteAutoplayVideos() {
+    document.querySelectorAll('video[autoplay]').forEach(v => {
+      v.muted = true;
+      v.defaultMuted = true;
+    });
   }
   viewAllToggles() {
     document.querySelectorAll('[data-view-all]').forEach(btn => {
