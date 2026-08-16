@@ -31,6 +31,8 @@ const IMG = {
   whyValorPageMinistry: 'https://static.wixstatic.com/media/669db9_cbec4c08493c4490aa235125c2031fbf~mv2.jpg',
   whyValorPageAcademics: 'https://static.wixstatic.com/media/669db9_69a3fbd7575e4f1783e7333534188801~mv2.jpg',
   whyValorPageExperience: 'https://static.wixstatic.com/media/669db9_b5b08a58b52b48548bb4b5447a7cd0c7~mv2.jpg',
+  // Client-supplied Wix asset for the Degree Programs page hero.
+  degreeProgramsHero: 'https://static.wixstatic.com/media/669db9_b8f4446b613947f7853070891c988e8e~mv2.jpeg',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
