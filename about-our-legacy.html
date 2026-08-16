@@ -606,12 +606,14 @@ class Component extends DCLogic {
     this.stickyHeader();
     this.quoteRotators();
     this.viewAllToggles();
-    this.muteAutoplayVideos();
+    this.fixAutoplayVideos();
   }
-  muteAutoplayVideos() {
+  fixAutoplayVideos() {
     document.querySelectorAll('video[autoplay]').forEach(v => {
       v.muted = true;
       v.defaultMuted = true;
+      v.loop = true;
+      v.addEventListener('ended', () => { v.currentTime = 0; v.play(); });
     });
   }
   viewAllToggles() {
