@@ -273,6 +273,8 @@
     .scholarship-cta{display:block!important;width:100%!important;text-align:center!important;padding:16px 20px!important;font-size:12.5px!important}
     .visit-divider{display:none!important}
     .contact-form-grid{grid-template-columns:1fr!important;gap:28px!important}
+    .help-cta-buttons{flex-direction:column!important;width:100%!important}
+    .help-cta-buttons a{display:block!important;width:100%!important;text-align:center!important;font-size:11.5px!important;letter-spacing:.02em!important;padding:14px 14px!important;white-space:nowrap!important}
   }
   @media (max-width:560px){
     .programs-grid,.pathways-grid{grid-template-columns:1fr!important}
@@ -382,23 +384,108 @@
 
 <a href="admissions-apply-now.html" class="floating-apply">Apply</a>
 
-  <section style="position:relative;min-height:52vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:70px">
-    <img src="https://ik.imagekit.io/vddpcxj7e/valor/A7301807.jpg?tr=f-auto,q-auto,w-1200" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4">
-    <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.55) 45%,rgba(16,14,13,.96) 100%)"></div>
-    <div style="position:relative;width:100%;max-width:900px;margin:0 auto;padding:60px 32px;text-align:center">
-      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Academics</div>
-      <h1 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(34px,5.5vw,64px);line-height:1.02;letter-spacing:-.03em">Credit for Prior Learning</h1>
-      <p data-reveal="" style="margin:0 auto;max-width:56ch;font-size:17px;line-height:1.6;color:rgba(250,245,238,.82)">How prior coursework, ministry experience, or training may count toward your degree.</p>
+  <section id="credit-hero" class="about-grid" style="max-width:1320px;margin:0 auto;padding:150px 32px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center">
+    <div>
+      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Credit for Prior Learning</div>
+      <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Your Experience Could Count Toward Your Degree.</h1>
+      <p data-reveal="" style="margin:0 0 32px;font-size:17px;line-height:1.6;color:rgba(16,14,13,.68);max-width:56ch">Your education does not always begin in a classroom. Previous college coursework, professional experience, military training, examinations, and other qualifying learning may be eligible for college credit at Valor Christian College.</p>
+      <a data-reveal="" href="mailto:academics@valorcollege.edu" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> Request Credit Information</a>
+    </div>
+    <div data-reveal="" class="about-collage" style="height:420px;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.2)">
+      <img src="https://static.wixstatic.com/media/669db9_c74e2854fa5c4c66a53bb3390e495f4a~mv2.jpg" alt="Valor Christian College students" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
     </div>
   </section>
 
-  <section style="max-width:760px;margin:0 auto;padding:70px 32px;text-align:center">
-    <div data-reveal="" style="display:inline-block;background:rgba(224,27,46,.08);border:1px solid rgba(224,27,46,.25);color:#B3121F;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px;border-radius:999px;margin-bottom:20px">Page coming soon</div>
-    <p data-reveal="" style="margin:0 0 30px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">This page is part of the Valor 2026 site update and is being finished. In the meantime, our team is happy to help directly.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-      <a data-reveal="" href="admissions-apply-now.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:16px 28px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply now</a>
-      <a data-reveal="" href="admissions-speak-with-a-counselor.html" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Speak with admissions</a>
-      <a data-reveal="" href="index.html" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Back to home</a>
+  <section id="credit-options" style="max-width:1320px;margin:0 auto;padding:100px 32px 40px">
+    <div style="max-width:640px;margin:0 auto 48px;text-align:center">
+      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Turn What You've Learned Into Credit</div>
+      <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">You May Be Closer Than You Think.</h2>
+    </div>
+    <div class="programs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:60px">
+      <div data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:30px 26px">
+        <div style="width:50px;height:50px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-briefcase" style="color:#E01B2E;font-size:19px"></i></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E01B2E;margin-bottom:8px">Life Experience</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:#100E0D;margin-bottom:12px">Credit by Portfolio</div>
+        <p style="flex:1;margin:0 0 22px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.62)">Students with college level learning gained outside of the traditional classroom may be eligible to receive credit through a portfolio review.</p>
+        <button type="button" data-view-all="portfolio" data-more-label="Learn More ▾" data-less-label="Learn More ▾" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(224,27,46,.4);background:none;color:#B3121F;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:13px 22px;border-radius:999px;cursor:pointer" style-hover="background:rgba(224,27,46,.08)">Learn More ▾</button>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:30px 26px">
+        <div style="width:50px;height:50px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-graduation-cap" style="color:#E01B2E;font-size:19px"></i></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E01B2E;margin-bottom:8px">Previous College Credit</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:#100E0D;margin-bottom:12px">Transfer Credits</div>
+        <p style="flex:1;margin:0 0 22px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.62)">Previously completed courses from an accredited college or university may be evaluated for transfer into your Valor degree program.</p>
+        <button type="button" data-view-all="transfer" data-more-label="Learn More ▾" data-less-label="Learn More ▾" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(224,27,46,.4);background:none;color:#B3121F;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:13px 22px;border-radius:999px;cursor:pointer" style-hover="background:rgba(224,27,46,.08)">Learn More ▾</button>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:30px 26px">
+        <div style="width:50px;height:50px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-star" style="color:#E01B2E;font-size:19px"></i></div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E01B2E;margin-bottom:8px">Additional Credit Options</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:#100E0D;margin-bottom:12px">Exams & Military Training</div>
+        <p style="flex:1;margin:0 0 22px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.62)">Qualifying examination credit, including CLEP and AP, as well as eligible military training may be considered for credit.</p>
+        <button type="button" data-view-all="exams-military" data-more-label="Learn More ▾" data-less-label="Learn More ▾" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(224,27,46,.4);background:none;color:#B3121F;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:13px 22px;border-radius:999px;cursor:pointer" style-hover="background:rgba(224,27,46,.08)">Learn More ▾</button>
+      </div>
+    </div>
+    <div style="max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
+        <button type="button" data-view-all="portfolio" data-more-label="Credit by Portfolio ▾" data-less-label="Credit by Portfolio ▴" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
+          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-briefcase" style="color:#E01B2E;font-size:17px"></i></div>
+          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Credit by Portfolio ▾</span>
+        </button>
+        <div data-more="portfolio" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
+          <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.7);max-width:70ch">Valor Christian College recognizes that college level learning can take place outside of the traditional classroom. Students enrolled in a degree program may apply to have qualifying life and professional experience evaluated for potential college credit.</p>
+          <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.7);max-width:70ch">Students must apply within their first year of enrollment. Credit is awarded only after all required documentation has been submitted, reviewed by a qualified faculty member, and validated by the Vice President for Academic Affairs.</p>
+          <a href="mailto:academics@valorcollege.edu" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:14px 24px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-envelope"></i> Request More Information</a>
+        </div>
+      </div>
+
+      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
+        <button type="button" data-view-all="transfer" data-more-label="Transfer Credits ▾" data-less-label="Transfer Credits ▴" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
+          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-graduation-cap" style="color:#E01B2E;font-size:17px"></i></div>
+          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Transfer Credits ▾</span>
+        </button>
+        <div data-more="transfer" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
+          <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.7);max-width:70ch">Students who have attended an accredited college or university may submit an official transcript for evaluation. Transfer credit may be awarded when previous coursework is compatible with the student's Valor degree program and a grade of <strong>C or better</strong> was earned.</p>
+          <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.7);max-width:70ch">Additional documentation, such as a course description or syllabus, may be requested during the evaluation process.</p>
+          <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.7);max-width:70ch">Valor allows a maximum of <strong>20 hours of nontraditional credit</strong>, including qualifying examination credit, military training, and life experience.</p>
+          <a href="mailto:registrar@valorcollege.edu" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:14px 24px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-envelope"></i> Request a Transcript Evaluation</a>
+        </div>
+      </div>
+
+      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
+        <button type="button" data-view-all="exams-military" data-more-label="Exams & Military Training ▾" data-less-label="Exams & Military Training ▴" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
+          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-star" style="color:#E01B2E;font-size:17px"></i></div>
+          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Exams & Military Training ▾</span>
+        </button>
+        <div data-more="exams-military" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
+          <p style="margin:0 0 22px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.7);max-width:70ch">Qualifying examination credit, including CLEP and AP, as well as eligible military training may be considered for credit.</p>
+          <a href="mailto:academics@valorcollege.edu" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:14px 24px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-envelope"></i> Request More Information</a>
+        </div>
+      </div>
+
+      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:18px 22px">
+        <button type="button" data-view-all="auditing" data-more-label="Auditing Courses ▾" data-less-label="Auditing Courses ▴" style="display:flex;align-items:center;gap:14px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
+          <div style="flex:none;width:36px;height:36px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-file-signature" style="color:#E01B2E;font-size:13px"></i></div>
+          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:#100E0D">Auditing Courses ▾</span>
+        </button>
+        <div data-more="auditing" style="display:none;margin-top:16px;padding-top:16px;border-top:1px solid rgba(16,14,13,.08)">
+          <p style="margin:0;font-size:14px;line-height:1.6;color:rgba(16,14,13,.65);max-width:70ch">Students interested in auditing a course must receive academic permission during registration or within the allowable schedule change period. Audit courses cannot later be changed to credit courses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credit-help" style="max-width:1000px;margin:0 auto;padding:20px 32px 120px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;background:#FAF5EE;border:1px solid rgba(16,14,13,.1);border-radius:24px;padding:44px 40px">
+      <div style="display:flex;align-items:center;gap:20px">
+        <div style="flex:none;width:56px;height:56px;border-radius:50%;border:1.5px solid rgba(224,27,46,.35);display:grid;place-items:center"><i class="fa-solid fa-headset" style="color:#E01B2E;font-size:22px"></i></div>
+        <div>
+          <div data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;color:#100E0D;margin-bottom:6px">Questions? We're Here to Help.</div>
+          <p data-reveal="" style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(16,14,13,.62);max-width:46ch">Our Academic Affairs and Registrar teams can help you understand transfer credits, prior learning, and your next steps.</p>
+        </div>
+      </div>
+      <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="mailto:academics@valorcollege.edu" style="background:#E01B2E;color:#fff;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:15px 24px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Contact Academic Affairs</a>
+        <a href="mailto:registrar@valorcollege.edu" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:13.5px 22px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Contact the Registrar</a>
+      </div>
     </div>
   </section>
 
@@ -498,12 +585,16 @@ class Component extends DCLogic {
   }
   viewAllToggles() {
     document.querySelectorAll('[data-view-all]').forEach(btn => {
-      const items = Array.from(document.querySelectorAll('[data-more="' + btn.getAttribute('data-view-all') + '"]'));
+      const key = btn.getAttribute('data-view-all');
+      const items = Array.from(document.querySelectorAll('[data-more="' + key + '"]'));
       if (!items.length) return;
       btn.addEventListener('click', () => {
         const show = items[0].style.display === 'none';
         items.forEach(el => { el.style.display = show ? '' : 'none'; });
-        btn.textContent = show ? btn.getAttribute('data-less-label') : btn.getAttribute('data-more-label');
+        document.querySelectorAll('[data-view-all="' + key + '"]').forEach(b => {
+          const label = b.querySelector('[data-swap-label]') || b;
+          label.textContent = show ? b.getAttribute('data-less-label') : b.getAttribute('data-more-label');
+        });
       });
     });
   }

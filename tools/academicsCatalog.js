@@ -86,7 +86,7 @@ ${OLDER_ARCHIVE.map((c) => archiveRow(c, true)).join('\n')}
           <p data-reveal="" style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(16,14,13,.62);max-width:46ch">Our Academic Affairs team can help with questions about programs, academic policies, or course requirements.</p>
         </div>
       </div>
-      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px">
+      <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:12px">
         <a href="mailto:academics@valorcollege.edu" style="background:#E01B2E;color:#fff;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:15px 24px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Contact Academics</a>
         <a href="admissions-speak-with-a-counselor.html" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:13.5px 22px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Speak with Admissions</a>
       </div>

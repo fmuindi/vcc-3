@@ -33,6 +33,9 @@ const IMG = {
   whyValorPageExperience: 'https://static.wixstatic.com/media/669db9_b5b08a58b52b48548bb4b5447a7cd0c7~mv2.jpg',
   // Client-supplied Wix asset for the Degree Programs page hero.
   degreeProgramsHero: 'https://static.wixstatic.com/media/669db9_b8f4446b613947f7853070891c988e8e~mv2.jpeg',
+  // Client-supplied Wix asset for the Credit for Prior Learning page hero
+  // (3 more were offered as alternates: dd7c87a3, 681eb7de, 4da42c0a).
+  creditForPriorLearningHero: 'https://static.wixstatic.com/media/669db9_c74e2854fa5c4c66a53bb3390e495f4a~mv2.jpg',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
@@ -270,6 +273,8 @@ const BASE_STYLE = `<style>
     .scholarship-cta{display:block!important;width:100%!important;text-align:center!important;padding:16px 20px!important;font-size:12.5px!important}
     .visit-divider{display:none!important}
     .contact-form-grid{grid-template-columns:1fr!important;gap:28px!important}
+    .help-cta-buttons{flex-direction:column!important;width:100%!important}
+    .help-cta-buttons a{display:block!important;width:100%!important;text-align:center!important;font-size:11.5px!important;letter-spacing:.02em!important;padding:14px 14px!important;white-space:nowrap!important}
   }
   @media (max-width:560px){
     .programs-grid,.pathways-grid{grid-template-columns:1fr!important}
@@ -302,12 +307,16 @@ class Component extends DCLogic {
   }
   viewAllToggles() {
     document.querySelectorAll('[data-view-all]').forEach(btn => {
-      const items = Array.from(document.querySelectorAll('[data-more="' + btn.getAttribute('data-view-all') + '"]'));
+      const key = btn.getAttribute('data-view-all');
+      const items = Array.from(document.querySelectorAll('[data-more="' + key + '"]'));
       if (!items.length) return;
       btn.addEventListener('click', () => {
         const show = items[0].style.display === 'none';
         items.forEach(el => { el.style.display = show ? '' : 'none'; });
-        btn.textContent = show ? btn.getAttribute('data-less-label') : btn.getAttribute('data-more-label');
+        document.querySelectorAll('[data-view-all="' + key + '"]').forEach(b => {
+          const label = b.querySelector('[data-swap-label]') || b;
+          label.textContent = show ? b.getAttribute('data-less-label') : b.getAttribute('data-more-label');
+        });
       });
     });
   }
