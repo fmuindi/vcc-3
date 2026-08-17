@@ -13,6 +13,7 @@ const { ACADEMICS_DEGREE_PROGRAMS_BODY } = require('./academicsDegreePrograms');
 const { ACADEMICS_CATALOG_BODY } = require('./academicsCatalog');
 const { ACADEMICS_CLASS_SCHEDULE_BODY } = require('./academicsClassSchedule');
 const { ACADEMICS_CREDIT_FOR_PRIOR_LEARNING_BODY } = require('./academicsCreditForPriorLearning');
+const { ADMISSIONS_OVERVIEW_BODY } = require('./admissionsOverview');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -37,6 +38,7 @@ PAGES.forEach((p) => {
   if (p.href === 'academics-academic-catalog.html') bodyHtml = ACADEMICS_CATALOG_BODY;
   if (p.href === 'academics-class-schedules.html') bodyHtml = ACADEMICS_CLASS_SCHEDULE_BODY;
   if (p.href === 'academics-credit-for-prior-learning.html') bodyHtml = ACADEMICS_CREDIT_FOR_PRIOR_LEARNING_BODY;
+  if (p.href === 'admissions.html') bodyHtml = ADMISSIONS_OVERVIEW_BODY;
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,
