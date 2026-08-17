@@ -96,12 +96,8 @@ const NAV = [
     children: [
       { label: 'Financial Overview', href: 'tuition-aid.html' },
       { label: 'Tuition & Fees', href: 'tuition-aid-tuition-fees.html' },
-      { label: 'International Student Tuition & Fees', href: 'tuition-aid-international.html' },
       { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html' },
       { label: 'Scholarships', href: 'tuition-aid-scholarships.html' },
-      { label: 'Veterans Benefits', href: 'tuition-aid-veterans-benefits.html' },
-      { label: 'Speak with the Finance Office', href: 'tuition-aid-speak-with-finance.html' },
-      { label: 'Speak with a Financial Aid Counselor', href: 'tuition-aid-speak-with-financial-aid-counselor.html' },
     ],
   },
   {
@@ -135,7 +131,7 @@ const FOOTER_COLUMNS = [
   { label: 'About', items: NAV[0].children },
   { label: 'Academics', items: NAV[1].children },
   { label: 'Admissions', items: NAV[2].children.slice(0, 4) },
-  { label: 'Tuition & Aid', items: [NAV[3].children[0], NAV[3].children[1], NAV[3].children[3], NAV[3].children[4]] },
+  { label: 'Tuition & Aid', items: NAV[3].children },
   { label: 'Student Life', items: [NAV[4].children[0], NAV[4].children[1], NAV[4].children[6], NAV[4].children[7]] },
   { label: 'Alumni', items: NAV[5].children.slice(0, 4) },
 ];
