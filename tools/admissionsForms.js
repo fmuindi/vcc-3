@@ -1,27 +1,30 @@
 const { IMG } = require('./build-site');
 
 const ADMISSIONS_EMAIL = 'admissions@valorcollege.edu';
-// TODO: no real PDF URLs were provided for this page (the brief said to
-// reuse what's on the old site, but valorcollege.edu is unreachable from
-// here). Each "View PDF" button below opens a pre-addressed email to
-// Admissions naming the specific form as a working interim behavior —
-// replace href with the real PDF URL per form once confirmed.
-const formLink = (name) => `mailto:${ADMISSIONS_EMAIL}?subject=${encodeURIComponent(`Request: ${name}`)}`;
 
 const ADMISSIONS_FORMS = [
-  'Application Form', 'Medical Form', 'Pastoral Recommendation', 'Personal Testimony Bio',
-  'Sponsor Affidavit', 'Spousal Letter of Support', 'Student Financial Certification',
+  { name: 'Application Form', href: 'https://valorcollege.formtitan.com/application?country=usa#/', icon: 'fa-arrow-up-right-from-square', cta: 'Start Application' },
+  { name: 'Medical Form', href: 'https://www.valorcollege.edu/root/pdf/forms/medical.pdf' },
+  { name: 'Pastoral Recommendation', href: 'https://www.valorcollege.edu/root/pdf/forms/pastoral-rec.pdf' },
+  { name: 'Personal Testimony Bio', href: 'https://www.valorcollege.edu/root/pdf/forms/personal-bio.pdf' },
+  { name: 'Sponsor Affidavit', href: 'https://www.valorcollege.edu/root/pdf/forms/sponsor.pdf' },
+  { name: 'Spousal Letter of Support', href: 'https://www.valorcollege.edu/root/pdf/forms/spousal.pdf' },
+  { name: 'Student Financial Certification', href: 'https://www.valorcollege.edu/root/pdf/forms/financial.pdf' },
 ];
-// The reference mockup also showed a "Request Valor Transcript" card not
-// listed in the brief's text — included here since the mockup is the more
-// complete visual reference; flagged to the user for confirmation.
-const TRANSCRIPT_FORMS = ['Request College Transcript', 'Request High School or GED Transcript', 'Request Valor Transcript'];
-const STUDENT_FORMS = ['Schedule Adjustment'];
+const TRANSCRIPT_FORMS = [
+  { name: 'Request College Transcript', href: 'https://www.valorcollege.edu/root/pdf/forms/request-transcript.pdf' },
+  { name: 'Request High School or GED Transcript', href: 'https://www.valorcollege.edu/root/pdf/forms/highschool-transcript.pdf' },
+  { name: 'Request Valor Transcript', href: 'https://www.valorcollege.edu/root/pdf/forms/valor-transcript.pdf' },
+];
+const STUDENT_FORMS = [
+  { name: 'Schedule Adjustment', href: 'https://www.valorcollege.edu/root/pdf/forms/schedule.pdf' },
+  { name: 'Cap & Gown Form', href: 'https://www.valorcollege.edu/root/pdf/forms/cap-gown.pdf' },
+];
 
-const formCard = (name) => `        <a href="${formLink(name)}" data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:24px 22px;color:#100E0D" style-hover="color:#100E0D;border-color:rgba(224,27,46,.3)">
-          <i class="fa-solid fa-file-pdf" style="color:#B3121F;font-size:22px;margin-bottom:16px"></i>
-          <div style="flex:1;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;line-height:1.3;margin-bottom:16px">${name}</div>
-          <span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B3121F">View PDF →</span>
+const formCard = (f) => `        <a href="${f.href}" target="_blank" rel="noopener" data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:24px 22px;color:#100E0D" style-hover="color:#100E0D;border-color:rgba(224,27,46,.3)">
+          <i class="fa-solid ${f.icon || 'fa-file-pdf'}" style="color:#B3121F;font-size:22px;margin-bottom:16px"></i>
+          <div style="flex:1;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;line-height:1.3;margin-bottom:16px">${f.name}</div>
+          <span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B3121F">${f.cta || 'View PDF'} →</span>
         </a>`;
 
 const formCategory = (icon, label, forms) => `    <div style="margin-bottom:48px">
