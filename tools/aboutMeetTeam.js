@@ -22,13 +22,13 @@ const ADMINISTRATION = [
 
 const FACULTY = [
   { name: 'David Cook, Ed.D.', title: ['Assistant Professor'], email: 'cookd@valorcollege.edu' },
-  { name: 'Trent Lambert, D.Min.', title: ['Assistant Professor'], email: 'lambertt@valorcollege.edu' },
-  { name: 'Sean Sams, M.Div.', title: ['Professor, Bible &amp; Theology Chair'], phone: `${PHONE} ext. 4473`, email: 'samss@valorcollege.edu' },
-  { name: 'Philip Tabler, M.B.A., M.A.M., M.A., M.T.-B.C.', title: ['Professor, Music Department Chair'], phone: `${PHONE} ext. 4484`, email: 'tablerp@valorcollege.edu' },
   { name: 'Mark Youngkin, M.A.', title: ['Professor, Church Ministries Chair', 'Valor Learning Center Director'], phone: `${PHONE} ext. 4472`, email: 'youngkinm@valorcollege.edu' },
+  { name: 'Philip Tabler, M.B.A., M.A.M., M.A., M.T.-B.C.', title: ['Professor, Music Department Chair'], phone: `${PHONE} ext. 4484`, email: 'tablerp@valorcollege.edu' },
   { name: 'Richard D. Burkhalter, Ed.D.', title: ['Assistant Professor'], phone: `${PHONE} ext. 1283`, email: 'burkhalterr@valorcollege.edu' },
-  { name: 'Rob Starner, Ph.D.', title: ['Professor of New Testament'], phone: `${PHONE} ext. 4468`, email: 'starnerr@valorcollege.edu', more: 'faculty' },
-  { name: 'Richard Hogue, D.Min.', title: ['Professor of Church History and Theology'], phone: `${PHONE} ext. 4469`, email: 'hoguer@valorcollege.edu', more: 'faculty' },
+  { name: 'Richard Hogue, D.Min.', title: ['Professor of Church History and Theology'], phone: `${PHONE} ext. 4469`, email: 'hoguer@valorcollege.edu' },
+  { name: 'Rob Starner, Ph.D.', title: ['Professor of New Testament'], phone: `${PHONE} ext. 4468`, email: 'starnerr@valorcollege.edu' },
+  { name: 'Sean Sams, M.Div.', title: ['Professor, Bible &amp; Theology Chair'], phone: `${PHONE} ext. 4473`, email: 'samss@valorcollege.edu', more: 'faculty' },
+  { name: 'Trent Lambert, D.Min.', title: ['Assistant Professor'], email: 'lambertt@valorcollege.edu', more: 'faculty' },
 ];
 
 const ADJUNCT = [
