@@ -56,6 +56,22 @@ const ADJUNCT = [
   { name: 'Marvin Jones, Ph.D.', title: [], email: 'mjones@valorcollege.edu', more: 'adjunct' },
 ];
 
+const BOARD = [
+  { name: 'Dr. Rod Parsley', title: ['Chair'] },
+  { name: 'Dr. Scott Camp', title: ['President'] },
+  { name: 'Dr. Dale Berkey', title: ['Vice-President'] },
+  { name: 'Dr. Eric Bates', title: [] },
+  { name: 'Dr. Paul Chappell', title: [] },
+  { name: 'Bishop Michael Grant', title: [] },
+  { name: 'Dr. Tom Melzoni', title: [] },
+  { name: 'Mrs. Mary Millben', title: [] },
+  { name: 'Dr. Nada Owusu', title: [] },
+  { name: 'Pastor Stewart Roberts', title: [] },
+  { name: 'Mr. Marion Schrock', title: [] },
+  { name: 'Dr. Cheryl Washington', title: [] },
+  { name: 'Dr. George Westlake', title: [] },
+];
+
 const STAFF = [
   { name: 'Aislynn Rambayon', title: ['Manager of Student Life'], phone: `${PHONE} ext. 4485`, email: 'rambayona@valorcollege.edu' },
   { name: 'Tamar Sams', title: ['Registrar'], phone: `${PHONE} ext. 4474`, email: 'registrar@valorcollege.edu' },
@@ -77,7 +93,7 @@ const card = (p) => `        <div data-reveal="" ${p.more ? `data-more="${p.more
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">${p.name}</div>
           ${p.title.map((t) => `<div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">${t}</div>`).join('\n          ')}
           ${p.phone ? `<div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>${p.phone}</span></div>` : ''}
-          <a href="mailto:${p.email}" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:${p.phone ? '6' : '12'}px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>${p.email.replace('@', '@<wbr>')}</span></a>
+          ${p.email ? `<a href="mailto:${p.email}" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:${p.phone ? '6' : '12'}px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>${p.email.replace('@', '@<wbr>')}</span></a>` : ''}
           ${p.cta ? `<a href="about-meet-our-president.html" style="display:block;margin-top:16px;text-align:center;background:#100E0D;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px;border-radius:8px" style-hover="background:#E01B2E;color:#fff">Meet Our President</a>` : ''}
         </div>`;
 
@@ -135,6 +151,13 @@ ${teamSection({
     label: 'Staff',
     blurb: 'Here to support you throughout your journey at Valor.',
     people: STAFF,
+  })}
+
+${teamSection({
+    id: 'board-of-trustees',
+    label: 'Board of Trustees',
+    blurb: 'Providing governance and oversight for Valor Christian College.',
+    people: BOARD,
   })}
 
   <section id="team-contact" style="position:relative;background:#100E0D;padding:80px 32px 44px">
