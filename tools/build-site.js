@@ -227,12 +227,7 @@ const BASE_STYLE = `<style>
   .contact-form input:focus,.contact-form textarea:focus{border-bottom-color:#fff}
   .contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.4)}
   .quote-dots button.is-active{background:#E01B2E;transform:scale(1.3)}
-  @media (max-width:860px){
-    .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
-    .hero-section{align-items:center!important}
-    .hero-inner{text-align:center;padding-bottom:0!important}
-    .hero-ctas{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
-    .hero-cta-btn{font-size:11px!important;padding:15px 6px!important;letter-spacing:.02em!important}
+  @media (max-width:1200px){
     .site-header{padding:12px 16px!important;gap:10px!important;flex-wrap:nowrap!important}
     .site-logo{height:32px!important;flex-shrink:0}
     .header-request-info,.header-student-portal{flex-shrink:0;white-space:nowrap;padding:9px 12px!important;font-size:10px!important;letter-spacing:.02em!important}
@@ -247,6 +242,13 @@ const BASE_STYLE = `<style>
     .dropdown{position:static;box-shadow:none;border:none;padding:0;background:rgba(255,255,255,.03);display:none}
     .nav-item.open .dropdown{display:block}
     .dropdown a{padding:10px 20px 10px 36px!important}
+  }
+  @media (max-width:860px){
+    .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
+    .hero-section{align-items:center!important}
+    .hero-inner{text-align:center;padding-bottom:0!important}
+    .hero-ctas{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
+    .hero-cta-btn{font-size:11px!important;padding:15px 6px!important;letter-spacing:.02em!important}
     .about-grid{grid-template-columns:1fr!important;gap:40px!important}
     .about-collage{height:400px!important}
     .stats-grid{grid-template-columns:repeat(2,1fr)!important;row-gap:24px!important}

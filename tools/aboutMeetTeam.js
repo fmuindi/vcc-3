@@ -111,7 +111,7 @@ ${viewAllTarget ? viewAllButton(viewAllTarget, viewAllLabel) : ''}
     </div>
   </section>`;
 
-const ABOUT_MEET_TEAM_BODY = `  <section id="team-hero" style="position:relative;min-height:64vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:70px">
+const ABOUT_MEET_TEAM_BODY = `  <section id="team-hero" style="position:relative;min-height:64vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.studentLifeGallery[6]}" alt="Valor faculty with students" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.4) 45%,rgba(16,14,13,.96) 100%)"></div>
     <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 70px">

@@ -88,7 +88,7 @@ const learningCard = (l) => `      <a href="${requestInfoLink(l.label)}" data-re
         </div>
       </a>`;
 
-const ACADEMICS_DEGREE_PROGRAMS_BODY = `  <section id="degree-hero" style="position:relative;min-height:68vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:70px">
+const ACADEMICS_DEGREE_PROGRAMS_BODY = `  <section id="degree-hero" style="position:relative;min-height:68vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.degreeProgramsHero}" alt="Valor Christian College students" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.4) 45%,rgba(16,14,13,.96) 100%)"></div>
     <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 80px">

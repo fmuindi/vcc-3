@@ -46,7 +46,7 @@ const PAGES = [
 PAGES.forEach((p, i) => { p.img = IMAGE_ROTATION[i % IMAGE_ROTATION.length]; });
 
 function placeholderBody(p) {
-  return `  <section style="position:relative;min-height:52vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:70px">
+  return `  <section style="position:relative;min-height:52vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${p.img}" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.55) 45%,rgba(16,14,13,.96) 100%)"></div>
     <div style="position:relative;width:100%;max-width:900px;margin:0 auto;padding:60px 32px;text-align:center">

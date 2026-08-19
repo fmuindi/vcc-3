@@ -1,6 +1,6 @@
 const { IMG } = require('./build-site');
 
-const ABOUT_PRESIDENT_BODY = `  <section id="president-hero" style="position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:70px">
+const ABOUT_PRESIDENT_BODY = `  <section id="president-hero" style="position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.presidentPortrait}" alt="Dr. Scott Camp, President of Valor Christian College" loading="eager" decoding="async" class="president-hero-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:22% 32%">
     <div class="president-hero-scrim" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(16,14,13,0) 15%,rgba(16,14,13,.6) 48%,rgba(16,14,13,.94) 78%)"></div>
     <div class="president-hero-text" style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px;display:flex;justify-content:flex-end">

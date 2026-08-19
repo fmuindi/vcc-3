@@ -26,7 +26,7 @@ const pathwayCard = (p) => `      <div data-reveal="" style="position:relative;h
         </div>
       </div>`;
 
-const ADMISSIONS_APPLY_NOW_BODY = `  <section id="apply-hero" style="position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:70px">
+const ADMISSIONS_APPLY_NOW_BODY = `  <section id="apply-hero" style="position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <div style="position:absolute;inset:0;background:radial-gradient(70% 90% at 30% 30%,rgba(224,27,46,.3),rgba(16,14,13,.97))"></div>
     <div style="position:relative;width:100%;max-width:900px;margin:0 auto;padding:0 32px;text-align:center">
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">Apply Now</div>

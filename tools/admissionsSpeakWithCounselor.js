@@ -13,7 +13,7 @@ const helpCard = (h) => `      <div data-reveal="" style="display:flex;flex-dire
         <p style="flex:1;margin:0;font-size:14px;line-height:1.6;color:rgba(16,14,13,.62)">${h.copy}</p>
       </div>`;
 
-const ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY = `  <section id="counselor-hero" style="position:relative;min-height:74vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:70px">
+const ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY = `  <section id="counselor-hero" style="position:relative;min-height:74vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.studentLifeGallery[7]}" alt="Valor Christian College students" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.4) 45%,rgba(16,14,13,.96) 100%)"></div>
     <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 80px">

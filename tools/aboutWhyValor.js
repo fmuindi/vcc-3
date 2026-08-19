@@ -27,7 +27,7 @@ const experienceItem = (e) => `        <div data-reveal="">
           <p style="margin:0;font-size:15px;line-height:1.65;color:rgba(250,245,238,.8)">${e.copy}</p>
         </div>`;
 
-const ABOUT_WHY_VALOR_BODY = `  <section id="why-valor-hero" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:70px">
+const ABOUT_WHY_VALOR_BODY = `  <section id="why-valor-hero" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.whyValorPageHero}" alt="Students together at Valor Christian College" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.4) 45%,rgba(16,14,13,.96) 100%)"></div>
     <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 32px 80px">
