@@ -18,6 +18,7 @@ const { ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY } = require('./admissionsSpeakWithC
 const { ADMISSIONS_APPLY_NOW_BODY } = require('./admissionsApplyNow');
 const { ADMISSIONS_FORMS_BODY } = require('./admissionsForms');
 const { TUITION_OVERVIEW_BODY } = require('./tuitionOverview');
+const { NOT_FOUND_BODY } = require('./notFound');
 
 function write(file, html) {
   fs.writeFileSync(path.join(ROOT, file), html);
@@ -62,4 +63,11 @@ write('about-meet-our-president.html', renderPage({
   bodyHtml: ABOUT_PRESIDENT_BODY,
 }));
 
-console.log(`\nDone: ${PAGES.length + 2} pages written.`);
+write('404.html', renderPage({
+  title: 'Page Not Found — Valor Christian College',
+  description: 'The page you requested could not be found.',
+  socialImage: IMG.social,
+  bodyHtml: NOT_FOUND_BODY,
+}));
+
+console.log(`\nDone: ${PAGES.length + 3} pages written.`);

@@ -53,18 +53,18 @@ const bachelorCard = (p) => `      <div data-reveal="" style="background:#fff;bo
         <div style="display:flex;gap:8px;margin-bottom:16px">${p.formats.map(badge).join('')}</div>
         <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;line-height:1.25;color:#100E0D;margin-bottom:12px">${p.name}</div>
         <p style="margin:0 0 18px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.65)">${p.copy}</p>
-        ${p.minors ? `<button type="button" data-view-all="${p.minorsKey}" data-more-label="View Minor Options ▾" data-less-label="Hide Minor Options ▴" style="display:block;margin-bottom:16px;background:none;border:none;padding:0;cursor:pointer;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:rgba(16,14,13,.55)" style-hover="color:#E01B2E">View Minor Options ▾</button>
+        ${p.minors ? `<button type="button" data-view-all="${p.minorsKey}" data-more-label="View Minor Options ▾" data-less-label="Hide Minor Options ▴" style="display:block;margin-bottom:16px;background:none;border:none;padding:0;cursor:pointer;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:rgba(16,14,13,.6)" style-hover="color:#E01B2E">View Minor Options ▾</button>
         <div data-more="${p.minorsKey}" style="display:none;margin:-6px 0 18px;padding-top:14px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.45);margin-bottom:10px">Minors Offered</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-bottom:10px">Minors Offered</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px">${p.minors.map((m) => `<span style="font-size:12px;padding:6px 12px;background:rgba(16,14,13,.04);border-radius:999px;color:rgba(16,14,13,.68)">${m}</span>`).join('')}</div>
         </div>` : ''}
-        ${p.note ? `<p style="margin:0 0 16px;font-size:12px;line-height:1.5;color:rgba(16,14,13,.45)">${p.note}</p>` : ''}
+        ${p.note ? `<p style="margin:0 0 16px;font-size:12px;line-height:1.5;color:rgba(16,14,13,.6)">${p.note}</p>` : ''}
         <a href="${requestInfoLink(p.name)}" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:3px" style-hover="color:#E01B2E">Request Info →</a>
       </div>`;
 
 const compactCard = (name, meta, more) => `        <div data-reveal="" ${more ? `data-more="${more}" style="display:none;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:20px 18px"` : `style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:20px 18px"`}>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;line-height:1.3;color:#100E0D;margin-bottom:6px">${name}</div>
-          <div style="font-size:12px;color:rgba(16,14,13,.55);margin-bottom:14px">${meta}</div>
+          <div style="font-size:12px;color:rgba(16,14,13,.6);margin-bottom:14px">${meta}</div>
           <a href="${requestInfoLink(name)}" style="font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:2px" style-hover="color:#E01B2E">Request Info →</a>
         </div>`;
 
@@ -123,7 +123,7 @@ ${BACHELOR_DEGREES.map(bachelorCard).join('\n')}
 
     <div id="associate-degrees" style="margin-bottom:90px">
       <h3 data-reveal="" style="margin:0 0 10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;color:#100E0D">Associate Degrees</h3>
-      <p data-reveal="" style="margin:0 0 28px;font-size:14px;line-height:1.6;color:rgba(16,14,13,.55)">Associate of Applied Science degrees. A limited number of transfer credits are accepted from accredited institutions.</p>
+      <p data-reveal="" style="margin:0 0 28px;font-size:14px;line-height:1.6;color:rgba(16,14,13,.6)">Associate of Applied Science degrees. A limited number of transfer credits are accepted from accredited institutions.</p>
       <div class="programs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
 ${associateCards}
       </div>
@@ -132,13 +132,13 @@ ${associateCards}
 
     <div id="certificate-programs">
       <h3 data-reveal="" style="margin:0 0 10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;color:#100E0D">One-Year Certificate Programs</h3>
-      <p data-reveal="" style="margin:0 0 28px;font-size:14px;line-height:1.6;color:rgba(16,14,13,.55)">No transfer credits are accepted for certificate programs.</p>
+      <p data-reveal="" style="margin:0 0 28px;font-size:14px;line-height:1.6;color:rgba(16,14,13,.6)">No transfer credits are accepted for certificate programs.</p>
       <div class="programs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
 ${certificateCards}
       </div>
     </div>
 
-    <p data-reveal="" style="max-width:800px;margin:70px auto 0;text-align:center;font-size:14px;line-height:1.65;color:rgba(16,14,13,.5)">All programs include general education plus Bible/theology coursework, with the associate and certificate tracks also covering Christian leadership, ethics, and spiritual formation.</p>
+    <p data-reveal="" style="max-width:800px;margin:70px auto 0;text-align:center;font-size:14px;line-height:1.65;color:rgba(16,14,13,.6)">All programs include general education plus Bible/theology coursework, with the associate and certificate tracks also covering Christian leadership, ethics, and spiritual formation.</p>
   </section>
 
   <section id="how-do-you-want-to-learn" style="max-width:1320px;margin:0 auto;padding:100px 32px 40px">

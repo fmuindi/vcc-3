@@ -50,12 +50,12 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
   <section id="legacy-numbers" style="max-width:1320px;margin:0 auto;padding:110px 32px 60px;text-align:center">
     <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:44px">A Vision That Continues</div>
     <div class="stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-      <div data-reveal=""><div data-count="1990" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">1990</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:10px">Established</div></div>
-      <div data-reveal=""><div data-count="30" data-suffix="+" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">30+</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:10px">Nations Represented*</div></div>
-      <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">ABHE</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:10px">Accredited</div></div>
-      <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">Thousands</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:10px">Alumni &amp; Graduates*</div></div>
+      <div data-reveal=""><div data-count="1990" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">1990</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:10px">Established</div></div>
+      <div data-reveal=""><div data-count="30" data-suffix="+" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">30+</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:10px">Nations Represented*</div></div>
+      <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">ABHE</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:10px">Accredited</div></div>
+      <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,54px);line-height:1;color:#E01B2E">Thousands</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:10px">Alumni &amp; Graduates*</div></div>
     </div>
-    <div data-reveal="" style="margin-top:36px;font-size:12px;color:rgba(16,14,13,.45)">*Approximate — final figures to be confirmed.</div>
+    <div data-reveal="" style="margin-top:36px;font-size:12px;color:rgba(16,14,13,.6)">*Approximate — final figures to be confirmed.</div>
   </section>
 
   <section id="then-now-next" style="max-width:1320px;margin:0 auto;padding:40px 32px 100px">
@@ -116,10 +116,10 @@ ${CALLOUTS.map(callout).join('\n')}
       <h2 data-reveal="" style="margin:0 0 26px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">This Vision Is Personal.</h2>
       <blockquote data-reveal="" style="margin:0 0 24px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(19px,2.4vw,26px);line-height:1.35;letter-spacing:-.01em;color:#100E0D;text-wrap:balance">"I believe that during your time with us, you will receive an impartation that will help prepare you to fulfill your destiny in God's Kingdom."</blockquote>
       <div data-reveal="" style="font-family:'Bricolage Grotesque',cursive;font-style:italic;font-size:26px;color:#B3121F;margin-bottom:6px">Rod Parsley</div>
-      <div data-reveal="" style="font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-bottom:30px">Dr. Rod Parsley · Founder &amp; Chancellor</div>
+      <div data-reveal="" style="font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-bottom:30px">Dr. Rod Parsley · Founder &amp; Chancellor</div>
       <div data-reveal="" style="display:inline-flex;align-items:center;gap:12px;opacity:.55">
         <span style="display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(16,14,13,.35);color:#100E0D;font-size:14px"><i class="fa-solid fa-play"></i></span>
-        <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#100E0D">Watch the Founder's Message<br><span style="font-weight:500;letter-spacing:.03em;text-transform:none;color:rgba(16,14,13,.55)">Coming soon</span></span>
+        <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#100E0D">Watch the Founder's Message<br><span style="font-weight:500;letter-spacing:.03em;text-transform:none;color:rgba(16,14,13,.6)">Coming soon</span></span>
       </div>
     </div>
   </section>

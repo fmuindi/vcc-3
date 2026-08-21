@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="en"><head>
 <script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/js/b4fcacef-2f6b-444c-8341-6d4e3eb29e09.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/js/234e7365-9799-4c80-83bd-25f9d31be6b8.js"};</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
 <meta property="og:title" content="Class Schedules — Valor Christian College">
 <meta property="og:description" content="Current class schedules by term.">
 <meta property="og:image" content="https://ik.imagekit.io/vddpcxj7e/valor/WEB.png?tr=f-auto,q-auto,w-1200">
+<meta name="theme-color" content="#100E0D">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="https://ik.imagekit.io/vddpcxj7e/valor/DSC01795.jpg?tr=f-auto,q-auto,w-1200" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
@@ -18,8 +21,6 @@
 <body>
 <x-dc>
 <helmet data-dc-atomics="">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <style>/* vietnamese */
 @font-face {
   font-family: 'Archivo';
@@ -207,8 +208,7 @@
   a{color:#E01B2E;text-decoration:none}
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes vspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  @keyframes vpulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:0;transform:scale(1.9)}}
+  @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -289,7 +289,7 @@
 </style>
 </helmet>
 
-<div id="top" style="background:#FAF5EE;overflow-x:hidden">
+<div id="page-top" style="background:#FAF5EE;overflow-x:hidden">
 
   <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:20px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
     <a href="index.html" style="flex:none"><img src="assets/images/valor-logo-white.png" alt="Valor Christian College" class="site-logo" style="display:block;height:56px;width:auto"></a>
@@ -404,21 +404,21 @@
         <div style="width:56px;height:56px;margin:0 auto 18px;border-radius:50%;border:1.5px solid rgba(224,27,46,.35);display:grid;place-items:center"><i class="fa-solid fa-building-columns" style="color:#E01B2E;font-size:22px"></i></div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#100E0D;margin-bottom:14px">Campus</div>
         <div style="font-weight:700;font-size:15px;color:#100E0D;margin-bottom:6px">Fall 2026 Campus Schedule</div>
-        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.55)">August 17 – December 6, 2026</p>
+        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.6)">August 17 – December 6, 2026</p>
         <a href="https://valorcollege.edu/root/pdf/academics/schedule/Fall-2026_Campus-Schedule.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> View Campus Schedule</a>
       </div>
       <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:32px 28px;text-align:center">
         <div style="width:56px;height:56px;margin:0 auto 18px;border-radius:50%;border:1.5px solid rgba(224,27,46,.35);display:grid;place-items:center"><i class="fa-solid fa-desktop" style="color:#E01B2E;font-size:22px"></i></div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#100E0D;margin-bottom:14px">Online Session One</div>
         <div style="font-weight:700;font-size:15px;color:#100E0D;margin-bottom:6px">Fall 2026 Online Session One</div>
-        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.55)">August 17 – October 11, 2026</p>
+        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.6)">August 17 – October 11, 2026</p>
         <a href="https://valorcollege.edu/root/pdf/academics/schedule/Fall-2026_Online-Schedule_Session-One.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> View Schedule</a>
       </div>
       <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:32px 28px;text-align:center">
         <div style="width:56px;height:56px;margin:0 auto 18px;border-radius:50%;border:1.5px solid rgba(224,27,46,.35);display:grid;place-items:center"><i class="fa-solid fa-laptop" style="color:#E01B2E;font-size:22px"></i></div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#100E0D;margin-bottom:14px">Online Session Two</div>
         <div style="font-weight:700;font-size:15px;color:#100E0D;margin-bottom:6px">Fall 2026 Online Session Two</div>
-        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.55)">October 12 – December 6, 2026</p>
+        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.6)">October 12 – December 6, 2026</p>
         <a href="https://valorcollege.edu/root/pdf/academics/schedule/Fall-2026_Online-Schedule_Session-Two.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> View Schedule</a>
       </div>
     </div>
@@ -447,7 +447,7 @@
       <div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Textbook Information</div>
       <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.72);max-width:70ch">Valor Christian College provides digital textbook resources for students. The cost of educational resources is included in tuition, so students are not required to purchase textbooks separately.</p>
       <p style="margin:0 0 26px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.72);max-width:70ch">Your textbook information can be found under <strong>Links</strong> inside each Populi class. Look for the title of your textbook or the word <strong>TEXTBOOK</strong>.</p>
-      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:18px">Your digital textbook may be provided through one of these resources:</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-bottom:18px">Your digital textbook may be provided through one of these resources:</div>
       <div class="pathways-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px">
         <div style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:22px 20px">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><i class="fa-solid fa-book-open-reader" style="color:#E01B2E;font-size:16px"></i><span style="font-weight:800;font-size:14px;color:#100E0D">LOGOS</span></div>
@@ -462,7 +462,7 @@
           <p style="margin:0;font-size:13px;line-height:1.55;color:rgba(16,14,13,.6)">Access digital resources through the VCC Library GALE resource. Use the password valor when prompted. GALE also includes a feature that can read content aloud.</p>
         </div>
       </div>
-      <p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(16,14,13,.55);max-width:70ch">Students may purchase physical copies of textbooks at their own expense. However, we recommend using the digital resources provided by Valor since they are already included in tuition.</p>
+      <p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(16,14,13,.6);max-width:70ch">Students may purchase physical copies of textbooks at their own expense. However, we recommend using the digital resources provided by Valor since they are already included in tuition.</p>
     </div>
   </section>
 
@@ -547,9 +547,9 @@
         </div>
       </div>
     </div>
-    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.42)">
+    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.55)">
       <span>© 2026 Valor Christian College · Accredited by ABHE · Approved by ODHE</span>
-      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Refund Policy</a><a href="#top" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Back to top ↑</a></span>
+      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Refund Policy</a><a href="#page-top" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Back to top ↑</a></span>
     </div>
   </footer>
 </div>
@@ -643,6 +643,7 @@ class Component extends DCLogic {
   reveal() {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
     if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     els.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(26px)';

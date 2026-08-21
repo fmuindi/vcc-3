@@ -34,7 +34,7 @@ const scheduleCard = (s) => `      <div data-reveal="" style="background:#fff;bo
         <div style="width:56px;height:56px;margin:0 auto 18px;border-radius:50%;border:1.5px solid rgba(224,27,46,.35);display:grid;place-items:center"><i class="fa-solid ${s.icon}" style="color:#E01B2E;font-size:22px"></i></div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#100E0D;margin-bottom:14px">${s.label}</div>
         <div style="font-weight:700;font-size:15px;color:#100E0D;margin-bottom:6px">${s.title}</div>
-        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.55)">${s.dates}</p>
+        <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.6)">${s.dates}</p>
         <a href="${SCHEDULE_BASE}${s.file}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> ${s.cta}</a>
       </div>`;
 
@@ -89,14 +89,14 @@ ${SCHEDULES.map(scheduleCard).join('\n')}
       <div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Textbook Information</div>
       <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.72);max-width:70ch">Valor Christian College provides digital textbook resources for students. The cost of educational resources is included in tuition, so students are not required to purchase textbooks separately.</p>
       <p style="margin:0 0 26px;font-size:15px;line-height:1.65;color:rgba(16,14,13,.72);max-width:70ch">Your textbook information can be found under <strong>Links</strong> inside each Populi class. Look for the title of your textbook or the word <strong>TEXTBOOK</strong>.</p>
-      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:18px">Your digital textbook may be provided through one of these resources:</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-bottom:18px">Your digital textbook may be provided through one of these resources:</div>
       <div class="pathways-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px">
 ${TEXTBOOK_RESOURCES.map((r) => `        <div style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:22px 20px">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><i class="fa-solid ${r.icon}" style="color:#E01B2E;font-size:16px"></i><span style="font-weight:800;font-size:14px;color:#100E0D">${r.name}</span></div>
           <p style="margin:0;font-size:13px;line-height:1.55;color:rgba(16,14,13,.6)">${r.copy}</p>
         </div>`).join('\n')}
       </div>
-      <p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(16,14,13,.55);max-width:70ch">Students may purchase physical copies of textbooks at their own expense. However, we recommend using the digital resources provided by Valor since they are already included in tuition.</p>
+      <p style="margin:0;font-size:13.5px;line-height:1.6;color:rgba(16,14,13,.6);max-width:70ch">Students may purchase physical copies of textbooks at their own expense. However, we recommend using the digital resources provided by Valor since they are already included in tuition.</p>
     </div>
   </section>
 

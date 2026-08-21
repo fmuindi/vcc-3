@@ -190,9 +190,9 @@ function renderFooter() {
       </div>
 ${cols}
     </div>
-    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.42)">
+    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.55)">
       <span>© 2026 Valor Christian College · Accredited by ABHE · Approved by ODHE</span>
-      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Refund Policy</a><a href="#top" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Back to top ↑</a></span>
+      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Refund Policy</a><a href="#page-top" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Back to top ↑</a></span>
     </div>
   </footer>`;
 }
@@ -203,8 +203,7 @@ const BASE_STYLE = `<style>
   a{color:#E01B2E;text-decoration:none}
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes vspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  @keyframes vpulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:0;transform:scale(1.9)}}
+  @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -372,6 +371,7 @@ class Component extends DCLogic {
   reveal() {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
     if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     els.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(26px)';
@@ -416,7 +416,7 @@ const RESOURCE_MAP_SCRIPT = `<script>window.__resources = {"https://unpkg.com/re
 
 function renderPage({ title, description, socialImage, bodyHtml }) {
   return `<!DOCTYPE html>
-<html><head>
+<html lang="en"><head>
 ${RESOURCE_MAP_SCRIPT}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -425,6 +425,9 @@ ${RESOURCE_MAP_SCRIPT}
 <meta property="og:title" content="${escapeHtml(title)}">
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:image" content="${socialImage || IMG.social}">
+<meta name="theme-color" content="#100E0D">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="${IMG.heroPoster}" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
@@ -435,13 +438,11 @@ ${RESOURCE_MAP_SCRIPT}
 <body>
 <x-dc>
 <helmet data-dc-atomics="">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 ${FONT_FACE_CSS}
 ${BASE_STYLE}
 </helmet>
 
-<div id="top" style="background:#FAF5EE;overflow-x:hidden">
+<div id="page-top" style="background:#FAF5EE;overflow-x:hidden">
 
 ${renderHeader()}
 

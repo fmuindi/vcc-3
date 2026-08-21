@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="en"><head>
 <script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/js/b4fcacef-2f6b-444c-8341-6d4e3eb29e09.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/js/234e7365-9799-4c80-83bd-25f9d31be6b8.js"};</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
 <meta property="og:title" content="Valor Christian College — A Place Where World Changers Are Made">
 <meta property="og:description" content="At Valor Christian College, you'll be challenged academically, strengthened spiritually, and equipped to lead. Explore degree programs on campus, online, or in a cohort.">
 <meta property="og:image" content="https://ik.imagekit.io/vddpcxj7e/valor/WEB.png?tr=f-auto,q-auto,w-1200">
+<meta name="theme-color" content="#100E0D">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="https://ik.imagekit.io/vddpcxj7e/valor/DSC01795.jpg?tr=f-auto,q-auto,w-1200" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
@@ -18,8 +21,6 @@
 <body>
 <x-dc>
 <helmet data-dc-atomics="">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <style>/* vietnamese */
 @font-face {
   font-family: 'Archivo';
@@ -207,8 +208,7 @@
   a{color:#E01B2E;text-decoration:none}
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes vspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  @keyframes vpulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:0;transform:scale(1.9)}}
+  @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -289,7 +289,7 @@
 </style>
 </helmet>
 
-<div id="top" style="background:#FAF5EE;overflow-x:hidden">
+<div id="page-top" style="background:#FAF5EE;overflow-x:hidden">
 
   <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:20px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
     <a href="index.html" style="flex:none"><img src="assets/images/valor-logo-white.png" alt="Valor Christian College" class="site-logo" style="display:block;height:56px;width:auto"></a>
@@ -402,7 +402,7 @@
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Called. Equipped. Sent.</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.68)">Valor is where faith comes alive and purpose becomes clear. Through biblical teaching, Spirit-filled community, and hands-on ministry, you'll grow in your calling and leave equipped to impact the world for Christ.</p>
     </div>
-    <div data-reveal="" style="text-align:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(16,14,13,.45);margin-bottom:24px">On Campus <span style="color:#E01B2E">|</span> Online <span style="color:#E01B2E">|</span> Cohort</div>
+    <div data-reveal="" style="text-align:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-bottom:24px">On Campus <span style="color:#E01B2E">|</span> Online <span style="color:#E01B2E">|</span> Cohort</div>
     <div class="pathways-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
       <a href="academics-degree-programs.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;color:#fff" style-hover="color:#fff">
         <img src="https://ik.imagekit.io/vddpcxj7e/valor/DSC08674.jpg?tr=f-auto,q-auto,w-1200" alt="Students on the Valor campus" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
@@ -442,10 +442,10 @@
       <h2 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Faith. Purpose. A Future Worth Pursuing.</h2>
       <p data-reveal="" style="margin:0 0 30px;font-size:17px;line-height:1.6;color:rgba(16,14,13,.72);max-width:56ch">Everything at Valor is centered around helping you discover who God has called you to become—through Spirit-filled community, hands-on ministry, and biblically grounded academics.</p>
       <div class="stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-top:1px solid rgba(16,14,13,.12);padding-top:26px">
-        <div data-reveal=""><div data-count="36" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">36</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">Years</div></div>
-        <div data-reveal=""><div data-count="50" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">50</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">States</div></div>
-        <div data-reveal=""><div data-count="30" data-suffix="+" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">30+</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">Nations</div></div>
-        <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">ABHE</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.55);margin-top:6px">Accredited</div></div>
+        <div data-reveal=""><div data-count="36" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">36</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:6px">Years</div></div>
+        <div data-reveal=""><div data-count="50" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">50</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:6px">States</div></div>
+        <div data-reveal=""><div data-count="30" data-suffix="+" class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">30+</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:6px">Nations</div></div>
+        <div data-reveal=""><div class="stat-num" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#E01B2E">ABHE</div><div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.6);margin-top:6px">Accredited</div></div>
       </div>
     </div>
     <div data-reveal="" class="about-collage" style="position:relative;height:640px">
@@ -600,9 +600,9 @@
         </div>
       </div>
     </div>
-    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.42)">
+    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.55)">
       <span>© 2026 Valor Christian College · Accredited by ABHE · Approved by ODHE</span>
-      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Refund Policy</a><a href="#top" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Back to top ↑</a></span>
+      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Refund Policy</a><a href="#page-top" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Back to top ↑</a></span>
     </div>
   </footer>
 </div>
@@ -696,6 +696,7 @@ class Component extends DCLogic {
   reveal() {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
     if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     els.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(26px)';

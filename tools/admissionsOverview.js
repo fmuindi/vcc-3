@@ -48,7 +48,7 @@ const ADMISSIONS_OVERVIEW_BODY = `  <section id="admissions-hero" style="positio
     <div style="text-align:center;max-width:680px;margin:0 auto 48px">
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Find Your Place at Valor.</h2>
       <p data-reveal="" style="margin:0 0 16px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Whether you are beginning your college journey, transferring from another school, or taking the next step in your calling, there is a place for you at Valor.</p>
-      <p data-reveal="" style="margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.45)">Choose the learning experience that works for you.</p>
+      <p data-reveal="" style="margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.6)">Choose the learning experience that works for you.</p>
     </div>
     <div class="pathways-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
 ${PATHWAYS.map(pathwayCard).join('\n')}

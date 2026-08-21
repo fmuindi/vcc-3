@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="en"><head>
 <script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/js/b4fcacef-2f6b-444c-8341-6d4e3eb29e09.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/js/234e7365-9799-4c80-83bd-25f9d31be6b8.js"};</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
 <meta property="og:title" content="Meet Our Team — Valor Christian College">
 <meta property="og:description" content="The pastors, mentors, and leaders behind Valor — leadership, faculty by department, and the student support team.">
 <meta property="og:image" content="https://ik.imagekit.io/vddpcxj7e/valor/WEB.png?tr=f-auto,q-auto,w-1200">
+<meta name="theme-color" content="#100E0D">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="https://ik.imagekit.io/vddpcxj7e/valor/DSC01795.jpg?tr=f-auto,q-auto,w-1200" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
@@ -18,8 +21,6 @@
 <body>
 <x-dc>
 <helmet data-dc-atomics="">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <style>/* vietnamese */
 @font-face {
   font-family: 'Archivo';
@@ -207,8 +208,7 @@
   a{color:#E01B2E;text-decoration:none}
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes vspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  @keyframes vpulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:0;transform:scale(1.9)}}
+  @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -289,7 +289,7 @@
 </style>
 </helmet>
 
-<div id="top" style="background:#FAF5EE;overflow-x:hidden">
+<div id="page-top" style="background:#FAF5EE;overflow-x:hidden">
 
   <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:20px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
     <a href="index.html" style="flex:none"><img src="assets/images/valor-logo-white.png" alt="Valor Christian College" class="site-logo" style="display:block;height:56px;width:auto"></a>
@@ -404,7 +404,7 @@
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Scott Camp, D.Div., D.Min.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">President</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Professor of Preaching, Missions and Evangelism</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088</span></div>
           <a href="mailto:camps@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>camps@<wbr>valorcollege.edu</span></a>
           <a href="about-meet-our-president.html" style="display:block;margin-top:16px;text-align:center;background:#100E0D;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px;border-radius:8px" style-hover="background:#E01B2E;color:#fff">Meet Our President</a>
         </div>
@@ -412,7 +412,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Laquetta Cortner, Ph.D.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Provost</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4476</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4476</span></div>
           <a href="mailto:cortnerl@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>cortnerl@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -420,7 +420,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">David Amos</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Dean of Students</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4485</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4485</span></div>
           <a href="mailto:deanofstudents@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>deanofstudents@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -428,7 +428,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">LaKesha Ray</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Executive Assistant to President and Provost</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4477</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4477</span></div>
           <a href="mailto:rayl@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>rayl@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -444,7 +444,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Sean Sams</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Interim Director of Enrollment</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4475</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4475</span></div>
           <a href="mailto:samss@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>samss@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -452,7 +452,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Megan Hassett, J.D.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Media Relations</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088</span></div>
           <a href="mailto:hassettm@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>hassettm@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -460,7 +460,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Cherisse Conley</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Director of Housing</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4306</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4306</span></div>
           <a href="mailto:conleyc@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>conleyc@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -468,7 +468,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Andrew Sturdon</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Business Manager</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4513</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4513</span></div>
           <a href="mailto:sturdona@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>sturdona@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -504,7 +504,7 @@
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Mark Youngkin, M.A.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Professor, Church Ministries Chair</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Valor Learning Center Director</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4472</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4472</span></div>
           <a href="mailto:youngkinm@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>youngkinm@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -512,7 +512,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Philip Tabler, M.B.A., M.A.M., M.A., M.T.-B.C.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Professor, Music Department Chair</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4484</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4484</span></div>
           <a href="mailto:tablerp@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>tablerp@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -520,7 +520,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Richard D. Burkhalter, Ed.D.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Assistant Professor</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 1283</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 1283</span></div>
           <a href="mailto:burkhalterr@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>burkhalterr@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -528,7 +528,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Richard Hogue, D.Min.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Professor of Church History and Theology</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4469</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4469</span></div>
           <a href="mailto:hoguer@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>hoguer@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -536,7 +536,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Rob Starner, Ph.D.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Professor of New Testament</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4468</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4468</span></div>
           <a href="mailto:starnerr@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>starnerr@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -544,7 +544,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Sean Sams, M.Div.</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Professor, Bible &amp; Theology Chair</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4473</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4473</span></div>
           <a href="mailto:samss@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>samss@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -758,7 +758,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Aislynn Rambayon</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Manager of Student Life</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4485</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4485</span></div>
           <a href="mailto:rambayona@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>rambayona@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -766,7 +766,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Tamar Sams</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Registrar</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4474</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4474</span></div>
           <a href="mailto:registrar@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>registrar@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -774,7 +774,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Phil Supple</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Financial Aid / IT Support</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4481</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4481</span></div>
           <a href="mailto:supplep@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>supplep@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -790,7 +790,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">George Lee</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Financial Aid Advisor</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4479</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4479</span></div>
           <a href="mailto:leeg@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>leeg@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -798,7 +798,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Norm Stoppenbrink</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Financial Aid Consultant</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4481</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 4481</span></div>
           <a href="mailto:stoppenbrinkn@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>stoppenbrinkn@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -814,7 +814,7 @@
           <div style="width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center;margin-bottom:16px"><i class="fa-solid fa-shield-halved" style="color:#E01B2E;font-size:17px"></i></div>
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.3;color:#100E0D;margin-bottom:6px">Blake Rice</div>
           <div style="font-size:13px;line-height:1.5;color:rgba(16,14,13,.6)">Director of Recruitment</div>
-          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.55)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 1228</span></div>
+          <div style="display:flex;align-items:flex-start;gap:6px;margin-top:12px;font-size:12.5px;color:rgba(16,14,13,.6)"><i class="fa-solid fa-phone" style="font-size:10.5px;flex:none;margin-top:2px"></i><span>614-837-4088 ext. 1228</span></div>
           <a href="mailto:riceb@valorcollege.edu" style="display:inline-flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:12.5px;color:#B3121F" style-hover="color:#E01B2E"><i class="fa-solid fa-envelope" style="font-size:11px;flex:none;margin-top:2px"></i><span>riceb@<wbr>valorcollege.edu</span></a>
           
         </div>
@@ -1051,9 +1051,9 @@
         </div>
       </div>
     </div>
-    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.42)">
+    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.55)">
       <span>© 2026 Valor Christian College · Accredited by ABHE · Approved by ODHE</span>
-      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Refund Policy</a><a href="#top" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Back to top ↑</a></span>
+      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Refund Policy</a><a href="#page-top" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Back to top ↑</a></span>
     </div>
   </footer>
 </div>
@@ -1147,6 +1147,7 @@ class Component extends DCLogic {
   reveal() {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
     if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     els.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(26px)';

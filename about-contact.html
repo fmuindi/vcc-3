@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="en"><head>
 <script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/js/b4fcacef-2f6b-444c-8341-6d4e3eb29e09.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/js/234e7365-9799-4c80-83bd-25f9d31be6b8.js"};</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
 <meta property="og:title" content="Contact — Valor Christian College">
 <meta property="og:description" content="How to reach our campus, admissions, and staff.">
 <meta property="og:image" content="https://ik.imagekit.io/vddpcxj7e/valor/WEB.png?tr=f-auto,q-auto,w-1200">
+<meta name="theme-color" content="#100E0D">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="https://ik.imagekit.io/vddpcxj7e/valor/DSC01795.jpg?tr=f-auto,q-auto,w-1200" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
@@ -18,8 +21,6 @@
 <body>
 <x-dc>
 <helmet data-dc-atomics="">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <style>/* vietnamese */
 @font-face {
   font-family: 'Archivo';
@@ -207,8 +208,7 @@
   a{color:#E01B2E;text-decoration:none}
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @keyframes vspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  @keyframes vpulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:0;transform:scale(1.9)}}
+  @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -289,7 +289,7 @@
 </style>
 </helmet>
 
-<div id="top" style="background:#FAF5EE;overflow-x:hidden">
+<div id="page-top" style="background:#FAF5EE;overflow-x:hidden">
 
   <header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:20px;padding:18px 32px;background:linear-gradient(180deg,rgba(16,14,13,.72),rgba(16,14,13,0))">
     <a href="index.html" style="flex:none"><img src="assets/images/valor-logo-white.png" alt="Valor Christian College" class="site-logo" style="display:block;height:56px;width:auto"></a>
@@ -408,7 +408,7 @@
         <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#100E0D;margin-bottom:10px">Admissions</div>
         <p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(16,14,13,.62);min-height:66px">Questions about applying, programs, or becoming a Valor student?</p>
         <a href="mailto:admissions@valorcollege.edu" style="display:block;font-size:12.5px;color:#B3121F;margin-bottom:2px" style-hover="color:#E01B2E">admissions@<wbr>valorcollege.edu</a>
-        <div style="font-size:12.5px;color:rgba(16,14,13,.55);margin-bottom:14px">1-855-219-6538</div>
+        <div style="font-size:12.5px;color:rgba(16,14,13,.6);margin-bottom:14px">1-855-219-6538</div>
         <a href="mailto:admissions@valorcollege.edu" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:3px" style-hover="color:#E01B2E">Contact Admissions →</a>
       </div>
       <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:28px 24px">
@@ -577,25 +577,25 @@
       <form class="contact-form" action="mailto:admissions@valorcollege.edu" method="post" enctype="text/plain">
         <div class="contact-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-bottom:40px">
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">First Name*</label>
-            <input type="text" name="firstName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-first-name" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">First Name*</label>
+            <input id="contact-first-name" type="text" name="firstName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Last Name*</label>
-            <input type="text" name="lastName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-last-name" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Last Name*</label>
+            <input id="contact-last-name" type="text" name="lastName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Email*</label>
-            <input type="email" name="email" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-email" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Email*</label>
+            <input id="contact-email" type="email" name="email" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Phone*</label>
-            <input type="tel" name="phone" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-phone" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Phone*</label>
+            <input id="contact-phone" type="tel" name="phone" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
         </div>
         <div data-reveal="" style="margin-bottom:44px">
-          <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Message*</label>
-          <textarea name="message" required rows="2" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif;resize:vertical"></textarea>
+          <label for="contact-message" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Message*</label>
+          <textarea id="contact-message" name="message" required rows="2" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif;resize:vertical"></textarea>
         </div>
         <div data-reveal="" style="text-align:right">
           <button type="submit" style="background:#fff;color:#100E0D;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;border:none;border-radius:4px;cursor:pointer">Submit</button>
@@ -671,9 +671,9 @@
         </div>
       </div>
     </div>
-    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.42)">
+    <div style="max-width:1320px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(250,245,238,.14);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:rgba(250,245,238,.55)">
       <span>© 2026 Valor Christian College · Accredited by ABHE · Approved by ODHE</span>
-      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Refund Policy</a><a href="#top" style="color:rgba(250,245,238,.42)" style-hover="color:#fff">Back to top ↑</a></span>
+      <span style="display:flex;gap:18px"><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Privacy</a><a href="about-contact.html" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Refund Policy</a><a href="#page-top" style="color:rgba(250,245,238,.55)" style-hover="color:#fff">Back to top ↑</a></span>
     </div>
   </footer>
 </div>
@@ -767,6 +767,7 @@ class Component extends DCLogic {
   reveal() {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
     if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     els.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(26px)';

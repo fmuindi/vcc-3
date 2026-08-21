@@ -39,7 +39,7 @@ const helpCard = (c) => `      <div data-reveal="" style="background:#fff;border
         <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#100E0D;margin-bottom:10px">${c.title}</div>
         <p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(16,14,13,.62);min-height:66px">${c.copy}</p>
         ${c.email ? `<a href="mailto:${c.email}" style="display:block;font-size:12.5px;color:#B3121F;margin-bottom:2px" style-hover="color:#E01B2E">${c.email.replace('@', '@<wbr>')}</a>` : ''}
-        ${c.phone ? `<div style="font-size:12.5px;color:rgba(16,14,13,.55);margin-bottom:14px">${c.phone}</div>` : '<div style="margin-bottom:14px"></div>'}
+        ${c.phone ? `<div style="font-size:12.5px;color:rgba(16,14,13,.6);margin-bottom:14px">${c.phone}</div>` : '<div style="margin-bottom:14px"></div>'}
         <a href="${c.href || `mailto:${c.email}`}" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:3px" style-hover="color:#E01B2E">${c.cta} →</a>
       </div>`;
 
@@ -152,25 +152,25 @@ ${DIRECTORY.map(directoryColumn).join('\n')}
       <form class="contact-form" action="mailto:admissions@valorcollege.edu" method="post" enctype="text/plain">
         <div class="contact-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-bottom:40px">
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">First Name*</label>
-            <input type="text" name="firstName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-first-name" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">First Name*</label>
+            <input id="contact-first-name" type="text" name="firstName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Last Name*</label>
-            <input type="text" name="lastName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-last-name" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Last Name*</label>
+            <input id="contact-last-name" type="text" name="lastName" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Email*</label>
-            <input type="email" name="email" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-email" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Email*</label>
+            <input id="contact-email" type="email" name="email" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
           <div data-reveal="">
-            <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Phone*</label>
-            <input type="tel" name="phone" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
+            <label for="contact-phone" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Phone*</label>
+            <input id="contact-phone" type="tel" name="phone" required style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif">
           </div>
         </div>
         <div data-reveal="" style="margin-bottom:44px">
-          <label style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Message*</label>
-          <textarea name="message" required rows="2" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif;resize:vertical"></textarea>
+          <label for="contact-message" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Message*</label>
+          <textarea id="contact-message" name="message" required rows="2" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif;resize:vertical"></textarea>
         </div>
         <div data-reveal="" style="text-align:right">
           <button type="submit" style="background:#fff;color:#100E0D;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;border:none;border-radius:4px;cursor:pointer">Submit</button>
