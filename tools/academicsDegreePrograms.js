@@ -116,7 +116,7 @@ const ACADEMICS_DEGREE_PROGRAMS_BODY = `  <section id="degree-hero" style="posit
 
     <div id="bachelors-degrees" style="margin-bottom:90px">
       <h3 data-reveal="" style="margin:0 0 28px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;color:#100E0D">Bachelor's Degrees</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:18px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:18px">
 ${BACHELOR_DEGREES.map(bachelorCard).join('\n')}
       </div>
     </div>
