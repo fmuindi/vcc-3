@@ -263,7 +263,7 @@ const BASE_STYLE = `<style>
     .president-hero-scrim{background:linear-gradient(0deg,rgba(16,14,13,.96) 35%,rgba(16,14,13,.55) 65%,rgba(16,14,13,.15) 100%)!important}
     .president-hero-text{justify-content:center!important}
     .president-hero-text>div{max-width:100%!important;text-align:center!important}
-    .president-hero-text>div>div[style*="justify-content:flex-end"]{justify-content:center!important}
+    .president-badge-row{justify-content:center!important}
     .scholarship-stat{border-left:none!important;padding-left:0!important;margin-top:36px!important}
     .scholarship-card{padding:36px 24px!important}
     .scholarship-badge{font-size:10px!important;letter-spacing:.06em!important;padding:8px 14px!important;border-radius:12px!important;white-space:normal!important;text-align:left!important}

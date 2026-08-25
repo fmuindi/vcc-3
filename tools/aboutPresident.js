@@ -7,7 +7,7 @@ const ABOUT_PRESIDENT_BODY = `  <section id="president-hero" style="position:rel
       <div style="max-width:540px;text-align:right">
         <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">About Our President</div>
         <h1 data-reveal="" style="margin:0 0 10px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(36px,6vw,80px);line-height:1;letter-spacing:-.03em">Dr. Scott Camp</h1>
-        <div data-reveal="" style="display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-bottom:26px">
+        <div data-reveal="" class="president-badge-row" style="display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-bottom:26px">
           <span style="font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E01B2E">President</span>
           <span style="width:34px;height:1.5px;background:#E01B2E"></span>
         </div>
