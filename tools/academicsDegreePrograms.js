@@ -95,7 +95,7 @@ const ACADEMICS_DEGREE_PROGRAMS_BODY = `  <section id="degree-hero" style="posit
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">Academics</div>
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(34px,5.5vw,68px);line-height:1.05;letter-spacing:-.03em;max-width:18ch;text-wrap:balance">Find the Program That Fits Your Calling.</h1>
       <p data-reveal="" style="margin:0 0 36px;max-width:60ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Your education should prepare you for more than a career. Explore degree programs designed to strengthen your faith, develop your gifts, and equip you to pursue the purpose God has placed on your life.</p>
-      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:14px">
+      <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px">
         <a href="#degree-programs" style="background:#FAF5EE;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Explore Programs</a>
         <a href="admissions.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
       </div>
@@ -159,7 +159,7 @@ ${LEARNING_PATHS.map(learningCard).join('\n')}
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:16px">Find Your Next Step</div>
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,58px);line-height:1.05;letter-spacing:-.03em">Not Sure Which Program Is Right for You?</h2>
       <p data-reveal="" style="margin:22px auto 34px;max-width:52ch;font-size:17px;line-height:1.55;color:rgba(255,255,255,.85)">Our Admissions team is ready to help you explore your options and find the program that best fits your goals, interests, and calling.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
         <a data-reveal="" href="admissions.html" style="background:#100E0D;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:20px 38px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-3px);background:#000;color:#fff">Request Info</a>
         <a data-reveal="" href="admissions-speak-with-a-counselor.html" style="border:1.5px solid rgba(255,255,255,.6);color:#fff;font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:19px 32px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(255,255,255,.16);color:#fff">Speak with Admissions</a>
       </div>

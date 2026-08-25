@@ -131,7 +131,7 @@ ${CALLOUTS.map(callout).join('\n')}
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.7);margin-bottom:18px">The Story Isn't Finished</div>
       <h2 data-reveal="" style="margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,58px);line-height:1.05;letter-spacing:-.03em;color:#FAF5EE">The Legacy Continues With You.</h2>
       <p data-reveal="" style="margin:0 auto 40px;max-width:52ch;font-size:17px;line-height:1.6;color:rgba(250,245,238,.82)">You've seen where Valor came from. Now discover where God could take you. Come grow in your faith, discover your calling, and leave equipped to impact the world for Christ.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
         <a data-reveal="" href="admissions-apply-now.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:18px 32px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply Now</a>
         <a data-reveal="" href="admissions.html" style="border:1.5px solid rgba(250,245,238,.55);color:#FAF5EE;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(250,245,238,.14);color:#FAF5EE">Visit Valor</a>
       </div>

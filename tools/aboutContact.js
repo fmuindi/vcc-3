@@ -89,7 +89,7 @@ const ABOUT_CONTACT_BODY = `  <section id="contact-hero" class="about-grid" styl
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Contact Valor</div>
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5vw,64px);line-height:1.03;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">We're Here to Help.</h1>
       <p data-reveal="" style="margin:0 0 32px;font-size:17px;line-height:1.6;color:rgba(16,14,13,.68);max-width:56ch">Whether you have questions about admissions, academics, financial aid, student life, or your next steps at Valor, our team is ready to help you find the answers you need.</p>
-      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:14px">
+      <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px">
         <a href="admissions.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
         <a href="admissions-speak-with-a-counselor.html" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Speak with Admissions</a>
       </div>
@@ -124,7 +124,7 @@ ${DIRECTORY.map(directoryColumn).join('\n')}
       <div>
         <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Visit Valor</div>
         <h2 data-reveal="" style="margin:0 0 30px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.08;letter-spacing:-.03em;color:#FAF5EE;text-wrap:balance">Come See Valor for Yourself.</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px">
           <a data-reveal="" href="https://www.google.com/maps/search/?api=1&query=4595+Gender+Road+Canal+Winchester+OH+43110" target="_blank" rel="noopener" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Get Directions</a>
           <a data-reveal="" href="admissions.html" style="border:1.5px solid rgba(250,245,238,.4);color:#FAF5EE;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(250,245,238,.1);color:#FAF5EE">Plan a Visit</a>
         </div>

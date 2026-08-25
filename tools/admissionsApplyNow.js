@@ -49,7 +49,7 @@ ${PATHWAYS.map(pathwayCard).join('\n')}
   <section id="not-sure" style="max-width:800px;margin:0 auto;padding:60px 32px;text-align:center">
     <h2 data-reveal="" style="margin:0 0 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,36px);line-height:1.1;letter-spacing:-.03em;color:#100E0D">Not Sure Where to Start?</h2>
     <p data-reveal="" style="margin:0 0 30px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Our Admissions Team can help you determine which option is right for you and answer any questions before you apply.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
       <a data-reveal="" href="${TALK_TO_ADMISSIONS_LINK}" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Talk to Admissions</a>
       <a data-reveal="" href="${REQUEST_INFO_LINK}" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Request Info</a>
     </div>

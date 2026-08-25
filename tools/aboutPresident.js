@@ -51,7 +51,7 @@ const ABOUT_PRESIDENT_BODY = `  <section id="president-hero" style="position:rel
   <section id="president-contact" style="max-width:760px;margin:0 auto;padding:100px 32px;text-align:center">
     <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;letter-spacing:-.03em;color:#100E0D">Reach the President's Office</h2>
     <p data-reveal="" style="margin:0 0 30px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Questions for Dr. Camp or his office are always welcome.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
       <a data-reveal="" href="mailto:camps@valorcollege.edu" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff"><i class="fa-solid fa-envelope"></i> camps@valorcollege.edu</a>
       <a data-reveal="" href="about-meet-our-team.html" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Meet the Rest of Our Team</a>
     </div>

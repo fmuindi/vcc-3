@@ -52,7 +52,7 @@ ${HELP_TOPICS.map(helpCard).join('\n')}
         <div style="font-size:15px;color:#B3121F">admissions@valorcollege.edu</div>
       </a>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
       <a data-reveal="" href="mailto:admissions@valorcollege.edu" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
       <a data-reveal="" href="admissions-apply-now.html" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Apply Now</a>
     </div>

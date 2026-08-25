@@ -34,7 +34,7 @@ const ABOUT_WHY_VALOR_BODY = `  <section id="why-valor-hero" style="position:rel
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">Why Valor</div>
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(36px,6vw,80px);line-height:1.03;letter-spacing:-.03em;max-width:18ch;text-wrap:balance">More Than a Degree. <span style="color:#E01B2E">A Calling Worth Pursuing.</span></h1>
       <p data-reveal="" style="margin:0 0 36px;max-width:60ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">At Valor Christian College, your education is about more than preparing for a career. It's about discovering who God has called you to be and becoming equipped to live it out.</p>
-      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:14px">
+      <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px">
         <a href="admissions.html" style="background:#FAF5EE;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Request Info</a>
         <a href="admissions-apply-now.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply Now</a>
       </div>
@@ -75,7 +75,7 @@ ${EXPERIENCE_ITEMS.map(experienceItem).join('\n')}
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5.5vw,74px);line-height:.98;letter-spacing:-.03em">Ready to Become a World Changer?</h2>
       <p data-reveal="" style="margin:22px auto 20px;max-width:46ch;font-size:18px;line-height:1.55;color:rgba(255,255,255,.85)">Discover the Valor experience and find the learning option that is right for you.</p>
       <div data-reveal="" style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:34px">On Campus <span style="color:#100E0D">|</span> Online <span style="color:#100E0D">|</span> Cohort</div>
-      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
         <a data-reveal="" href="admissions.html" style="border:1.5px solid rgba(255,255,255,.6);color:#fff;font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:19px 32px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(255,255,255,.16);color:#fff">Request Info</a>
         <a data-reveal="" href="admissions-apply-now.html" style="background:#100E0D;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:20px 38px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-3px);background:#000;color:#fff">Apply Now</a>
       </div>
