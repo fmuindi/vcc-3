@@ -123,6 +123,9 @@ const NAV = [
       ] },
       { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html' },
       { label: 'Scholarships', href: 'tuition-aid-scholarships.html' },
+      { label: 'Speak with the Finance Office', href: 'tuition-aid-speak-with-finance.html', children: [
+        { label: 'Speak with a Financial Aid Counselor', href: 'tuition-aid-speak-with-financial-aid-counselor.html' },
+      ] },
     ],
     featured: [
       { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html', blurb: 'Learn about financial aid options and resources available to eligible students.' },

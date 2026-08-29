@@ -27,6 +27,8 @@ const PAGES = [
   { href: 'tuition-aid-international.html', section: 'Tuition & Aid', title: 'International Student Tuition & Fees', blurb: 'Tuition and fees for international students.' },
   { href: 'tuition-aid-financial-aid.html', section: 'Tuition & Aid', title: 'Financial Aid', blurb: 'Financial aid options and how to apply.' },
   { href: 'tuition-aid-scholarships.html', section: 'Tuition & Aid', title: 'Scholarships', blurb: 'Scholarships available to Valor students.' },
+  { href: 'tuition-aid-speak-with-finance.html', section: 'Tuition & Aid', title: 'Speak with the Finance Office', blurb: 'Connect with the Finance Office about billing, payments, and your account.' },
+  { href: 'tuition-aid-speak-with-financial-aid-counselor.html', section: 'Tuition & Aid', title: 'Speak with a Financial Aid Counselor', blurb: 'Book time with a financial aid counselor to talk through your options.' },
   { href: 'student-life.html', section: 'Student Life', title: 'Student Life Overview', blurb: 'What life as a Valor student looks like — community, events, support, and fast access to the student portal.' },
   { href: 'student-life-get-involved.html', section: 'Student Life', title: 'Get Involved', blurb: 'Ways to plug into campus and community life.' },
   { href: 'student-life-events-calendar.html', section: 'Student Life', title: 'Student Events & Calendar', blurb: 'Upcoming campus events and the academic calendar.' },
