@@ -62,6 +62,14 @@ const IMG = {
 };
 
 // ---------- Navigation (from docs/BUILD_BRIEF.md, section 2) ----------
+// Each section is main-navigation content (a mega-menu of real pages).
+// Secondary/utility actions (Request Info, Student Portal) live outside
+// this structure entirely, as the two persistent header buttons — they
+// are tools/actions, not content, so they never appear inside a section's
+// own menu. "featured" holds 1-2 real, already-published pages per
+// section (reusing each page's own established copy) plus one CTA link,
+// for the mega-menu's left panel; "children" is the plain link list for
+// the right panel (and, unchanged, the footer).
 const NAV = [
   {
     label: 'About', href: 'about-our-legacy.html',
@@ -71,6 +79,11 @@ const NAV = [
       { label: 'Why Valor', href: 'about-why-valor.html' },
       { label: 'Contact', href: 'about-contact.html' },
     ],
+    featured: [
+      { label: 'Our Legacy', href: 'about-our-legacy.html', blurb: 'The story behind Valor — why it exists, and the founder who started it.' },
+      { label: 'Why Valor', href: 'about-why-valor.html', blurb: 'What sets a Valor education apart, in plain terms.' },
+    ],
+    cta: { label: 'Meet Our Team', href: 'about-meet-our-team.html' },
   },
   {
     label: 'Academics', href: 'academics-degree-programs.html',
@@ -80,6 +93,11 @@ const NAV = [
       { label: 'Class Schedules', href: 'academics-class-schedules.html' },
       { label: 'Credit for Prior Learning', href: 'academics-credit-for-prior-learning.html' },
     ],
+    featured: [
+      { label: 'Degree Programs', href: 'academics-degree-programs.html', blurb: "Bachelor's degrees, associate degrees, and one-year certificates — compare programs and find the one that fits your calling." },
+      { label: 'Academic Catalog', href: 'academics-academic-catalog.html', blurb: 'The current academic catalog, policies, and course descriptions.' },
+    ],
+    cta: { label: 'View Class Schedules', href: 'academics-class-schedules.html' },
   },
   {
     label: 'Admissions', href: 'admissions.html',
@@ -90,6 +108,11 @@ const NAV = [
       { label: 'Complete Your Enrollment', href: 'admissions-complete-your-enrollment.html' },
       { label: 'Admissions & Enrollment Forms', href: 'admissions-forms.html' },
     ],
+    featured: [
+      { label: 'Apply Now', href: 'admissions-apply-now.html', blurb: 'Start your Valor application.' },
+      { label: 'Speak with a Counselor', href: 'admissions-speak-with-a-counselor.html', blurb: 'Book time with an admissions counselor to talk through programs, cost, and next steps.' },
+    ],
+    cta: { label: 'Admissions Overview', href: 'admissions.html' },
   },
   {
     label: 'Tuition & Aid', href: 'tuition-aid.html',
@@ -99,6 +122,11 @@ const NAV = [
       { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html' },
       { label: 'Scholarships', href: 'tuition-aid-scholarships.html' },
     ],
+    featured: [
+      { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html', blurb: 'Learn about financial aid options and resources available to eligible students.' },
+      { label: 'Scholarships', href: 'tuition-aid-scholarships.html', blurb: 'Explore scholarship opportunities that may help make your Valor education more affordable.' },
+    ],
+    cta: { label: 'View Tuition & Fees', href: 'tuition-aid-tuition-fees.html' },
   },
   {
     label: 'Student Life', href: 'student-life.html',
@@ -110,8 +138,12 @@ const NAV = [
       { label: 'Academic Support & Accessibility', href: 'student-life-accessibility.html' },
       { label: 'Work-Study Program', href: 'student-life-work-study.html' },
       { label: 'Student Handbook', href: 'student-life-handbook.html' },
-      { label: 'Student Portal', href: 'student-life-portal.html', highlight: true },
     ],
+    featured: [
+      { label: 'Get Involved', href: 'student-life-get-involved.html', blurb: 'Ways to plug into campus and community life.' },
+      { label: 'Student Support', href: 'student-life-support.html', blurb: 'Support resources available to every Valor student.' },
+    ],
+    cta: { label: 'Student Life Overview', href: 'student-life.html' },
   },
   {
     label: 'Alumni', href: 'alumni.html',
@@ -124,6 +156,11 @@ const NAV = [
       { label: 'Career & Ministry Opportunities', href: 'alumni-career-ministry.html' },
       { label: 'Share Your Story', href: 'alumni-share-your-story.html' },
     ],
+    featured: [
+      { label: 'Alumni Stories', href: 'alumni-stories.html', blurb: 'Stories of Valor graduates serving in ministry, missions, business, and media.' },
+      { label: 'Stay Connected', href: 'alumni-stay-connected.html', blurb: 'Ways to stay connected to Valor after graduation.' },
+    ],
+    cta: { label: 'Share Your Story', href: 'alumni-share-your-story.html' },
   },
 ];
 
@@ -132,7 +169,7 @@ const FOOTER_COLUMNS = [
   { label: 'Academics', items: NAV[1].children },
   { label: 'Admissions', items: NAV[2].children.slice(0, 4) },
   { label: 'Tuition & Aid', items: NAV[3].children },
-  { label: 'Student Life', items: [NAV[4].children[0], NAV[4].children[1], NAV[4].children[6], NAV[4].children[7]] },
+  { label: 'Student Life', items: [...NAV[4].children.slice(0, 2), NAV[4].children[6], { label: 'Student Portal', href: 'student-life-portal.html' }] },
   { label: 'Alumni', items: NAV[5].children.slice(0, 4) },
 ];
 
@@ -144,15 +181,31 @@ function escapeHtml(s) {
 function renderHeader() {
   const items = NAV.map((sec) => {
     const children = sec.children.map((c) => (
-      `<a href="${c.href}"${c.highlight ? ' class="nav-portal-link"' : ''}>${escapeHtml(c.label)}</a>`
-    )).join('\n            ');
+      `<a href="${c.href}">${escapeHtml(c.label)}</a>`
+    )).join('\n              ');
+    const featured = sec.featured.map((f) => (
+      `<a href="${f.href}" class="mega-feature">
+                <div class="mega-feature-title">${escapeHtml(f.label)} <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">${escapeHtml(f.blurb)}</p>
+              </a>`
+    )).join('\n              ');
     return `<div class="nav-item">
             <div class="nav-item-row">
               <a href="${sec.href}" style="color:#FAF5EE" style-hover="color:#E01B2E">${escapeHtml(sec.label)}</a>
               <button class="submenu-toggle" aria-label="Toggle ${escapeHtml(sec.label)} submenu">▾</button>
             </div>
             <div class="dropdown">
-            ${children}
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  ${featured}
+                  <a href="${sec.cta.href}" class="mega-cta">${escapeHtml(sec.cta.label)}</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">${escapeHtml(sec.label)}</div>
+                  ${children}
+                </div>
+              </div>
             </div>
           </div>`;
   }).join('\n          ');
@@ -210,11 +263,23 @@ const BASE_STYLE = `<style>
   .nav-item{position:relative;display:flex;align-items:center;gap:3px}
   .nav-item-row{display:flex;align-items:center;gap:3px}
   .submenu-toggle{display:none;background:none;border:none;color:inherit;font-size:11px;cursor:pointer;padding:4px}
-  .dropdown{position:absolute;top:100%;left:-18px;min-width:250px;background:#100E0D;border:1px solid rgba(250,245,238,.1);border-radius:12px;padding:8px 0;box-shadow:0 20px 44px rgba(0,0,0,.4);display:none;z-index:100}
+  .dropdown{position:fixed;top:92px;left:0;right:0;background:transparent;display:none;z-index:100}
   .nav-item:hover .dropdown,.nav-item:focus-within .dropdown{display:block}
-  .dropdown a{display:block;padding:10px 20px;font-size:12.5px;letter-spacing:.03em;text-transform:none;color:rgba(250,245,238,.85)!important;white-space:nowrap}
-  .dropdown a:hover{color:#fff!important;background:rgba(224,27,46,.16)}
-  .nav-portal-link{color:#FF8A93!important;font-weight:700!important}
+  .mega-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;background:#100E0D;border-radius:0 0 16px 16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);border:1px solid rgba(250,245,238,.1);border-top:none}
+  .mega-featured{background:#FAF5EE;padding:36px 40px}
+  .mega-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B3121F;margin-bottom:18px}
+  .mega-feature{display:block;padding:14px 0;border-bottom:1px solid rgba(16,14,13,.08)}
+  .mega-feature:first-of-type{padding-top:0}
+  .mega-feature-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;color:#100E0D!important;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .mega-feature-title i{font-size:12px;color:#B3121F;transition:transform .18s ease}
+  .mega-feature:hover .mega-feature-title i{transform:translateX(4px)}
+  .mega-feature-blurb{margin:6px 0 0;font-size:13px;line-height:1.5;color:rgba(16,14,13,.62)!important}
+  .mega-cta{display:inline-block;margin-top:22px;background:#100E0D;color:#fff!important;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:13px 24px;border-radius:999px;transition:background .18s ease}
+  .mega-cta:hover{background:#000!important}
+  .mega-links{background:#100E0D;padding:36px 40px}
+  .mega-links-title{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,245,238,.5);margin-bottom:14px}
+  .mega-links a{display:block;padding:9px 0;font-size:13.5px;letter-spacing:.02em;text-transform:none;color:rgba(250,245,238,.85)!important;white-space:nowrap}
+  .mega-links a:hover{color:#fff!important;padding-left:6px}
   .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
   .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
   .quote-stage{position:relative;min-height:200px}
@@ -238,9 +303,13 @@ const BASE_STYLE = `<style>
     .nav-item-row a{padding:14px 24px!important;width:100%}
     .submenu-toggle{display:block!important;font-size:16px;padding:14px 20px;color:#FAF5EE}
     .nav-item.open .submenu-toggle{transform:rotate(180deg)}
-    .dropdown{position:static;box-shadow:none;border:none;padding:0;background:rgba(255,255,255,.03);display:none}
+    .dropdown{position:static;display:none}
     .nav-item.open .dropdown{display:block}
-    .dropdown a{padding:10px 20px 10px 36px!important}
+    .mega-inner{display:block;max-width:none;margin:0;background:none;border:none;box-shadow:none;border-radius:0}
+    .mega-featured{display:none!important}
+    .mega-links{background:rgba(255,255,255,.03);padding:0}
+    .mega-links-title{display:none}
+    .mega-links a{padding:10px 20px 10px 36px!important}
   }
   @media (max-width:860px){
     .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}

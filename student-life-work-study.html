@@ -215,11 +215,23 @@
   .nav-item{position:relative;display:flex;align-items:center;gap:3px}
   .nav-item-row{display:flex;align-items:center;gap:3px}
   .submenu-toggle{display:none;background:none;border:none;color:inherit;font-size:11px;cursor:pointer;padding:4px}
-  .dropdown{position:absolute;top:100%;left:-18px;min-width:250px;background:#100E0D;border:1px solid rgba(250,245,238,.1);border-radius:12px;padding:8px 0;box-shadow:0 20px 44px rgba(0,0,0,.4);display:none;z-index:100}
+  .dropdown{position:fixed;top:92px;left:0;right:0;background:transparent;display:none;z-index:100}
   .nav-item:hover .dropdown,.nav-item:focus-within .dropdown{display:block}
-  .dropdown a{display:block;padding:10px 20px;font-size:12.5px;letter-spacing:.03em;text-transform:none;color:rgba(250,245,238,.85)!important;white-space:nowrap}
-  .dropdown a:hover{color:#fff!important;background:rgba(224,27,46,.16)}
-  .nav-portal-link{color:#FF8A93!important;font-weight:700!important}
+  .mega-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;background:#100E0D;border-radius:0 0 16px 16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);border:1px solid rgba(250,245,238,.1);border-top:none}
+  .mega-featured{background:#FAF5EE;padding:36px 40px}
+  .mega-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B3121F;margin-bottom:18px}
+  .mega-feature{display:block;padding:14px 0;border-bottom:1px solid rgba(16,14,13,.08)}
+  .mega-feature:first-of-type{padding-top:0}
+  .mega-feature-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;color:#100E0D!important;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .mega-feature-title i{font-size:12px;color:#B3121F;transition:transform .18s ease}
+  .mega-feature:hover .mega-feature-title i{transform:translateX(4px)}
+  .mega-feature-blurb{margin:6px 0 0;font-size:13px;line-height:1.5;color:rgba(16,14,13,.62)!important}
+  .mega-cta{display:inline-block;margin-top:22px;background:#100E0D;color:#fff!important;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:13px 24px;border-radius:999px;transition:background .18s ease}
+  .mega-cta:hover{background:#000!important}
+  .mega-links{background:#100E0D;padding:36px 40px}
+  .mega-links-title{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,245,238,.5);margin-bottom:14px}
+  .mega-links a{display:block;padding:9px 0;font-size:13.5px;letter-spacing:.02em;text-transform:none;color:rgba(250,245,238,.85)!important;white-space:nowrap}
+  .mega-links a:hover{color:#fff!important;padding-left:6px}
   .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
   .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
   .quote-stage{position:relative;min-height:200px}
@@ -243,9 +255,13 @@
     .nav-item-row a{padding:14px 24px!important;width:100%}
     .submenu-toggle{display:block!important;font-size:16px;padding:14px 20px;color:#FAF5EE}
     .nav-item.open .submenu-toggle{transform:rotate(180deg)}
-    .dropdown{position:static;box-shadow:none;border:none;padding:0;background:rgba(255,255,255,.03);display:none}
+    .dropdown{position:static;display:none}
     .nav-item.open .dropdown{display:block}
-    .dropdown a{padding:10px 20px 10px 36px!important}
+    .mega-inner{display:block;max-width:none;margin:0;background:none;border:none;box-shadow:none;border-radius:0}
+    .mega-featured{display:none!important}
+    .mega-links{background:rgba(255,255,255,.03);padding:0}
+    .mega-links-title{display:none}
+    .mega-links a{padding:10px 20px 10px 36px!important}
   }
   @media (max-width:860px){
     .floating-apply{width:60px;height:60px;font-size:11px;bottom:16px;right:16px}
@@ -300,10 +316,27 @@
               <button class="submenu-toggle" aria-label="Toggle About submenu">▾</button>
             </div>
             <div class="dropdown">
-            <a href="about-our-legacy.html">Our Legacy</a>
-            <a href="about-meet-our-team.html">Meet Our Team</a>
-            <a href="about-why-valor.html">Why Valor</a>
-            <a href="about-contact.html">Contact</a>
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  <a href="about-our-legacy.html" class="mega-feature">
+                <div class="mega-feature-title">Our Legacy <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">The story behind Valor — why it exists, and the founder who started it.</p>
+              </a>
+              <a href="about-why-valor.html" class="mega-feature">
+                <div class="mega-feature-title">Why Valor <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">What sets a Valor education apart, in plain terms.</p>
+              </a>
+                  <a href="about-meet-our-team.html" class="mega-cta">Meet Our Team</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">About</div>
+                  <a href="about-our-legacy.html">Our Legacy</a>
+              <a href="about-meet-our-team.html">Meet Our Team</a>
+              <a href="about-why-valor.html">Why Valor</a>
+              <a href="about-contact.html">Contact</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -312,10 +345,27 @@
               <button class="submenu-toggle" aria-label="Toggle Academics submenu">▾</button>
             </div>
             <div class="dropdown">
-            <a href="academics-degree-programs.html">Degree Programs</a>
-            <a href="academics-academic-catalog.html">Academic Catalog</a>
-            <a href="academics-class-schedules.html">Class Schedules</a>
-            <a href="academics-credit-for-prior-learning.html">Credit for Prior Learning</a>
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  <a href="academics-degree-programs.html" class="mega-feature">
+                <div class="mega-feature-title">Degree Programs <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Bachelor's degrees, associate degrees, and one-year certificates — compare programs and find the one that fits your calling.</p>
+              </a>
+              <a href="academics-academic-catalog.html" class="mega-feature">
+                <div class="mega-feature-title">Academic Catalog <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">The current academic catalog, policies, and course descriptions.</p>
+              </a>
+                  <a href="academics-class-schedules.html" class="mega-cta">View Class Schedules</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">Academics</div>
+                  <a href="academics-degree-programs.html">Degree Programs</a>
+              <a href="academics-academic-catalog.html">Academic Catalog</a>
+              <a href="academics-class-schedules.html">Class Schedules</a>
+              <a href="academics-credit-for-prior-learning.html">Credit for Prior Learning</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -324,11 +374,28 @@
               <button class="submenu-toggle" aria-label="Toggle Admissions submenu">▾</button>
             </div>
             <div class="dropdown">
-            <a href="admissions.html">Admissions Overview</a>
-            <a href="admissions-speak-with-a-counselor.html">Speak with a Counselor</a>
-            <a href="admissions-apply-now.html">Apply Now</a>
-            <a href="admissions-complete-your-enrollment.html">Complete Your Enrollment</a>
-            <a href="admissions-forms.html">Admissions &amp; Enrollment Forms</a>
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  <a href="admissions-apply-now.html" class="mega-feature">
+                <div class="mega-feature-title">Apply Now <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Start your Valor application.</p>
+              </a>
+              <a href="admissions-speak-with-a-counselor.html" class="mega-feature">
+                <div class="mega-feature-title">Speak with a Counselor <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Book time with an admissions counselor to talk through programs, cost, and next steps.</p>
+              </a>
+                  <a href="admissions.html" class="mega-cta">Admissions Overview</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">Admissions</div>
+                  <a href="admissions.html">Admissions Overview</a>
+              <a href="admissions-speak-with-a-counselor.html">Speak with a Counselor</a>
+              <a href="admissions-apply-now.html">Apply Now</a>
+              <a href="admissions-complete-your-enrollment.html">Complete Your Enrollment</a>
+              <a href="admissions-forms.html">Admissions &amp; Enrollment Forms</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -337,10 +404,27 @@
               <button class="submenu-toggle" aria-label="Toggle Tuition &amp; Aid submenu">▾</button>
             </div>
             <div class="dropdown">
-            <a href="tuition-aid.html">Financial Overview</a>
-            <a href="tuition-aid-tuition-fees.html">Tuition &amp; Fees</a>
-            <a href="tuition-aid-financial-aid.html">Financial Aid</a>
-            <a href="tuition-aid-scholarships.html">Scholarships</a>
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  <a href="tuition-aid-financial-aid.html" class="mega-feature">
+                <div class="mega-feature-title">Financial Aid <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Learn about financial aid options and resources available to eligible students.</p>
+              </a>
+              <a href="tuition-aid-scholarships.html" class="mega-feature">
+                <div class="mega-feature-title">Scholarships <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Explore scholarship opportunities that may help make your Valor education more affordable.</p>
+              </a>
+                  <a href="tuition-aid-tuition-fees.html" class="mega-cta">View Tuition &amp; Fees</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">Tuition &amp; Aid</div>
+                  <a href="tuition-aid.html">Financial Overview</a>
+              <a href="tuition-aid-tuition-fees.html">Tuition &amp; Fees</a>
+              <a href="tuition-aid-financial-aid.html">Financial Aid</a>
+              <a href="tuition-aid-scholarships.html">Scholarships</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -349,14 +433,30 @@
               <button class="submenu-toggle" aria-label="Toggle Student Life submenu">▾</button>
             </div>
             <div class="dropdown">
-            <a href="student-life.html">Student Life Overview</a>
-            <a href="student-life-get-involved.html">Get Involved</a>
-            <a href="student-life-events-calendar.html">Student Events &amp; Calendar</a>
-            <a href="student-life-support.html">Student Support</a>
-            <a href="student-life-accessibility.html">Academic Support &amp; Accessibility</a>
-            <a href="student-life-work-study.html">Work-Study Program</a>
-            <a href="student-life-handbook.html">Student Handbook</a>
-            <a href="student-life-portal.html" class="nav-portal-link">Student Portal</a>
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  <a href="student-life-get-involved.html" class="mega-feature">
+                <div class="mega-feature-title">Get Involved <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Ways to plug into campus and community life.</p>
+              </a>
+              <a href="student-life-support.html" class="mega-feature">
+                <div class="mega-feature-title">Student Support <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Support resources available to every Valor student.</p>
+              </a>
+                  <a href="student-life.html" class="mega-cta">Student Life Overview</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">Student Life</div>
+                  <a href="student-life.html">Student Life Overview</a>
+              <a href="student-life-get-involved.html">Get Involved</a>
+              <a href="student-life-events-calendar.html">Student Events &amp; Calendar</a>
+              <a href="student-life-support.html">Student Support</a>
+              <a href="student-life-accessibility.html">Academic Support &amp; Accessibility</a>
+              <a href="student-life-work-study.html">Work-Study Program</a>
+              <a href="student-life-handbook.html">Student Handbook</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-item">
@@ -365,13 +465,30 @@
               <button class="submenu-toggle" aria-label="Toggle Alumni submenu">▾</button>
             </div>
             <div class="dropdown">
-            <a href="alumni.html">Alumni Overview</a>
-            <a href="alumni-stories.html">Alumni Stories</a>
-            <a href="alumni-stay-connected.html">Stay Connected</a>
-            <a href="alumni-city-harvest-network.html">City Harvest Network</a>
-            <a href="alumni-continue-your-calling.html">Continue Your Calling</a>
-            <a href="alumni-career-ministry.html">Career &amp; Ministry Opportunities</a>
-            <a href="alumni-share-your-story.html">Share Your Story</a>
+              <div class="mega-inner">
+                <div class="mega-featured">
+                  <div class="mega-eyebrow">Featured</div>
+                  <a href="alumni-stories.html" class="mega-feature">
+                <div class="mega-feature-title">Alumni Stories <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Stories of Valor graduates serving in ministry, missions, business, and media.</p>
+              </a>
+              <a href="alumni-stay-connected.html" class="mega-feature">
+                <div class="mega-feature-title">Stay Connected <i class="fa-solid fa-chevron-right"></i></div>
+                <p class="mega-feature-blurb">Ways to stay connected to Valor after graduation.</p>
+              </a>
+                  <a href="alumni-share-your-story.html" class="mega-cta">Share Your Story</a>
+                </div>
+                <div class="mega-links">
+                  <div class="mega-links-title">Alumni</div>
+                  <a href="alumni.html">Alumni Overview</a>
+              <a href="alumni-stories.html">Alumni Stories</a>
+              <a href="alumni-stay-connected.html">Stay Connected</a>
+              <a href="alumni-city-harvest-network.html">City Harvest Network</a>
+              <a href="alumni-continue-your-calling.html">Continue Your Calling</a>
+              <a href="alumni-career-ministry.html">Career &amp; Ministry Opportunities</a>
+              <a href="alumni-share-your-story.html">Share Your Story</a>
+                </div>
+              </div>
             </div>
           </div>
     </nav>
