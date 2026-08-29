@@ -118,7 +118,9 @@ const NAV = [
     label: 'Tuition & Aid', href: 'tuition-aid.html',
     children: [
       { label: 'Financial Overview', href: 'tuition-aid.html' },
-      { label: 'Tuition & Fees', href: 'tuition-aid-tuition-fees.html' },
+      { label: 'Tuition & Fees', href: 'tuition-aid-tuition-fees.html', children: [
+        { label: 'International Student Tuition & Fees', href: 'tuition-aid-international.html' },
+      ] },
       { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html' },
       { label: 'Scholarships', href: 'tuition-aid-scholarships.html' },
     ],
@@ -304,7 +306,7 @@ const BASE_STYLE = `<style>
   .mega-feature-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;color:#100E0D!important;display:flex;align-items:center;justify-content:space-between;gap:10px}
   .mega-feature-title i{font-size:12px;color:#B3121F;transition:transform .18s ease}
   .mega-feature:hover .mega-feature-title i{transform:translateX(4px)}
-  .mega-feature-blurb{margin:6px 0 0;font-size:13px;line-height:1.5;color:rgba(16,14,13,.62)!important}
+  .mega-feature-blurb{margin:6px 0 0;font-size:13px;line-height:1.5;color:rgba(16,14,13,.62)!important;text-transform:none!important}
   .mega-cta{display:inline-block;margin-top:22px;background:#100E0D;color:#fff!important;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:13px 24px;border-radius:999px;transition:background .18s ease}
   .mega-cta:hover{background:#000!important}
   .mega-links{background:#100E0D;padding:36px 40px}
