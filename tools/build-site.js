@@ -205,7 +205,7 @@ function renderHeader() {
       c.children
         ? `<div class="mega-link-group">
                 <a href="${c.href}">${escapeHtml(c.label)}</a>
-                ${c.children.map((sc) => `<a href="${sc.href}" class="mega-sublink">${escapeHtml(sc.label)}</a>`).join('\n                ')}
+                ${c.children.map((sc) => `<a href="${sc.href}" class="mega-sublink"><i class="fa-solid fa-chevron-right"></i>${escapeHtml(sc.label)}</a>`).join('\n                ')}
               </div>`
         : `<a href="${c.href}">${escapeHtml(c.label)}</a>`
     )).join('\n              ');
@@ -216,10 +216,10 @@ function renderHeader() {
               </a>`
     )).join('\n              ');
     return `<div class="nav-item">
-            <div class="nav-item-row">
-              <a href="${sec.href}" style="color:#FAF5EE" style-hover="color:#E01B2E">${escapeHtml(sec.label)}</a>
-              <button type="button" class="submenu-toggle" aria-label="Toggle ${escapeHtml(sec.label)} menu" aria-expanded="false"><i class="fa-solid fa-chevron-down"></i></button>
-            </div>
+            <button type="button" class="nav-item-row submenu-toggle" aria-expanded="false">
+              <span>${escapeHtml(sec.label)}</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
             <div class="dropdown">
               <div class="mega-inner">
                 <div class="mega-featured">
@@ -287,13 +287,13 @@ const BASE_STYLE = `<style>
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
   .nav-item{position:relative;display:flex;align-items:center}
-  .nav-item-row{display:flex;align-items:center;gap:2px;padding:8px 10px;margin:0 -10px;border-radius:8px;border:1px solid transparent;transition:border-color .15s ease,background .15s ease}
-  .nav-item.open .nav-item-row{border-color:rgba(250,245,238,.3);background:rgba(250,245,238,.06)}
+  .nav-item-row{display:flex;align-items:center;gap:7px;padding:8px 10px;margin:0 -10px;border-radius:8px;border:1px solid transparent;background:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;text-transform:inherit;line-height:inherit;color:#FAF5EE;transition:border-color .15s ease,background .15s ease,color .15s ease}
+  .nav-item-row:hover{color:#FF8A93}
+  .nav-item.open .nav-item-row{border-color:rgba(250,245,238,.3);background:rgba(250,245,238,.06);color:#fff}
   .nav-item-row::after{content:'';position:absolute;left:10px;right:10px;bottom:-15px;height:2px;background:#E01B2E;transform:scaleX(0);transition:transform .18s ease}
   .nav-item.open .nav-item-row::after{transform:scaleX(1)}
-  .submenu-toggle{display:inline-flex;align-items:center;justify-content:center;background:none;border:none;color:inherit;font-size:9px;cursor:pointer;padding:4px;line-height:1}
-  .submenu-toggle i{transition:transform .18s ease}
-  .nav-item.open .submenu-toggle i{transform:rotate(180deg)}
+  .nav-item-row i{font-size:9px;color:inherit;transition:transform .18s ease}
+  .nav-item.open .nav-item-row i{transform:rotate(180deg)}
   .dropdown{position:fixed;top:92px;left:0;right:0;z-index:100;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease;pointer-events:none}
   .nav-item.open .dropdown{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
   .mega-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;background:#100E0D;border-radius:0 0 16px 16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);border:1px solid rgba(250,245,238,.1);border-top:none}
@@ -311,10 +311,10 @@ const BASE_STYLE = `<style>
   .mega-links-title{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,245,238,.5);margin-bottom:14px}
   .mega-links a{display:block;padding:9px 0;font-size:13.5px;letter-spacing:.02em;text-transform:none;color:rgba(250,245,238,.85)!important;white-space:nowrap;transition:padding-left .15s ease}
   .mega-links a:hover{color:#fff!important;padding-left:6px}
-  .mega-link-group{border-bottom:1px dashed rgba(250,245,238,.1);margin-bottom:2px;padding-bottom:2px}
-  .mega-link-group:last-child{border-bottom:none}
-  .mega-sublink{padding:7px 0 7px 18px!important;font-size:12.5px!important;color:rgba(250,245,238,.6)!important;position:relative}
-  .mega-sublink::before{content:'—';position:absolute;left:0;color:rgba(250,245,238,.35)}
+  .mega-link-group{margin-bottom:2px}
+  .mega-sublink{display:flex!important;align-items:center;gap:8px;padding:7px 0 7px 4px!important;font-size:12.5px!important;color:rgba(250,245,238,.6)!important}
+  .mega-sublink i{font-size:8px;color:rgba(250,245,238,.35)}
+  .mega-sublink:hover i{color:#E01B2E}
   .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
   .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
   .quote-stage{position:relative;min-height:200px}
@@ -334,11 +334,10 @@ const BASE_STYLE = `<style>
     #site-nav{position:fixed!important;top:64px;left:0;right:0;margin-left:0!important;flex-direction:column!important;align-items:flex-start!important;gap:0!important;background:#100E0D;max-height:0;overflow:auto;transition:max-height .3s ease}
     #site-nav.open{max-height:calc(100vh - 64px)}
     #site-nav>.nav-item{display:flex;flex-direction:column;align-items:stretch;width:100%}
-    .nav-item-row{padding:0;margin:0;border-radius:0;border:none;justify-content:space-between;border-bottom:1px solid rgba(250,245,238,.1)}
+    .nav-item-row{width:100%;padding:14px 24px!important;margin:0;border-radius:0;border:none;justify-content:space-between;border-bottom:1px solid rgba(250,245,238,.1)}
     .nav-item-row::after{display:none}
     .nav-item.open .nav-item-row{background:none}
-    .nav-item-row a{padding:14px 24px!important;width:100%}
-    .submenu-toggle{display:flex!important;font-size:16px;padding:14px 20px;color:#FAF5EE}
+    .nav-item-row i{font-size:14px}
     .dropdown{position:static;opacity:1;visibility:visible;transform:none;transition:none;pointer-events:auto;display:none}
     .nav-item.open .dropdown{display:block}
     .mega-inner{display:block;max-width:none;margin:0;background:none;border:none;box-shadow:none;border-radius:0}
