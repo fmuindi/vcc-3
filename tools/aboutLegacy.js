@@ -25,7 +25,7 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
 
   <section id="vision" class="about-grid" style="max-width:1320px;margin:0 auto;padding:110px 32px 40px;display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center">
     <div data-reveal="" class="about-collage" style="height:560px;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.22)">
-      <img src="https://static.wixstatic.com/media/669db9_037a5a19c03e47ebb719aac5ddd1dcf5~mv2.jpg" alt="Valor Christian College" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+      <img src="https://directus.valorcollege.edu/assets/D779215E-10CE-4BE3-A11F-766783EFE79C?width=1200&quality=80" alt="Valor Christian College" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
     </div>
     <div>
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:18px">The Vision</div>
@@ -64,7 +64,7 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
     </div>
     <div class="programs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
       <div data-reveal="" style="position:relative;height:480px;border-radius:20px;overflow:hidden;color:#fff">
-        <img src="https://static.wixstatic.com/media/669db9_0069aa3255a3479ca76893a027b67f2d~mv2.jpg" alt="Early days of Valor Christian College" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+        <img src="https://directus.valorcollege.edu/assets/C17020F2-83F0-4D80-87CF-40DE1F3F1888?width=1200&quality=80" alt="Early days of Valor Christian College" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.96) 20%,rgba(16,14,13,.15) 78%)"></div>
         <div style="position:absolute;left:24px;right:24px;bottom:20px;height:200px;display:flex;flex-direction:column;justify-content:flex-start">
           <div style="margin-bottom:12px"><span style="display:inline-block;background:#FAF5EE;color:#B3121F;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:999px">Then.</span></div>
@@ -73,7 +73,7 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
         </div>
       </div>
       <div data-reveal="" style="position:relative;height:480px;border-radius:20px;overflow:hidden;color:#fff">
-        <img src="https://static.wixstatic.com/media/669db9_7a58e051d016428baa9fb672ec228f5b~mv2.jpg" alt="Students in worship at Valor" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <img src="https://directus.valorcollege.edu/assets/AD89E786-5B79-4BB7-8072-CA3161652397?width=1200&quality=80" alt="Students in worship at Valor" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.96) 20%,rgba(16,14,13,.15) 78%)"></div>
         <div style="position:absolute;left:24px;right:24px;bottom:20px;height:200px;display:flex;flex-direction:column;justify-content:flex-start">
           <div style="margin-bottom:12px"><span style="display:inline-block;background:#FAF5EE;color:#B3121F;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:999px">Now.</span></div>
@@ -82,7 +82,7 @@ const ABOUT_LEGACY_BODY = `  <section id="legacy-hero" style="position:relative;
         </div>
       </div>
       <div data-reveal="" style="position:relative;height:480px;border-radius:20px;overflow:hidden;color:#fff">
-        <img src="https://static.wixstatic.com/media/669db9_ef934705bbfa4bad8e4a796db3c7e536~mv2.jpg" alt="Valor students serving" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <img src="https://directus.valorcollege.edu/assets/A75532CA-AA46-401E-B355-02CB2CBD270D?width=1200&quality=80" alt="Valor students serving" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.96) 20%,rgba(16,14,13,.15) 78%)"></div>
         <div style="position:absolute;left:24px;right:24px;bottom:20px;height:200px;display:flex;flex-direction:column;justify-content:flex-start">
           <div style="margin-bottom:12px"><span style="display:inline-block;background:#FAF5EE;color:#B3121F;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:999px">Next.</span></div>
