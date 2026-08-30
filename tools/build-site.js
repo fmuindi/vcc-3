@@ -44,8 +44,7 @@ const IK = (name) => DIRECTUS_ASSET[name]
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),
   onCampus: IK('DSC08674.jpg'),
-  // Client-supplied Unsplash image, used as-is (not an ImageKit asset).
-  online: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  online: 'https://directus.valorcollege.edu/assets/2CDEF3FE-3DA2-4528-B067-D5C8BF9E7936?width=1200&quality=80',
   cohort: IK('DHCOWYTE.jpg'),
   whyValorMain: IK('VCC.Graduation.2026-383.jpg'),
   whyValor2: IK('A7309778_1.jpg'),
