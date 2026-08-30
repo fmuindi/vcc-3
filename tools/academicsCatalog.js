@@ -1,19 +1,16 @@
 const { IMG } = require('./build-site');
 
-// PDF links per the client-supplied list ("ALL THE PDFs to USE from the old
-// website", valorcollege.edu/academics/catalog). No invented years or URLs —
-// the reference mockup showed an extra "2018" archive card with no matching
-// URL in that list, so it's intentionally left out here.
-const CATALOG_BASE = 'https://valorcollege.edu/root/pdf/academics/catalog/';
-const CURRENT_CATALOG = { years: '2026–2027', file: '2026-2027_Academic_Catalog.pdf' };
+// PDF links migrated to Directus asset management (client-supplied URLs).
+// No invented years or URLs.
+const CURRENT_CATALOG = { years: '2026–2027', href: 'https://directus.valorcollege.edu/assets/04A72CBA-8534-47D6-8157-AD002E29D027' };
 const ARCHIVE_CATALOGS = [
-  { years: '2025–2026', file: '2025-2026_Academic_Catalog.pdf' },
-  { years: '2024–2025', file: '2024-2025_Academic_Catalog.pdf' },
-  { years: '2023–2024', file: '2023-2024_Academic_Catalog.pdf' },
-  { years: '2022–2023', file: '2022-2023_Academic_Catalog.pdf' },
-  { years: '2021–2022', file: '2021-2022_Academic_Catalog.pdf' },
-  { years: '2020–2021', file: '2020-2021_Academic_Catalog.pdf' },
-  { years: '2019–2020', file: '2019-2020_Academic_Catalog.pdf' },
+  { years: '2025–2026', href: 'https://directus.valorcollege.edu/assets/BA30CE87-AFB3-4C65-AB2D-127EFFAB073C' },
+  { years: '2024–2025', href: 'https://directus.valorcollege.edu/assets/3B7D641A-7F5C-4E6D-BC72-25873EE3DAD5' },
+  { years: '2023–2024', href: 'https://directus.valorcollege.edu/assets/27342E0F-A3E9-49D1-8026-C98FFEA4BF71' },
+  { years: '2022–2023', href: 'https://directus.valorcollege.edu/assets/AFFD2D35-3B08-4531-A8D1-612179708221' },
+  { years: '2021–2022', href: 'https://directus.valorcollege.edu/assets/7CB304D7-7BC2-4A98-B612-75F3938E8CAB' },
+  { years: '2020–2021', href: 'https://directus.valorcollege.edu/assets/90B3DDF0-94CD-4864-BD8C-494A96DC3B8D' },
+  { years: '2019–2020', href: 'https://directus.valorcollege.edu/assets/08A616D4-7060-45C3-9319-07C63407809C' },
 ];
 const RECENT_ARCHIVE = ARCHIVE_CATALOGS.slice(0, 4);
 const OLDER_ARCHIVE = ARCHIVE_CATALOGS.slice(4);
@@ -23,7 +20,7 @@ const archiveRow = (c, compact) => `        <div data-reveal="" style="display:f
             <i class="fa-solid fa-file-pdf" style="color:#B3121F;font-size:${compact ? '14' : '17'}px"></i>
             <span style="font-weight:700;font-size:${compact ? '13.5' : '15'}px;color:#100E0D">${c.years} Academic Catalog</span>
           </div>
-          <a href="${CATALOG_BASE}${c.file}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:6px;font-size:${compact ? '11.5' : '12.5'}px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#B3121F" style-hover="color:#E01B2E">View PDF <i class="fa-solid fa-arrow-right" style="font-size:10px"></i></a>
+          <a href="${c.href}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:6px;font-size:${compact ? '11.5' : '12.5'}px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#B3121F" style-hover="color:#E01B2E">View PDF <i class="fa-solid fa-arrow-right" style="font-size:10px"></i></a>
         </div>`;
 
 const ACADEMICS_CATALOG_BODY = `  <section id="catalog-hero" class="about-grid" style="max-width:1320px;margin:0 auto;padding:150px 32px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center">
@@ -51,8 +48,8 @@ const ACADEMICS_CATALOG_BODY = `  <section id="catalog-hero" class="about-grid" 
         <div style="position:relative;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.7);margin-bottom:8px">Academic Catalog</div>
         <div style="position:relative;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,4vw,44px);color:#E01B2E;margin-bottom:26px">${CURRENT_CATALOG.years}</div>
         <div style="position:relative;display:flex;flex-direction:column;gap:10px">
-          <a href="${CATALOG_BASE}${CURRENT_CATALOG.file}" target="_blank" rel="noopener" style="background:#E01B2E;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 20px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> View PDF</a>
-          <a href="${CATALOG_BASE}${CURRENT_CATALOG.file}" download style="border:1.5px solid rgba(250,245,238,.4);color:#FAF5EE;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:13px 20px;border-radius:999px" style-hover="background:rgba(250,245,238,.1);color:#FAF5EE"><i class="fa-solid fa-download"></i> Download PDF</a>
+          <a href="${CURRENT_CATALOG.href}" target="_blank" rel="noopener" style="background:#E01B2E;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 20px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> View PDF</a>
+          <a href="${CURRENT_CATALOG.href}" download style="border:1.5px solid rgba(250,245,238,.4);color:#FAF5EE;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:13px 20px;border-radius:999px" style-hover="background:rgba(250,245,238,.1);color:#FAF5EE"><i class="fa-solid fa-download"></i> Download PDF</a>
         </div>
       </div>
       <div style="padding:44px 40px">

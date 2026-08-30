@@ -4,21 +4,21 @@ const ADMISSIONS_EMAIL = 'admissions@valorcollege.edu';
 
 const ADMISSIONS_FORMS = [
   { name: 'Application Form', href: 'https://valorcollege.formtitan.com/application?country=usa#/', icon: 'fa-arrow-up-right-from-square', cta: 'Start Application' },
-  { name: 'Medical Form', href: 'https://www.valorcollege.edu/root/pdf/forms/medical.pdf' },
-  { name: 'Pastoral Recommendation', href: 'https://www.valorcollege.edu/root/pdf/forms/pastoral-rec.pdf' },
-  { name: 'Personal Testimony Bio', href: 'https://www.valorcollege.edu/root/pdf/forms/personal-bio.pdf' },
-  { name: 'Sponsor Affidavit', href: 'https://www.valorcollege.edu/root/pdf/forms/sponsor.pdf' },
-  { name: 'Spousal Letter of Support', href: 'https://www.valorcollege.edu/root/pdf/forms/spousal.pdf' },
-  { name: 'Student Financial Certification', href: 'https://www.valorcollege.edu/root/pdf/forms/financial.pdf' },
+  { name: 'Medical Form', href: 'https://directus.valorcollege.edu/assets/3B6B904C-592B-48E3-88B6-02163D72D60B' },
+  { name: 'Pastoral Recommendation', href: 'https://directus.valorcollege.edu/assets/9BDC3376-DCFB-415A-B430-0857F597C1EB' },
+  { name: 'Personal Testimony Bio', href: 'https://directus.valorcollege.edu/assets/5C9E9325-1D57-4497-8AB7-A1D226048002' },
+  { name: 'Sponsor Affidavit', href: 'https://directus.valorcollege.edu/assets/56E10D1F-954A-42D0-86DB-C7627C382530' },
+  { name: 'Spousal Letter of Support', href: 'https://directus.valorcollege.edu/assets/1A1B2912-09F7-4D36-A31A-67D12F5B3E47' },
+  { name: 'Student Financial Certification', href: 'https://directus.valorcollege.edu/assets/9051B944-6DF3-4FA5-AFE5-11B0328A4CBE' },
 ];
 const TRANSCRIPT_FORMS = [
-  { name: 'Request College Transcript', href: 'https://www.valorcollege.edu/root/pdf/forms/request-transcript.pdf' },
-  { name: 'Request High School or GED Transcript', href: 'https://www.valorcollege.edu/root/pdf/forms/highschool-transcript.pdf' },
-  { name: 'Request Valor Transcript', href: 'https://www.valorcollege.edu/root/pdf/forms/valor-transcript.pdf' },
+  { name: 'Request College Transcript', href: 'https://directus.valorcollege.edu/assets/C7524BC0-2BA6-4C37-B5BD-7CB7004E4A15' },
+  { name: 'Request High School or GED Transcript', href: 'https://directus.valorcollege.edu/assets/56A76576-D795-416B-BD6C-C7656192B889' },
+  { name: 'Request Valor Transcript', href: 'https://directus.valorcollege.edu/assets/4B50B31E-896F-4BD6-BE4E-D825B15C9DA0' },
 ];
 const STUDENT_FORMS = [
-  { name: 'Schedule Adjustment', href: 'https://www.valorcollege.edu/root/pdf/forms/schedule.pdf' },
-  { name: 'Cap & Gown Form', href: 'https://www.valorcollege.edu/root/pdf/forms/cap-gown.pdf' },
+  { name: 'Schedule Adjustment', href: 'https://directus.valorcollege.edu/assets/27C4B9AC-F495-4C5A-9675-0D15413C6200' },
+  { name: 'Cap & Gown Form', href: 'https://directus.valorcollege.edu/assets/8104DA11-9DAC-491B-8976-C3FB4AECAC3F' },
 ];
 
 const formCard = (f) => `        <a href="${f.href}" target="_blank" rel="noopener" data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:14px;padding:24px 22px;color:#100E0D" style-hover="color:#100E0D;border-color:rgba(224,27,46,.3)">

@@ -1,15 +1,14 @@
 const { IMG } = require('./build-site');
 
-// Schedule PDF links per the client-supplied URLs (tracking query param
-// stripped from the campus link). No invented dates or destinations.
-const SCHEDULE_BASE = 'https://valorcollege.edu/root/pdf/academics/schedule/';
+// Schedule PDF links migrated to Directus asset management (client-supplied
+// URLs). No invented dates or destinations.
 const SCHEDULES = [
   {
     icon: 'fa-building-columns',
     label: 'Campus',
     title: 'Fall 2026 Campus Schedule',
     dates: 'August 17 – December 6, 2026',
-    file: 'Fall-2026_Campus-Schedule.pdf',
+    href: 'https://directus.valorcollege.edu/assets/0D23FA25-752B-46B4-BD19-8392196F339A',
     cta: 'View Campus Schedule',
   },
   {
@@ -17,7 +16,7 @@ const SCHEDULES = [
     label: 'Online Session One',
     title: 'Fall 2026 Online Session One',
     dates: 'August 17 – October 11, 2026',
-    file: 'Fall-2026_Online-Schedule_Session-One.pdf',
+    href: 'https://directus.valorcollege.edu/assets/294E5E0C-4776-4B6E-9D18-53A172DFEE53',
     cta: 'View Schedule',
   },
   {
@@ -25,7 +24,7 @@ const SCHEDULES = [
     label: 'Online Session Two',
     title: 'Fall 2026 Online Session Two',
     dates: 'October 12 – December 6, 2026',
-    file: 'Fall-2026_Online-Schedule_Session-Two.pdf',
+    href: 'https://directus.valorcollege.edu/assets/3C08DA87-3AB0-4DD6-BA95-07AFC877F15B',
     cta: 'View Schedule',
   },
 ];
@@ -35,7 +34,7 @@ const scheduleCard = (s) => `      <div data-reveal="" style="background:#fff;bo
         <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#100E0D;margin-bottom:14px">${s.label}</div>
         <div style="font-weight:700;font-size:15px;color:#100E0D;margin-bottom:6px">${s.title}</div>
         <p style="margin:0 0 22px;font-size:13.5px;color:rgba(16,14,13,.6)">${s.dates}</p>
-        <a href="${SCHEDULE_BASE}${s.file}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> ${s.cta}</a>
+        <a href="${s.href}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:14px 22px;border-radius:999px" style-hover="background:#F02338;color:#fff"><i class="fa-solid fa-file-lines"></i> ${s.cta}</a>
       </div>`;
 
 const TEXTBOOK_RESOURCES = [
