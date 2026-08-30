@@ -793,6 +793,9 @@ class Component extends DCLogic {
       });
     });
     nav.querySelectorAll('.dropdown a, .nav-item-row a').forEach(a => a.addEventListener('click', () => closeMobileNav()));
+    nav.querySelectorAll('.dropdown').forEach(d => d.addEventListener('click', (e) => {
+      if (e.target === d) closeSubmenus();
+    }));
     document.addEventListener('click', (e) => {
       if (!nav.contains(e.target)) closeSubmenus();
     });
