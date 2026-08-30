@@ -9,8 +9,38 @@ const FONT_FACE_CSS = fs.readFileSync(path.join(__dirname, 'fontface.html'), 'ut
 
 // ---------- Content sources ----------
 const LOGO = 'assets/images/valor-logo-white.png'; // downloaded + downscaled from the S3 original for performance
-const HERO_VIDEO = 'https://video.wixstatic.com/video/669db9_f40c8336ac684880a7700d45d31d107c/1080p/mp4/file.mp4';
-const IK = (name) => `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q-auto,w-1200`;
+const HERO_VIDEO = 'https://directus.valorcollege.edu/assets/73C04156-E3A8-492F-9369-1E2461C3A7DB';
+// Client migrated the ImageKit photo library to Directus. Map of the old
+// ImageKit filename -> new Directus asset id, built from the client's own
+// re-exported HTML (every image below was verified present, consistently,
+// across all 38 pages). WEB.png (the social-share/OG image) was not part of
+// that export — it's the one filename with no entry here — so IK() falls
+// back to the original ImageKit URL for anything not yet migrated.
+const DIRECTUS_ASSET = {
+  'A7301737pl.jpg': '25FADC64-3582-4861-84EB-9704E2036BC9',
+  'A7301807.jpg': 'B4EDE3CC-308F-4379-945E-1A5E97170C9E',
+  'A7303011.jpg': 'FEAD2F38-77AE-4EE6-84A2-4732EE79400C',
+  'A7309778_1.jpg': '6A3C8B6E-A7EE-4A78-9B31-BD4983DD7886',
+  'DHCOWYTE.jpg': '0D12328F-7271-4D8F-BA91-C4B991AE8AFB',
+  'DSC00837.jpg': 'B6BC630C-BC9E-4A9F-86E7-1EFBD1A48A52',
+  'DSC01795.jpg': 'BDF23190-E5A9-4479-909E-8226AE9102B4',
+  'DSC02739.jpg': 'DA9EC617-74E6-4EE0-B089-AA6DF2C4F3F0',
+  'DSC03220.jpg': 'D89D4CD6-C9C9-4B0E-8EE3-A8D441E12669',
+  'DSC03821.jpg': '3C54B9CF-68BB-4B6E-B7D3-3EC0585284C4',
+  'DSC03832.jpg': '0EC30D40-F732-41A0-9B02-2EE04B8E38BC',
+  'DSC03837.jpg': 'A44193A5-580C-40B9-B556-09267470620B',
+  'DSC03880.jpg': 'D4C9C49B-3E6B-45ED-AC7A-187D24C18943',
+  'DSC03895.jpg': '1FB45362-814A-40D5-831B-C4F1892E0B51',
+  'DSC03901.jpg': '7BCA1821-CEF3-4D98-A0A3-8ECC312AD6D7',
+  'DSC05427.jpg': 'E5F0B7A3-12FA-4070-9F00-6E2894147859',
+  'DSC08674.jpg': '0E27E0B1-B1E1-4982-A4E1-4D30C6AA67E1',
+  'DSC09572.jpg': '23D17BFE-9E43-4C31-A1E4-8AD99AF59C2C',
+  'DSC09620_1.jpg': '92C8D4A3-9778-43A7-A891-253DADA13BBB',
+  'VCC.Graduation.2026-383.jpg': 'BBCACFDF-4806-49DB-930E-31FC1287DD0D',
+};
+const IK = (name) => DIRECTUS_ASSET[name]
+  ? `https://directus.valorcollege.edu/assets/${DIRECTUS_ASSET[name]}?width=1200&quality=80`
+  : `https://ik.imagekit.io/vddpcxj7e/valor/${name}?tr=f-auto,q-auto,w-1200`;
 const IMG = {
   heroPoster: IK('DSC01795.jpg'),
   onCampus: IK('DSC08674.jpg'),

@@ -2,10 +2,20 @@ const { IMG } = require('./build-site');
 
 // One entry per nav destination (except Home). "blurb" is a short, honest
 // description of what the page will contain — no invented facts/figures.
+// NOTE: this previously referenced IMG.whyValor1/gallery1/gallery2, none of
+// which exist on the IMG object (whyValor1 was renamed to whyValorMain at
+// some point; gallery1/gallery2 never existed after the gallery became
+// IMG.studentLifeGallery). That silently produced src="undefined" on any
+// page landing on one of those 3 rotation slots — about-contact,
+// admissions-complete-your-enrollment, admissions-forms, tuition-aid,
+// tuition-aid-scholarships, student-life-work-study, student-life-handbook,
+// and alumni-city-harvest-network (the first 4 happen to be custom-built
+// pages that don't use this template, so it was invisible there, but the
+// other 4 shipped a broken hero background image).
 const IMAGE_ROTATION = [
-  IMG.onCampus, IMG.online, IMG.cohort, IMG.whyValor1, IMG.whyValor2,
+  IMG.onCampus, IMG.online, IMG.cohort, IMG.whyValorMain, IMG.whyValor2,
   IMG.testimonial, IMG.prog1, IMG.prog2, IMG.prog3, IMG.prog4, IMG.prog5,
-  IMG.gallery1, IMG.gallery2, IMG.heroPoster,
+  IMG.studentLifeGallery[0], IMG.studentLifeGallery[3], IMG.heroPoster,
 ];
 
 const PAGES = [
