@@ -606,7 +606,7 @@ ${FONT_FACE_CSS}
 ${BASE_STYLE}
 </helmet>
 
-<div id="page-top" style="background:#FAF5EE;overflow-x:hidden">
+<div id="page-top" style="background:#FFFFFF;overflow-x:hidden">
 
 ${renderHeader()}
 
