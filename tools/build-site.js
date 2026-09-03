@@ -144,7 +144,9 @@ const NAV = [
     label: 'Tuition & Aid', href: 'tuition-aid.html',
     children: [
       { label: 'Financial Overview', href: 'tuition-aid.html' },
-      { label: 'Tuition & Fees', href: 'tuition-aid-tuition-fees.html' },
+      { label: 'Tuition & Fees', href: 'tuition-aid-tuition-fees.html', children: [
+        { label: 'International Student Tuition & Fees', href: 'tuition-aid-international.html' },
+      ] },
       { label: 'Financial Aid', href: 'tuition-aid-financial-aid.html' },
       { label: 'Scholarships', href: 'tuition-aid-scholarships.html' },
     ],
