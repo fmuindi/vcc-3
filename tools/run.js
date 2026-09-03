@@ -21,6 +21,7 @@ const { ADMISSIONS_FORMS_BODY } = require('./admissionsForms');
 const { TUITION_OVERVIEW_BODY } = require('./tuitionOverview');
 const { TUITION_FEES_BODY } = require('./tuitionFees');
 const { TUITION_INTERNATIONAL_BODY } = require('./tuitionInternational');
+const { TUITION_FINANCIAL_AID_BODY } = require('./tuitionFinancialAid');
 const { NOT_FOUND_BODY } = require('./notFound');
 
 function write(file, html) {
@@ -54,6 +55,7 @@ PAGES.forEach((p) => {
   if (p.href === 'tuition-aid.html') bodyHtml = TUITION_OVERVIEW_BODY;
   if (p.href === 'tuition-aid-tuition-fees.html') bodyHtml = TUITION_FEES_BODY;
   if (p.href === 'tuition-aid-international.html') bodyHtml = TUITION_INTERNATIONAL_BODY;
+  if (p.href === 'tuition-aid-financial-aid.html') bodyHtml = TUITION_FINANCIAL_AID_BODY;
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,

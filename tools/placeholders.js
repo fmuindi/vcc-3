@@ -36,7 +36,7 @@ const PAGES = [
   { href: 'tuition-aid.html', section: 'Tuition & Aid', title: 'Financial Overview', blurb: 'A clear look at cost, aid, and scholarships for paying for Valor.' },
   { href: 'tuition-aid-tuition-fees.html', section: 'Tuition & Aid', title: 'Tuition & Fees', blurb: 'Your estimated cost to attend Valor, a full tuition and fee breakdown, and how financial aid and scholarships can lower it.' },
   { href: 'tuition-aid-international.html', section: 'Tuition & Aid', title: 'International Student Tuition & Fees', blurb: 'Your estimated annual cost paid to Valor and the minimum financial requirement for international students.' },
-  { href: 'tuition-aid-financial-aid.html', section: 'Tuition & Aid', title: 'Financial Aid', blurb: 'Financial aid options and how to apply.' },
+  { href: 'tuition-aid-financial-aid.html', section: 'Tuition & Aid', title: 'Financial Aid', blurb: 'Start your FAFSA, explore grants, loans, and scholarships, and connect with our Financial Aid team.' },
   { href: 'tuition-aid-scholarships.html', section: 'Tuition & Aid', title: 'Scholarships', blurb: 'Scholarships available to Valor students.' },
   { href: 'student-life.html', section: 'Student Life', title: 'Student Life Overview', blurb: 'What life as a Valor student looks like — community, events, support, and fast access to the student portal.' },
   { href: 'student-life-get-involved.html', section: 'Student Life', title: 'Get Involved', blurb: 'Ways to plug into campus and community life.' },
