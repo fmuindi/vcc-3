@@ -131,7 +131,7 @@ const NAV = [
       { label: 'Admissions Overview', href: 'admissions.html' },
       { label: 'Speak with a Counselor', href: 'admissions-speak-with-a-counselor.html' },
       { label: 'Apply Now', href: 'admissions-apply-now.html' },
-      { label: 'Complete Your Enrollment', href: 'admissions-complete-your-enrollment.html' },
+      { label: 'International Students', href: 'admissions-international-students.html' },
       { label: 'Admissions & Enrollment Forms', href: 'admissions-forms.html' },
     ],
     featured: [
@@ -208,7 +208,7 @@ const FOOTER_COLUMNS = [
     { label: 'Admissions Overview', href: 'admissions.html' },
     { label: 'Speak with a Counselor', href: 'admissions-speak-with-a-counselor.html' },
     { label: 'Apply Now', href: 'admissions-apply-now.html' },
-    { label: 'Complete Your Enrollment', href: 'admissions-complete-your-enrollment.html' },
+    { label: 'International Students', href: 'admissions-international-students.html' },
   ] },
   { label: 'Tuition & Aid', items: NAV[3].children },
   { label: 'Student Life', items: [

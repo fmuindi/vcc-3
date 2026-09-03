@@ -16,6 +16,7 @@ const { ACADEMICS_CREDIT_FOR_PRIOR_LEARNING_BODY } = require('./academicsCreditF
 const { ADMISSIONS_OVERVIEW_BODY } = require('./admissionsOverview');
 const { ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY } = require('./admissionsSpeakWithCounselor');
 const { ADMISSIONS_APPLY_NOW_BODY } = require('./admissionsApplyNow');
+const { ADMISSIONS_INTERNATIONAL_STUDENTS_BODY } = require('./admissionsInternationalStudents');
 const { ADMISSIONS_FORMS_BODY } = require('./admissionsForms');
 const { TUITION_OVERVIEW_BODY } = require('./tuitionOverview');
 const { NOT_FOUND_BODY } = require('./notFound');
@@ -46,6 +47,7 @@ PAGES.forEach((p) => {
   if (p.href === 'admissions.html') bodyHtml = ADMISSIONS_OVERVIEW_BODY;
   if (p.href === 'admissions-speak-with-a-counselor.html') bodyHtml = ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY;
   if (p.href === 'admissions-apply-now.html') bodyHtml = ADMISSIONS_APPLY_NOW_BODY;
+  if (p.href === 'admissions-international-students.html') bodyHtml = ADMISSIONS_INTERNATIONAL_STUDENTS_BODY;
   if (p.href === 'admissions-forms.html') bodyHtml = ADMISSIONS_FORMS_BODY;
   if (p.href === 'tuition-aid.html') bodyHtml = TUITION_OVERVIEW_BODY;
   write(p.href, renderPage({

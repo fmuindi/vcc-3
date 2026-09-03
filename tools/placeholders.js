@@ -7,11 +7,12 @@ const { IMG } = require('./build-site');
 // some point; gallery1/gallery2 never existed after the gallery became
 // IMG.studentLifeGallery). That silently produced src="undefined" on any
 // page landing on one of those 3 rotation slots — about-contact,
-// admissions-complete-your-enrollment, admissions-forms, tuition-aid,
-// tuition-aid-scholarships, student-life-work-study, student-life-handbook,
-// and alumni-city-harvest-network (the first 4 happen to be custom-built
-// pages that don't use this template, so it was invisible there, but the
-// other 4 shipped a broken hero background image).
+// admissions-international-students (then still admissions-complete-your-
+// enrollment), admissions-forms, tuition-aid, tuition-aid-scholarships,
+// student-life-work-study, student-life-handbook, and alumni-city-harvest-
+// network (the first 4 happen to be custom-built pages that don't use this
+// template, so it was invisible there, but the other 4 shipped a broken
+// hero background image).
 const IMAGE_ROTATION = [
   IMG.onCampus, IMG.online, IMG.cohort, IMG.whyValorMain, IMG.whyValor2,
   IMG.testimonial, IMG.prog1, IMG.prog2, IMG.prog3, IMG.prog4, IMG.prog5,
@@ -30,7 +31,7 @@ const PAGES = [
   { href: 'admissions.html', section: 'Admissions', title: 'Admissions Overview', blurb: 'Every degree and program at Valor, and every way to take the next step — speak with a counselor, apply, or complete your enrollment.' },
   { href: 'admissions-speak-with-a-counselor.html', section: 'Admissions', title: 'Speak with a Counselor', blurb: 'Book time with an admissions counselor to talk through programs, cost, and next steps.' },
   { href: 'admissions-apply-now.html', section: 'Admissions', title: 'Apply Now', blurb: 'Start your Valor application.' },
-  { href: 'admissions-complete-your-enrollment.html', section: 'Admissions', title: 'Complete Your Enrollment', blurb: 'The steps to finish enrolling once you’ve been accepted.' },
+  { href: 'admissions-international-students.html', section: 'Admissions', title: 'International Students', blurb: 'Everything international students need to know about applying, financial requirements, and enrolling at Valor.' },
   { href: 'admissions-forms.html', section: 'Admissions', title: 'Admissions & Enrollment Forms', blurb: 'Downloadable admissions and enrollment forms.' },
   { href: 'tuition-aid.html', section: 'Tuition & Aid', title: 'Financial Overview', blurb: 'A clear look at cost, aid, and scholarships for paying for Valor.' },
   { href: 'tuition-aid-tuition-fees.html', section: 'Tuition & Aid', title: 'Tuition & Fees', blurb: 'Current tuition and fees by program.' },
