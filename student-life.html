@@ -265,6 +265,8 @@
   .acc-bullet-list{display:flex;flex-direction:column;gap:12px;margin:0 0 20px}
   .acc-bullet{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.7)}
   .acc-bullet-dot{flex:none;width:9px;height:9px;margin-top:6px;border-radius:50%;border:2px solid #E01B2E}
+  .acc-row [data-more]{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .25s ease}
+  .acc-row.is-open [data-more]{opacity:1;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease .1s}
   @media (max-width:1200px){
     .site-header{padding:12px 16px!important;gap:10px!important;flex-wrap:nowrap!important}
     .site-logo{height:32px!important;flex-shrink:0}
@@ -669,19 +671,54 @@ class Component extends DCLogic {
     });
   }
   viewAllToggles() {
+    // Rows inside .acc-row animate open/closed via max-height (instead of
+    // display toggling) and, when also inside an .acc-group, auto-close
+    // any sibling row that's already open — a true accordion. Anything
+    // not using .acc-row keeps the original instant display:none toggle,
+    // untouched, so this doesn't affect the site's other accordions.
+    const setRowOpen = (key, open) => {
+      document.querySelectorAll('[data-more="' + key + '"]').forEach(el => {
+        el.style.maxHeight = open ? el.scrollHeight + 'px' : '0px';
+      });
+      document.querySelectorAll('[data-view-all="' + key + '"]').forEach(b => {
+        const label = b.querySelector('[data-swap-label]') || b;
+        label.textContent = open ? b.getAttribute('data-less-label') : b.getAttribute('data-more-label');
+        const row = b.closest('.acc-row');
+        if (row) row.classList.toggle('is-open', open);
+      });
+    };
     document.querySelectorAll('[data-view-all]').forEach(btn => {
       const key = btn.getAttribute('data-view-all');
       const items = Array.from(document.querySelectorAll('[data-more="' + key + '"]'));
       if (!items.length) return;
+      const row = btn.closest('.acc-row');
+      const group = row ? row.closest('.acc-group') : null;
       btn.addEventListener('click', () => {
+        if (row) {
+          const opening = !row.classList.contains('is-open');
+          if (opening && group) {
+            group.querySelectorAll('.acc-row.is-open').forEach(openRow => {
+              if (openRow === row) return;
+              const openBtn = openRow.querySelector('[data-view-all]');
+              if (openBtn) setRowOpen(openBtn.getAttribute('data-view-all'), false);
+            });
+          }
+          setRowOpen(key, opening);
+          return;
+        }
         const show = items[0].style.display === 'none';
         items.forEach(el => { el.style.display = show ? '' : 'none'; });
         document.querySelectorAll('[data-view-all="' + key + '"]').forEach(b => {
           const label = b.querySelector('[data-swap-label]') || b;
           label.textContent = show ? b.getAttribute('data-less-label') : b.getAttribute('data-more-label');
-          const row = b.closest('.acc-row');
-          if (row) row.classList.toggle('is-open', show);
         });
+      });
+    });
+    // Keep open rows correctly sized if content reflows (e.g. font load,
+    // viewport resize) while they're open.
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.acc-row.is-open [data-more]').forEach(el => {
+        el.style.maxHeight = el.scrollHeight + 'px';
       });
     });
   }

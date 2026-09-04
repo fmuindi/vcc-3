@@ -131,12 +131,12 @@ const detailBullets = (s) => [
 const detailAccordion = (s) => `      <div id="${s.key}" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
         <button type="button" class="acc-header" data-view-all="${s.key}-details" data-more-label="${s.title}" data-less-label="${s.title}">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="${s.iconUrl}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:9px;overflow:hidden"><div style="width:100%;height:100%;background:#E01B2E;-webkit-mask-image:url('${s.iconUrl}');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url('${s.iconUrl}');mask-size:contain;mask-repeat:no-repeat;mask-position:center"></div></div>
             <span data-swap-label="" class="acc-title">${s.title}</span>
           </div>
           <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="${s.key}-details" style="display:none">
+        <div data-more="${s.key}-details">
           <div class="acc-panel-inner">
             <div class="acc-bullet-list">
 ${detailBullets(s).map((b) => `              <div class="acc-bullet"><span class="acc-bullet-dot"></span>${b}</div>`).join('\n')}
@@ -188,7 +188,7 @@ ${STEPS.map(stepCard).join('\n')}
     <div style="max-width:640px;margin:0 auto 44px;text-align:center">
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Scholarship Details &amp; Eligibility</h2>
     </div>
-    <div style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
+    <div class="acc-group" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
 ${SCHOLARSHIPS.map(detailAccordion).join('\n')}
     </div>
   </section>

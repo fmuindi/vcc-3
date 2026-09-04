@@ -265,6 +265,8 @@
   .acc-bullet-list{display:flex;flex-direction:column;gap:12px;margin:0 0 20px}
   .acc-bullet{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.7)}
   .acc-bullet-dot{flex:none;width:9px;height:9px;margin-top:6px;border-radius:50%;border:2px solid #E01B2E}
+  .acc-row [data-more]{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .25s ease}
+  .acc-row.is-open [data-more]{opacity:1;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease .1s}
   @media (max-width:1200px){
     .site-header{padding:12px 16px!important;gap:10px!important;flex-wrap:nowrap!important}
     .site-logo{height:32px!important;flex-shrink:0}
@@ -676,16 +678,16 @@
     <div style="max-width:640px;margin:0 auto 44px;text-align:center">
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Scholarship Details &amp; Eligibility</h2>
     </div>
-    <div style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
+    <div class="acc-group" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
       <div id="world-changer" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
         <button type="button" class="acc-header" data-view-all="world-changer-details" data-more-label="World Changer Scholarship" data-less-label="World Changer Scholarship">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="https://directus.valorcollege.edu/assets/27499A52-44AD-49A7-AE25-619438EA7EFD" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:9px;overflow:hidden"><div style="width:100%;height:100%;background:#E01B2E;-webkit-mask-image:url('https://directus.valorcollege.edu/assets/27499A52-44AD-49A7-AE25-619438EA7EFD');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url('https://directus.valorcollege.edu/assets/27499A52-44AD-49A7-AE25-619438EA7EFD');mask-size:contain;mask-repeat:no-repeat;mask-position:center"></div></div>
             <span data-swap-label="" class="acc-title">World Changer Scholarship</span>
           </div>
           <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="world-changer-details" style="display:none">
+        <div data-more="world-changer-details">
           <div class="acc-panel-inner">
             <div class="acc-bullet-list">
               <div class="acc-bullet"><span class="acc-bullet-dot"></span>Award: Up to 20% of tuition</div>
@@ -699,12 +701,12 @@
       <div id="word-network" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
         <button type="button" class="acc-header" data-view-all="word-network-details" data-more-label="Word Network Scholarship" data-less-label="Word Network Scholarship">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="https://directus.valorcollege.edu/assets/4176C0DF-9356-4770-8428-47E0D2AB4FF8" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:9px;overflow:hidden"><div style="width:100%;height:100%;background:#E01B2E;-webkit-mask-image:url('https://directus.valorcollege.edu/assets/4176C0DF-9356-4770-8428-47E0D2AB4FF8');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url('https://directus.valorcollege.edu/assets/4176C0DF-9356-4770-8428-47E0D2AB4FF8');mask-size:contain;mask-repeat:no-repeat;mask-position:center"></div></div>
             <span data-swap-label="" class="acc-title">Word Network Scholarship</span>
           </div>
           <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="word-network-details" style="display:none">
+        <div data-more="word-network-details">
           <div class="acc-panel-inner">
             <div class="acc-bullet-list">
               <div class="acc-bullet"><span class="acc-bullet-dot"></span>Award: Up to 20% of tuition</div>
@@ -717,12 +719,12 @@
       <div id="city-harvest" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
         <button type="button" class="acc-header" data-view-all="city-harvest-details" data-more-label="City Harvest Network Scholarship" data-less-label="City Harvest Network Scholarship">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="https://directus.valorcollege.edu/assets/34612451-998F-4D68-BE8B-F31CD865B2F3" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:9px;overflow:hidden"><div style="width:100%;height:100%;background:#E01B2E;-webkit-mask-image:url('https://directus.valorcollege.edu/assets/34612451-998F-4D68-BE8B-F31CD865B2F3');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url('https://directus.valorcollege.edu/assets/34612451-998F-4D68-BE8B-F31CD865B2F3');mask-size:contain;mask-repeat:no-repeat;mask-position:center"></div></div>
             <span data-swap-label="" class="acc-title">City Harvest Network Scholarship</span>
           </div>
           <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="city-harvest-details" style="display:none">
+        <div data-more="city-harvest-details">
           <div class="acc-panel-inner">
             <div class="acc-bullet-list">
               <div class="acc-bullet"><span class="acc-bullet-dot"></span>Award: Up to 25% of tuition</div>
@@ -736,12 +738,12 @@
       <div id="presidential" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
         <button type="button" class="acc-header" data-view-all="presidential-details" data-more-label="Presidential Scholarship" data-less-label="Presidential Scholarship">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="https://directus.valorcollege.edu/assets/8D439628-AFCF-4B10-B5C9-9D81171BDAE8" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:9px;overflow:hidden"><div style="width:100%;height:100%;background:#E01B2E;-webkit-mask-image:url('https://directus.valorcollege.edu/assets/8D439628-AFCF-4B10-B5C9-9D81171BDAE8');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url('https://directus.valorcollege.edu/assets/8D439628-AFCF-4B10-B5C9-9D81171BDAE8');mask-size:contain;mask-repeat:no-repeat;mask-position:center"></div></div>
             <span data-swap-label="" class="acc-title">Presidential Scholarship</span>
           </div>
           <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="presidential-details" style="display:none">
+        <div data-more="presidential-details">
           <div class="acc-panel-inner">
             <div class="acc-bullet-list">
               <div class="acc-bullet"><span class="acc-bullet-dot"></span>Award: Award amount: to be confirmed</div>
@@ -860,19 +862,54 @@ class Component extends DCLogic {
     });
   }
   viewAllToggles() {
+    // Rows inside .acc-row animate open/closed via max-height (instead of
+    // display toggling) and, when also inside an .acc-group, auto-close
+    // any sibling row that's already open — a true accordion. Anything
+    // not using .acc-row keeps the original instant display:none toggle,
+    // untouched, so this doesn't affect the site's other accordions.
+    const setRowOpen = (key, open) => {
+      document.querySelectorAll('[data-more="' + key + '"]').forEach(el => {
+        el.style.maxHeight = open ? el.scrollHeight + 'px' : '0px';
+      });
+      document.querySelectorAll('[data-view-all="' + key + '"]').forEach(b => {
+        const label = b.querySelector('[data-swap-label]') || b;
+        label.textContent = open ? b.getAttribute('data-less-label') : b.getAttribute('data-more-label');
+        const row = b.closest('.acc-row');
+        if (row) row.classList.toggle('is-open', open);
+      });
+    };
     document.querySelectorAll('[data-view-all]').forEach(btn => {
       const key = btn.getAttribute('data-view-all');
       const items = Array.from(document.querySelectorAll('[data-more="' + key + '"]'));
       if (!items.length) return;
+      const row = btn.closest('.acc-row');
+      const group = row ? row.closest('.acc-group') : null;
       btn.addEventListener('click', () => {
+        if (row) {
+          const opening = !row.classList.contains('is-open');
+          if (opening && group) {
+            group.querySelectorAll('.acc-row.is-open').forEach(openRow => {
+              if (openRow === row) return;
+              const openBtn = openRow.querySelector('[data-view-all]');
+              if (openBtn) setRowOpen(openBtn.getAttribute('data-view-all'), false);
+            });
+          }
+          setRowOpen(key, opening);
+          return;
+        }
         const show = items[0].style.display === 'none';
         items.forEach(el => { el.style.display = show ? '' : 'none'; });
         document.querySelectorAll('[data-view-all="' + key + '"]').forEach(b => {
           const label = b.querySelector('[data-swap-label]') || b;
           label.textContent = show ? b.getAttribute('data-less-label') : b.getAttribute('data-more-label');
-          const row = b.closest('.acc-row');
-          if (row) row.classList.toggle('is-open', show);
         });
+      });
+    });
+    // Keep open rows correctly sized if content reflows (e.g. font load,
+    // viewport resize) while they're open.
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.acc-row.is-open [data-more]').forEach(el => {
+        el.style.maxHeight = el.scrollHeight + 'px';
       });
     });
   }
