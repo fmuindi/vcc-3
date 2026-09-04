@@ -1,31 +1,44 @@
 const { IMG, HERO_VIDEO } = require('./build-site');
 const { studentLifeGalleryGrid } = require('./studentLife');
 
-// TODO: "Mac Café" is called for as its own linkable destination (a card in
-// Experience Valor + a secondary link for Current Students) but no such page
-// or nav entry exists yet on this site. Routed to Get Involved in the
-// interim — the closest existing page — until a real Mac Café page/URL is
-// created.
-const MAC_CAFE_LINK = 'student-life-get-involved.html';
+// Confirmed by the client's follow-up brief: Mac Café & Meal Menu is now a
+// real Student Life nav destination (added to the mega-menu and footer in
+// tools/build-site.js). The page itself is still a placeholder pending
+// actual hours/menu content.
+const MAC_CAFE_LINK = 'student-life-mac-cafe.html';
 
 const EXPERIENCE_CARDS = [
-  { title: 'Get Involved', copy: 'Connect, serve, lead, and become part of the Valor community.', href: 'student-life-get-involved.html', img: IMG.studentLifeGallery[2] },
-  { title: 'Events & Campus Life', copy: 'Experience the moments that bring the Valor community together.', href: 'student-life-events-calendar.html', img: IMG.studentLifeGallery[4] },
-  { title: 'Mac Café', copy: 'Grab a meal, connect with friends, and experience another part of everyday life at Valor.', href: MAC_CAFE_LINK, img: IMG.studentLifeGallery[5] },
+  { num: '01', title: 'Get Involved', copy: 'Connect, serve, lead, and become part of the Valor community.', href: 'student-life-get-involved.html', img: IMG.studentLifeGallery[2] },
+  { num: '02', title: 'Events & Campus Life', copy: 'Experience the moments that bring the Valor community together.', href: 'student-life-events-calendar.html', img: IMG.studentLifeGallery[4] },
+  { num: '03', title: 'Mac Café', copy: 'Grab a meal, connect with friends, and experience another part of everyday life at Valor.', href: MAC_CAFE_LINK, img: IMG.studentLifeGallery[5] },
 ];
 
-const experienceCard = (c) => `      <a href="${c.href}" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,14,13,.3);color:#fff">
+const experienceCard = (c) => `      <a href="${c.href}" data-reveal="" style="position:relative;height:360px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,14,13,.32);color:#fff">
         <img src="${c.img}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,0) 62%)"></div>
+        <div style="position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;color:#fff">${c.num}</div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;line-height:1.1;color:#FAF5EE;margin-bottom:8px">${c.title}</div>
           <p style="margin:0;font-size:13.5px;line-height:1.5;color:rgba(250,245,238,.82)">${c.copy}</p>
         </div>
       </a>`;
 
+const HERO_TAGS = [
+  { label: 'Worship', icon: 'fa-hands-praying', top: '20%', left: '6%', delay: '0s' },
+  { label: 'Ministry', icon: 'fa-heart', top: '16%', right: '6%', delay: '1.2s' },
+  { label: 'Belonging', icon: 'fa-people-group', bottom: '22%', left: '8%', delay: '2.1s' },
+  { label: 'Calling', icon: 'fa-compass', bottom: '18%', right: '5%', delay: '.6s' },
+];
+
+const heroTag = (t) => `    <div class="float-tag" style="position:absolute;${t.top ? `top:${t.top};` : ''}${t.bottom ? `bottom:${t.bottom};` : ''}${t.left ? `left:${t.left};` : ''}${t.right ? `right:${t.right};` : ''}animation-delay:${t.delay};display:inline-flex;align-items:center;gap:8px;background:rgba(250,245,238,.08);border:1px solid rgba(250,245,238,.18);backdrop-filter:blur(6px);color:rgba(250,245,238,.85);font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:10px 16px;border-radius:999px;z-index:1"><i class="fa-solid ${t.icon}" style="color:#FF8A93;font-size:12px"></i> ${t.label}</div>`;
+
+const SPIRITUAL_WORDS = ['Chapel', 'Worship', 'Prayer', 'Ministry', 'Service', 'Faith'];
+const marqueeHalf = () => SPIRITUAL_WORDS.map((w) => `<span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">${w}</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>`).join('\n        ');
+
 const STUDENT_LIFE_OVERVIEW_BODY = `  <section id="student-life-hero" style="position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <video src="${HERO_VIDEO}" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="${IMG.heroPoster}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55"></video>
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.3) 0%,rgba(16,14,13,.4) 45%,rgba(16,14,13,.96) 100%)"></div>
+${HERO_TAGS.map(heroTag).join('\n')}
     <div style="position:relative;width:100%;max-width:1000px;margin:0 auto;padding:60px 32px;text-align:center">
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:18px">Student Life</div>
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(38px,7vw,96px);line-height:.98;letter-spacing:-.03em;text-wrap:balance">This Is Life at Valor.</h1>
@@ -60,6 +73,16 @@ ${studentLifeGalleryGrid()}
       <div style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.7);margin-bottom:20px">Grow in Your Faith</div>
       <h2 style="margin:0 0 28px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,5vw,58px);line-height:1.05;letter-spacing:-.03em;color:#FAF5EE;text-wrap:balance">More Than an Education.</h2>
       <p style="margin:0 auto;max-width:58ch;font-size:clamp(17px,2vw,20px);line-height:1.65;color:rgba(250,245,238,.88)">At Valor, spiritual formation is part of everyday life. Through chapel, worship, prayer, ministry, and serving others, students are challenged to deepen their relationship with God and put their faith into action.</p>
+    </div>
+    <div class="marquee-wrap" style="position:absolute;left:0;right:0;bottom:0;padding:20px 0;border-top:1px solid rgba(250,245,238,.14)">
+      <div class="marquee-track">
+        <span style="display:inline-flex;align-items:center;gap:28px;padding-right:28px">
+        ${marqueeHalf()}
+        </span>
+        <span aria-hidden="true" style="display:inline-flex;align-items:center;gap:28px;padding-right:28px">
+        ${marqueeHalf()}
+        </span>
+      </div>
     </div>
   </section>
 

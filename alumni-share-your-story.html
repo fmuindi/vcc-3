@@ -209,6 +209,16 @@
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
+  @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .marquee-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .marquee-track{display:flex;width:max-content;animation:marquee-scroll 32s linear infinite}
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+  .float-tag{animation:vfloat 5.5s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){.float-tag{animation:none}}
+  @media (max-width:1320px){.float-tag{display:none!important}}
+  .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
+  .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
+  @media (max-width:1200px){.tilt-tile{transform:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -485,6 +495,7 @@
                 <a href="student-life-accessibility.html" class="mega-sublink"><i class="fa-solid fa-chevron-right"></i>Academic Support &amp; Accessibility</a>
               </div>
               <a href="student-life-work-study.html">Work-Study Program</a>
+              <a href="student-life-mac-cafe.html">Mac Café &amp; Meal Menu</a>
               <a href="student-life-handbook.html">Student Handbook</a>
                 </div>
               </div>
@@ -535,7 +546,7 @@
 <a href="admissions-apply-now.html" class="floating-apply">Apply</a>
 
   <section style="position:relative;min-height:52vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
-    <img src="https://directus.valorcollege.edu/assets/6A3C8B6E-A7EE-4A78-9B31-BD4983DD7886?width=1200&quality=80" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4">
+    <img src="https://directus.valorcollege.edu/assets/7BCA1821-CEF3-4D98-A0A3-8ECC312AD6D7?width=1200&quality=80" alt="" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.55) 45%,rgba(16,14,13,.96) 100%)"></div>
     <div style="position:relative;width:100%;max-width:900px;margin:0 auto;padding:60px 32px;text-align:center">
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Alumni</div>
@@ -607,8 +618,8 @@
         <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
           <a href="student-life.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Student Life Overview</a>
           <a href="student-life-get-involved.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Get Involved</a>
+          <a href="student-life-mac-cafe.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Mac Café &amp; Meal Menu</a>
           <a href="student-life-handbook.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Student Handbook</a>
-          <a href="student-life-portal.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Student Portal</a>
         </div>
       </div>
       <div>

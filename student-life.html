@@ -209,6 +209,16 @@
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
+  @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .marquee-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .marquee-track{display:flex;width:max-content;animation:marquee-scroll 32s linear infinite}
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+  .float-tag{animation:vfloat 5.5s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){.float-tag{animation:none}}
+  @media (max-width:1320px){.float-tag{display:none!important}}
+  .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
+  .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
+  @media (max-width:1200px){.tilt-tile{transform:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -485,6 +495,7 @@
                 <a href="student-life-accessibility.html" class="mega-sublink"><i class="fa-solid fa-chevron-right"></i>Academic Support &amp; Accessibility</a>
               </div>
               <a href="student-life-work-study.html">Work-Study Program</a>
+              <a href="student-life-mac-cafe.html">Mac Café &amp; Meal Menu</a>
               <a href="student-life-handbook.html">Student Handbook</a>
                 </div>
               </div>
@@ -537,6 +548,10 @@
   <section id="student-life-hero" style="position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <video src="https://directus.valorcollege.edu/assets/73C04156-E3A8-492F-9369-1E2461C3A7DB" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="https://directus.valorcollege.edu/assets/BDF23190-E5A9-4479-909E-8226AE9102B4?width=1200&quality=80" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55"></video>
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.3) 0%,rgba(16,14,13,.4) 45%,rgba(16,14,13,.96) 100%)"></div>
+    <div class="float-tag" style="position:absolute;top:20%;left:6%;animation-delay:0s;display:inline-flex;align-items:center;gap:8px;background:rgba(250,245,238,.08);border:1px solid rgba(250,245,238,.18);backdrop-filter:blur(6px);color:rgba(250,245,238,.85);font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:10px 16px;border-radius:999px;z-index:1"><i class="fa-solid fa-hands-praying" style="color:#FF8A93;font-size:12px"></i> Worship</div>
+    <div class="float-tag" style="position:absolute;top:16%;right:6%;animation-delay:1.2s;display:inline-flex;align-items:center;gap:8px;background:rgba(250,245,238,.08);border:1px solid rgba(250,245,238,.18);backdrop-filter:blur(6px);color:rgba(250,245,238,.85);font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:10px 16px;border-radius:999px;z-index:1"><i class="fa-solid fa-heart" style="color:#FF8A93;font-size:12px"></i> Ministry</div>
+    <div class="float-tag" style="position:absolute;bottom:22%;left:8%;animation-delay:2.1s;display:inline-flex;align-items:center;gap:8px;background:rgba(250,245,238,.08);border:1px solid rgba(250,245,238,.18);backdrop-filter:blur(6px);color:rgba(250,245,238,.85);font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:10px 16px;border-radius:999px;z-index:1"><i class="fa-solid fa-people-group" style="color:#FF8A93;font-size:12px"></i> Belonging</div>
+    <div class="float-tag" style="position:absolute;bottom:18%;right:5%;animation-delay:.6s;display:inline-flex;align-items:center;gap:8px;background:rgba(250,245,238,.08);border:1px solid rgba(250,245,238,.18);backdrop-filter:blur(6px);color:rgba(250,245,238,.85);font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:10px 16px;border-radius:999px;z-index:1"><i class="fa-solid fa-compass" style="color:#FF8A93;font-size:12px"></i> Calling</div>
     <div style="position:relative;width:100%;max-width:1000px;margin:0 auto;padding:60px 32px;text-align:center">
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:18px">Student Life</div>
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(38px,7vw,96px);line-height:.98;letter-spacing:-.03em;text-wrap:balance">This Is Life at Valor.</h1>
@@ -558,20 +573,46 @@
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">You Belong Here.</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">College is about more than where you study. It's about the people you experience it with. At Valor, students build meaningful relationships through everyday campus life, shared experiences, ministry, and community.</p>
     </div>
-    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/A44193A5-580C-40B9-B556-09267470620B?width=1200&quality=80" alt="Campus community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Worship gathering" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/DA9EC617-74E6-4EE0-B089-AA6DF2C4F3F0?width=1200&quality=80" alt="Student life" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="https://directus.valorcollege.edu/assets/D89D4CD6-C9C9-4B0E-8EE3-A8D441E12669?width=1200&quality=80" alt="Students together" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/3C54B9CF-68BB-4B6E-B7D3-3EC0585284C4?width=1200&quality=80" alt="Campus life" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="https://directus.valorcollege.edu/assets/0EC30D40-F732-41A0-9B02-2EE04B8E38BC?width=1200&quality=80" alt="Community fellowship" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/D4C9C49B-3E6B-45ED-AC7A-187D24C18943?width=1200&quality=80" alt="Ministry team" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="https://directus.valorcollege.edu/assets/25FADC64-3582-4861-84EB-9704E2036BC9?width=1200&quality=80" alt="Student fellowship" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/0E27E0B1-B1E1-4982-A4E1-4D30C6AA67E1?width=1200&quality=80" alt="On campus" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="https://directus.valorcollege.edu/assets/0D12328F-7271-4D8F-BA91-C4B991AE8AFB?width=1200&quality=80" alt="Cohort life" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/6A3C8B6E-A7EE-4A78-9B31-BD4983DD7886?width=1200&quality=80" alt="Community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" class="gallery-offset" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4;margin-top:34px"><img src="https://directus.valorcollege.edu/assets/FEAD2F38-77AE-4EE6-84A2-4732EE79400C?width=1200&quality=80" alt="Campus moment" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
-      <div data-reveal="" style="border-radius:16px;overflow:hidden;aspect-ratio:3/4"><img src="https://directus.valorcollege.edu/assets/92C8D4A3-9778-43A7-A891-253DADA13BBB?width=1200&quality=80" alt="Student gathering" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease" style-hover="transform:scale(1.06)"></div>
+    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px 16px">
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-2.5deg)"><img src="https://directus.valorcollege.edu/assets/A44193A5-580C-40B9-B556-09267470620B?width=1200&quality=80" alt="Campus community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" class="gallery-offset" style="aspect-ratio:3/4;margin-top:34px">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(1.8deg)"><img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Worship gathering" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-1.6deg)"><img src="https://directus.valorcollege.edu/assets/DA9EC617-74E6-4EE0-B089-AA6DF2C4F3F0?width=1200&quality=80" alt="Student life" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" class="gallery-offset" style="aspect-ratio:3/4;margin-top:34px">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(2.6deg)"><img src="https://directus.valorcollege.edu/assets/D89D4CD6-C9C9-4B0E-8EE3-A8D441E12669?width=1200&quality=80" alt="Students together" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-2deg)"><img src="https://directus.valorcollege.edu/assets/3C54B9CF-68BB-4B6E-B7D3-3EC0585284C4?width=1200&quality=80" alt="Campus life" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" class="gallery-offset" style="aspect-ratio:3/4;margin-top:34px">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(1.5deg)"><img src="https://directus.valorcollege.edu/assets/0EC30D40-F732-41A0-9B02-2EE04B8E38BC?width=1200&quality=80" alt="Community fellowship" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-3deg)"><img src="https://directus.valorcollege.edu/assets/D4C9C49B-3E6B-45ED-AC7A-187D24C18943?width=1200&quality=80" alt="Ministry team" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" class="gallery-offset" style="aspect-ratio:3/4;margin-top:34px">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(2.2deg)"><img src="https://directus.valorcollege.edu/assets/25FADC64-3582-4861-84EB-9704E2036BC9?width=1200&quality=80" alt="Student fellowship" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-1.8deg)"><img src="https://directus.valorcollege.edu/assets/0E27E0B1-B1E1-4982-A4E1-4D30C6AA67E1?width=1200&quality=80" alt="On campus" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" class="gallery-offset" style="aspect-ratio:3/4;margin-top:34px">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(2.8deg)"><img src="https://directus.valorcollege.edu/assets/0D12328F-7271-4D8F-BA91-C4B991AE8AFB?width=1200&quality=80" alt="Cohort life" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-2.2deg)"><img src="https://directus.valorcollege.edu/assets/6A3C8B6E-A7EE-4A78-9B31-BD4983DD7886?width=1200&quality=80" alt="Community" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" class="gallery-offset" style="aspect-ratio:3/4;margin-top:34px">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(1.6deg)"><img src="https://directus.valorcollege.edu/assets/FEAD2F38-77AE-4EE6-84A2-4732EE79400C?width=1200&quality=80" alt="Campus moment" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
+      <div data-reveal="" style="aspect-ratio:3/4">
+        <div class="tilt-tile" style="width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(16,14,13,.14);transform:rotate(-2.6deg)"><img src="https://directus.valorcollege.edu/assets/92C8D4A3-9778-43A7-A891-253DADA13BBB?width=1200&quality=80" alt="Student gathering" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:44px">
       <a data-reveal="" href="student-life-get-involved.html" style="font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#100E0D;border-bottom:2px solid #E01B2E;padding-bottom:4px" style-hover="color:#E01B2E">Get Involved →</a>
@@ -586,6 +627,26 @@
       <h2 style="margin:0 0 28px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,5vw,58px);line-height:1.05;letter-spacing:-.03em;color:#FAF5EE;text-wrap:balance">More Than an Education.</h2>
       <p style="margin:0 auto;max-width:58ch;font-size:clamp(17px,2vw,20px);line-height:1.65;color:rgba(250,245,238,.88)">At Valor, spiritual formation is part of everyday life. Through chapel, worship, prayer, ministry, and serving others, students are challenged to deepen their relationship with God and put their faith into action.</p>
     </div>
+    <div class="marquee-wrap" style="position:absolute;left:0;right:0;bottom:0;padding:20px 0;border-top:1px solid rgba(250,245,238,.14)">
+      <div class="marquee-track">
+        <span style="display:inline-flex;align-items:center;gap:28px;padding-right:28px">
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Chapel</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Worship</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Prayer</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Ministry</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Service</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Faith</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        </span>
+        <span aria-hidden="true" style="display:inline-flex;align-items:center;gap:28px;padding-right:28px">
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Chapel</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Worship</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Prayer</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Ministry</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Service</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        <span style="display:inline-flex;align-items:center;gap:28px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.55)">Faith</span><span style="color:#E01B2E;font-size:12px">&#10022;</span></span>
+        </span>
+      </div>
+    </div>
   </section>
 
   <section id="experience-valor" style="max-width:1320px;margin:0 auto;padding:110px 32px 40px">
@@ -594,25 +655,28 @@
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">There's More to College Than Class.</h2>
     </div>
     <div class="programs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-      <a href="student-life-get-involved.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,14,13,.3);color:#fff">
+      <a href="student-life-get-involved.html" data-reveal="" style="position:relative;height:360px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,14,13,.32);color:#fff">
         <img src="https://directus.valorcollege.edu/assets/DA9EC617-74E6-4EE0-B089-AA6DF2C4F3F0?width=1200&quality=80" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,0) 62%)"></div>
+        <div style="position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;color:#fff">01</div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;line-height:1.1;color:#FAF5EE;margin-bottom:8px">Get Involved</div>
           <p style="margin:0;font-size:13.5px;line-height:1.5;color:rgba(250,245,238,.82)">Connect, serve, lead, and become part of the Valor community.</p>
         </div>
       </a>
-      <a href="student-life-events-calendar.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,14,13,.3);color:#fff">
+      <a href="student-life-events-calendar.html" data-reveal="" style="position:relative;height:360px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,14,13,.32);color:#fff">
         <img src="https://directus.valorcollege.edu/assets/3C54B9CF-68BB-4B6E-B7D3-3EC0585284C4?width=1200&quality=80" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,0) 62%)"></div>
+        <div style="position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;color:#fff">02</div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;line-height:1.1;color:#FAF5EE;margin-bottom:8px">Events & Campus Life</div>
           <p style="margin:0;font-size:13.5px;line-height:1.5;color:rgba(250,245,238,.82)">Experience the moments that bring the Valor community together.</p>
         </div>
       </a>
-      <a href="student-life-get-involved.html" data-reveal="" style="position:relative;height:340px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,14,13,.3);color:#fff">
+      <a href="student-life-mac-cafe.html" data-reveal="" style="position:relative;height:360px;border-radius:20px;overflow:hidden;display:block;background:#100E0D;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,14,13,.32);color:#fff">
         <img src="https://directus.valorcollege.edu/assets/0EC30D40-F732-41A0-9B02-2EE04B8E38BC?width=1200&quality=80" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7">
         <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92),rgba(16,14,13,0) 62%)"></div>
+        <div style="position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;color:#fff">03</div>
         <div style="position:absolute;left:24px;right:24px;bottom:22px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;line-height:1.1;color:#FAF5EE;margin-bottom:8px">Mac Café</div>
           <p style="margin:0;font-size:13.5px;line-height:1.5;color:rgba(250,245,238,.82)">Grab a meal, connect with friends, and experience another part of everyday life at Valor.</p>
@@ -637,7 +701,7 @@
       <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;font-size:13px">
         <a href="student-life-handbook.html" style="color:rgba(250,245,238,.6)" style-hover="color:#fff">Student Handbook</a>
         <span style="color:rgba(250,245,238,.25)">·</span>
-        <a href="student-life-get-involved.html" style="color:rgba(250,245,238,.6)" style-hover="color:#fff">Mac Café Menu</a>
+        <a href="student-life-mac-cafe.html" style="color:rgba(250,245,238,.6)" style-hover="color:#fff">Mac Café Menu</a>
         <span style="color:rgba(250,245,238,.25)">·</span>
         <a href="student-life-events-calendar.html" style="color:rgba(250,245,238,.6)" style-hover="color:#fff">Student Events</a>
       </div>
@@ -711,8 +775,8 @@
         <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
           <a href="student-life.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Student Life Overview</a>
           <a href="student-life-get-involved.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Get Involved</a>
+          <a href="student-life-mac-cafe.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Mac Café &amp; Meal Menu</a>
           <a href="student-life-handbook.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Student Handbook</a>
-          <a href="student-life-portal.html" style="color:rgba(250,245,238,.7)" style-hover="color:#fff">Student Portal</a>
         </div>
       </div>
       <div>

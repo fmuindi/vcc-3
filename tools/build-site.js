@@ -166,6 +166,7 @@ const NAV = [
         { label: 'Academic Support & Accessibility', href: 'student-life-accessibility.html' },
       ] },
       { label: 'Work-Study Program', href: 'student-life-work-study.html' },
+      { label: 'Mac Café & Meal Menu', href: 'student-life-mac-cafe.html' },
       { label: 'Student Handbook', href: 'student-life-handbook.html' },
     ],
     featured: [
@@ -211,8 +212,8 @@ const FOOTER_COLUMNS = [
   { label: 'Student Life', items: [
     { label: 'Student Life Overview', href: 'student-life.html' },
     { label: 'Get Involved', href: 'student-life-get-involved.html' },
+    { label: 'Mac Café & Meal Menu', href: 'student-life-mac-cafe.html' },
     { label: 'Student Handbook', href: 'student-life-handbook.html' },
-    { label: 'Student Portal', href: 'student-life-portal.html' },
   ] },
   { label: 'Alumni', items: [
     { label: 'Alumni Overview', href: 'alumni.html' },
@@ -311,6 +312,16 @@ const BASE_STYLE = `<style>
   a:hover{color:#B3121F}
   @keyframes vfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   @media (prefers-reduced-motion:reduce){.collage-bounce{animation:none!important}}
+  @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .marquee-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .marquee-track{display:flex;width:max-content;animation:marquee-scroll 32s linear infinite}
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+  .float-tag{animation:vfloat 5.5s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){.float-tag{animation:none}}
+  @media (max-width:1320px){.float-tag{display:none!important}}
+  .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
+  .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
+  @media (max-width:1200px){.tilt-tile{transform:none!important}}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}

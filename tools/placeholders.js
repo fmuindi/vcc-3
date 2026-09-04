@@ -44,6 +44,7 @@ const PAGES = [
   { href: 'student-life-support.html', section: 'Student Life', title: 'Student Support', blurb: 'Support resources available to every Valor student.' },
   { href: 'student-life-accessibility.html', section: 'Student Life', title: 'Academic Support & Accessibility', blurb: 'Disability services and academic accommodations.' },
   { href: 'student-life-work-study.html', section: 'Student Life', title: 'Work-Study Program', blurb: 'How the work-study program works and how to apply.' },
+  { href: 'student-life-mac-cafe.html', section: 'Student Life', title: 'Mac Café & Meal Menu', blurb: 'Meal plans, hours, and the menu at Mac Café.' },
   { href: 'student-life-handbook.html', section: 'Student Life', title: 'Student Handbook', blurb: 'Campus policies and expectations for Valor students.' },
   { href: 'student-life-portal.html', section: 'Student Life', title: 'Student Portal', blurb: 'Sign in to Populi, the system that powers the Valor student portal, to manage classes, grades, and billing.', isPortal: true },
   { href: 'alumni.html', section: 'Alumni', title: 'Alumni Overview', blurb: "Your Valor journey doesn't end at graduation — alumni stories, City Harvest Network, and ways to stay connected." },
