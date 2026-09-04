@@ -3,7 +3,7 @@ const path = require('path');
 const { renderPage, ROOT, IMG } = require('./build-site');
 const { HOME_BODY } = require('./home');
 const { PAGES, placeholderBody } = require('./placeholders');
-const { studentLifeGallery } = require('./studentLife');
+const { STUDENT_LIFE_OVERVIEW_BODY } = require('./studentLifeOverview');
 const { ABOUT_LEGACY_BODY } = require('./aboutLegacy');
 const { ABOUT_MEET_TEAM_BODY } = require('./aboutMeetTeam');
 const { ABOUT_PRESIDENT_BODY } = require('./aboutPresident');
@@ -39,7 +39,7 @@ write('index.html', renderPage({
 
 PAGES.forEach((p) => {
   let bodyHtml = placeholderBody(p);
-  if (p.href === 'student-life.html') bodyHtml += '\n\n' + studentLifeGallery();
+  if (p.href === 'student-life.html') bodyHtml = STUDENT_LIFE_OVERVIEW_BODY;
   if (p.href === 'about-our-legacy.html') bodyHtml = ABOUT_LEGACY_BODY;
   if (p.href === 'about-meet-our-team.html') bodyHtml = ABOUT_MEET_TEAM_BODY;
   if (p.href === 'about-why-valor.html') bodyHtml = ABOUT_WHY_VALOR_BODY;
