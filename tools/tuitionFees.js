@@ -24,14 +24,19 @@ const BREAKDOWN_GROUPS = [
   { key: 'additional-fees', icon: 'fa-circle-plus', title: 'Additional Fees', items: ['Credit by Examination', 'Transcript Requests', 'Late Registration', 'Graduation', 'Replacement Fees', 'Other applicable fees'] },
 ];
 
-const breakdownGroup = (g) => `      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
-        <button type="button" data-view-all="${g.key}" data-more-label="${g.title} +" data-less-label="${g.title} –" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
-          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid ${g.icon}" style="color:#E01B2E;font-size:17px"></i></div>
-          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">${g.title} +</span>
+const breakdownGroup = (g) => `      <div class="acc-row" data-reveal="">
+        <button type="button" class="acc-header" data-view-all="${g.key}" data-more-label="${g.title}" data-less-label="${g.title}">
+          <div style="display:flex;align-items:center;gap:16px;min-width:0">
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid ${g.icon}" style="color:#E01B2E;font-size:16px"></i></div>
+            <span data-swap-label="" class="acc-title">${g.title}</span>
+          </div>
+          <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="${g.key}" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="display:flex;flex-direction:column;gap:12px">
-${g.items.map((t) => `            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> ${t}</div>`).join('\n')}
+        <div data-more="${g.key}">
+          <div class="acc-panel-inner">
+            <div class="acc-bullet-list" style="margin-bottom:0">
+${g.items.map((t) => `              <div class="acc-bullet"><span class="acc-bullet-dot"></span>${t}</div>`).join('\n')}
+            </div>
           </div>
         </div>
       </div>`;
@@ -90,7 +95,7 @@ ${BREAKDOWN.map(breakdownRow).join('\n')}
       <h2 data-reveal="" style="margin:0 0 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">2026–2027 Tuition &amp; Fee Breakdown</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Review the current tuition, housing, and applicable student fees for the 2026–2027 academic year.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="acc-group" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
 ${BREAKDOWN_GROUPS.map(breakdownGroup).join('\n')}
     </div>
   </section>

@@ -25,16 +25,16 @@ const TERMS_LINK = SCHOLARSHIP_APPLY_LINK;
 // scholarship (confirmed updated at these same URLs, including a
 // corrected City Harvest Network asset — the version supplied for the
 // first pass was an Illustrator .ai file, which browsers can't render).
-// `icon` (Font Awesome) is kept only as a big, low-opacity decorative
-// watermark behind each card header — a purely geometric texture, not a
-// brand mark, so it doesn't need to match the real logos.
+// Displayed in each logo's own original colors — a CSS mask/filter
+// attempt to force a single brand color was tried and reverted, since it
+// depends on the source images having real alpha transparency, which
+// isn't guaranteed for these assets and made the icons disappear.
 const CARD_GRADIENT = 'linear-gradient(135deg,#1a0508 0%,#4a0d15 55%,#E01B2E 100%)';
 
 const SCHOLARSHIPS = [
   {
     key: 'world-changer',
     num: '01',
-    icon: 'fa-earth-americas',
     iconUrl: 'https://directus.valorcollege.edu/assets/27499A52-44AD-49A7-AE25-619438EA7EFD',
     title: 'World Changer Scholarship',
     stat: '20%', statLabel: 'of Tuition',
@@ -46,7 +46,6 @@ const SCHOLARSHIPS = [
   {
     key: 'word-network',
     num: '02',
-    icon: 'fa-tower-broadcast',
     iconUrl: 'https://directus.valorcollege.edu/assets/4176C0DF-9356-4770-8428-47E0D2AB4FF8',
     title: 'Word Network Scholarship',
     stat: '20%', statLabel: 'of Tuition',
@@ -58,7 +57,6 @@ const SCHOLARSHIPS = [
   {
     key: 'city-harvest',
     num: '03',
-    icon: 'fa-city',
     iconUrl: 'https://directus.valorcollege.edu/assets/34612451-998F-4D68-BE8B-F31CD865B2F3',
     title: 'City Harvest Network Scholarship',
     stat: '25%', statLabel: 'of Tuition',
@@ -70,7 +68,6 @@ const SCHOLARSHIPS = [
   {
     key: 'presidential',
     num: '04',
-    icon: 'fa-shield-halved',
     iconUrl: 'https://directus.valorcollege.edu/assets/8D439628-AFCF-4B10-B5C9-9D81171BDAE8',
     title: 'Presidential Scholarship',
     stat: 'TBD', statLabel: 'Award Amount',
@@ -131,7 +128,7 @@ const detailBullets = (s) => [
 const detailAccordion = (s) => `      <div id="${s.key}" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
         <button type="button" class="acc-header" data-view-all="${s.key}-details" data-more-label="${s.title}" data-less-label="${s.title}">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:9px;overflow:hidden"><div style="width:100%;height:100%;background:#E01B2E;-webkit-mask-image:url('${s.iconUrl}');-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;mask-image:url('${s.iconUrl}');mask-size:contain;mask-repeat:no-repeat;mask-position:center"></div></div>
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="${s.iconUrl}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
             <span data-swap-label="" class="acc-title">${s.title}</span>
           </div>
           <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>

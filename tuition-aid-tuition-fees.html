@@ -602,64 +602,84 @@
       <h2 data-reveal="" style="margin:0 0 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">2026–2027 Tuition &amp; Fee Breakdown</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Review the current tuition, housing, and applicable student fees for the 2026–2027 academic year.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
-        <button type="button" data-view-all="tuition" data-more-label="Tuition +" data-less-label="Tuition –" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
-          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-graduation-cap" style="color:#E01B2E;font-size:17px"></i></div>
-          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Tuition +</span>
+    <div class="acc-group" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
+      <div class="acc-row" data-reveal="">
+        <button type="button" class="acc-header" data-view-all="tuition" data-more-label="Tuition" data-less-label="Tuition">
+          <div style="display:flex;align-items:center;gap:16px;min-width:0">
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-graduation-cap" style="color:#E01B2E;font-size:16px"></i></div>
+            <span data-swap-label="" class="acc-title">Tuition</span>
+          </div>
+          <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="tuition" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Full time tuition</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Part time tuition</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Additional credit hours</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Audit tuition</div>
+        <div data-more="tuition">
+          <div class="acc-panel-inner">
+            <div class="acc-bullet-list" style="margin-bottom:0">
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Full time tuition</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Part time tuition</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Additional credit hours</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Audit tuition</div>
+            </div>
           </div>
         </div>
       </div>
-      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
-        <button type="button" data-view-all="student-fees" data-more-label="Student Fees +" data-less-label="Student Fees –" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
-          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-file-invoice-dollar" style="color:#E01B2E;font-size:17px"></i></div>
-          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Student Fees +</span>
+      <div class="acc-row" data-reveal="">
+        <button type="button" class="acc-header" data-view-all="student-fees" data-more-label="Student Fees" data-less-label="Student Fees">
+          <div style="display:flex;align-items:center;gap:16px;min-width:0">
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-file-invoice-dollar" style="color:#E01B2E;font-size:16px"></i></div>
+            <span data-swap-label="" class="acc-title">Student Fees</span>
+          </div>
+          <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="student-fees" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Administrative Fee</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Technology Fee</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Course Resource Fee</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Program specific fees</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Parking</div>
+        <div data-more="student-fees">
+          <div class="acc-panel-inner">
+            <div class="acc-bullet-list" style="margin-bottom:0">
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Administrative Fee</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Technology Fee</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Course Resource Fee</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Program specific fees</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Parking</div>
+            </div>
           </div>
         </div>
       </div>
-      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
-        <button type="button" data-view-all="housing-meals" data-more-label="Housing & Meals +" data-less-label="Housing & Meals –" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
-          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-house" style="color:#E01B2E;font-size:17px"></i></div>
-          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Housing & Meals +</span>
+      <div class="acc-row" data-reveal="">
+        <button type="button" class="acc-header" data-view-all="housing-meals" data-more-label="Housing & Meals" data-less-label="Housing & Meals">
+          <div style="display:flex;align-items:center;gap:16px;min-width:0">
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-house" style="color:#E01B2E;font-size:16px"></i></div>
+            <span data-swap-label="" class="acc-title">Housing & Meals</span>
+          </div>
+          <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="housing-meals" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Double Occupancy</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Single Occupancy</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Room and Board Fee</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Dorm Activities and Laundry Fee</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Meal Plan</div>
+        <div data-more="housing-meals">
+          <div class="acc-panel-inner">
+            <div class="acc-bullet-list" style="margin-bottom:0">
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Double Occupancy</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Single Occupancy</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Room and Board Fee</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Dorm Activities and Laundry Fee</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Meal Plan</div>
+            </div>
           </div>
         </div>
       </div>
-      <div data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px">
-        <button type="button" data-view-all="additional-fees" data-more-label="Additional Fees +" data-less-label="Additional Fees –" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
-          <div style="flex:none;width:44px;height:44px;border-radius:50%;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-circle-plus" style="color:#E01B2E;font-size:17px"></i></div>
-          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">Additional Fees +</span>
+      <div class="acc-row" data-reveal="">
+        <button type="button" class="acc-header" data-view-all="additional-fees" data-more-label="Additional Fees" data-less-label="Additional Fees">
+          <div style="display:flex;align-items:center;gap:16px;min-width:0">
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:rgba(224,27,46,.08);display:grid;place-items:center"><i class="fa-solid fa-circle-plus" style="color:#E01B2E;font-size:16px"></i></div>
+            <span data-swap-label="" class="acc-title">Additional Fees</span>
+          </div>
+          <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
         </button>
-        <div data-more="additional-fees" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Credit by Examination</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Transcript Requests</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Late Registration</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Graduation</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Replacement Fees</div>
-            <div style="display:flex;align-items:center;gap:12px;font-size:14.5px;color:rgba(16,14,13,.72)"><i class="fa-solid fa-circle-check" style="color:#E01B2E;font-size:12px"></i> Other applicable fees</div>
+        <div data-more="additional-fees">
+          <div class="acc-panel-inner">
+            <div class="acc-bullet-list" style="margin-bottom:0">
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Credit by Examination</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Transcript Requests</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Late Registration</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Graduation</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Replacement Fees</div>
+              <div class="acc-bullet"><span class="acc-bullet-dot"></span>Other applicable fees</div>
+            </div>
           </div>
         </div>
       </div>
