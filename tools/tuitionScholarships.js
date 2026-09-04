@@ -82,14 +82,15 @@ const SCHOLARSHIPS = [
 ];
 
 const scholarshipCard = (s) => `      <div data-reveal="" style="display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:22px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-6px);box-shadow:0 24px 50px rgba(16,14,13,.16)">
-        <div style="position:relative;background:${CARD_GRADIENT};padding:30px 26px 24px;overflow:hidden">
-          <i class="fa-solid ${s.icon}" style="position:absolute;right:-14px;bottom:-22px;font-size:104px;color:rgba(255,255,255,.08);transform:rotate(-8deg)"></i>
-          <div style="position:relative;display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px">
-            <div style="width:52px;height:52px;display:grid;place-items:center"><img src="${s.iconUrl}" alt="" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 2px 5px rgba(0,0,0,.3));opacity:.96"></div>
-            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.45)">${s.num}</div>
+        <div style="position:relative;background:${CARD_GRADIENT};padding:28px 22px;overflow:hidden;min-height:168px">
+          <div style="position:relative;display:flex;align-items:center;gap:14px">
+            <div style="flex:1;min-width:0">
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:14px">${s.num}</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,3vw,38px);line-height:1;color:#fff">${s.stat}</div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:6px">${s.statLabel}</div>
+            </div>
+            <div style="flex:none;width:88px;height:88px;display:grid;place-items:center"><img src="${s.iconUrl}" alt="" loading="lazy" decoding="async" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 3px 8px rgba(0,0,0,.3));opacity:.96"></div>
           </div>
-          <div style="position:relative;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,3vw,38px);line-height:1;color:#fff">${s.stat}</div>
-          <div style="position:relative;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:6px">${s.statLabel}</div>
         </div>
         <div style="display:flex;flex-direction:column;flex:1;padding:26px 26px 28px">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;line-height:1.3;color:#100E0D;min-height:44px;margin-bottom:10px">${s.title}</div>
