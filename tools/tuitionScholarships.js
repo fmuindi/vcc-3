@@ -17,14 +17,17 @@ const SCHOLARSHIP_APPLY_LINK = 'https://valorcollege.edu/scholarships';
 const TERMS_LINK = SCHOLARSHIP_APPLY_LINK;
 
 // One unified visual system for all 4 scholarships — same gradient panel,
-// same icon treatment, same stat hierarchy — replacing the mismatched
-// logo artwork on the old site (built as a coordinated "collection"
-// rather than four separate ads, per the brief's own framing). The City
-// Harvest Network asset supplied for this page is an Illustrator (.ai)
-// file, which browsers can't render as an <img>, so all 4 use Font
-// Awesome icons instead — this also guarantees the "same dimensions,
-// same typography, same hierarchy, same background" the brief asked for,
-// which 3 mismatched raster/vector logos couldn't have delivered anyway.
+// same icon tile, same stat hierarchy — replacing the mismatched logo
+// artwork on the old site (built as a coordinated "collection" rather
+// than four separate ads, per the brief's own framing).
+//
+// iconUrl points at the client's own Directus-hosted brand mark for each
+// scholarship (confirmed updated at these same URLs, including a
+// corrected City Harvest Network asset — the version supplied for the
+// first pass was an Illustrator .ai file, which browsers can't render).
+// `icon` (Font Awesome) is kept only as a big, low-opacity decorative
+// watermark behind each card header — a purely geometric texture, not a
+// brand mark, so it doesn't need to match the real logos.
 const CARD_GRADIENT = 'linear-gradient(135deg,#1a0508 0%,#4a0d15 55%,#E01B2E 100%)';
 
 const SCHOLARSHIPS = [
@@ -32,9 +35,10 @@ const SCHOLARSHIPS = [
     key: 'world-changer',
     num: '01',
     icon: 'fa-earth-americas',
+    iconUrl: 'https://directus.valorcollege.edu/assets/27499A52-44AD-49A7-AE25-619438EA7EFD',
     title: 'World Changer Scholarship',
     stat: '20%', statLabel: 'of Tuition',
-    award: 'Up to 20% of Tuition',
+    award: 'Up to 20% of tuition',
     copy: 'Created for students ready to answer the call, pursue their purpose and become World Changers through a Valor education.',
     available: 'On Campus + Online',
     programs: 'On Campus and Online',
@@ -43,9 +47,10 @@ const SCHOLARSHIPS = [
     key: 'word-network',
     num: '02',
     icon: 'fa-tower-broadcast',
+    iconUrl: 'https://directus.valorcollege.edu/assets/4176C0DF-9356-4770-8428-47E0D2AB4FF8',
     title: 'Word Network Scholarship',
     stat: '20%', statLabel: 'of Tuition',
-    award: 'Up to 20% of Tuition',
+    award: 'Up to 20% of tuition',
     copy: 'A scholarship opportunity helping eligible students take the next step toward their education at Valor Christian College.',
     available: null,
     programs: null,
@@ -54,9 +59,10 @@ const SCHOLARSHIPS = [
     key: 'city-harvest',
     num: '03',
     icon: 'fa-city',
+    iconUrl: 'https://directus.valorcollege.edu/assets/34612451-998F-4D68-BE8B-F31CD865B2F3',
     title: 'City Harvest Network Scholarship',
     stat: '25%', statLabel: 'of Tuition',
-    award: 'Up to 25% of Tuition',
+    award: 'Up to 25% of tuition',
     copy: 'Available to eligible students connected to the City Harvest Network who are pursuing their education and preparing to impact their communities for the Kingdom.',
     available: 'On Campus + Online',
     programs: 'On Campus and Online',
@@ -65,9 +71,10 @@ const SCHOLARSHIPS = [
     key: 'presidential',
     num: '04',
     icon: 'fa-shield-halved',
+    iconUrl: 'https://directus.valorcollege.edu/assets/8D439628-AFCF-4B10-B5C9-9D81171BDAE8',
     title: 'Presidential Scholarship',
     stat: 'TBD', statLabel: 'Award Amount',
-    award: 'Award Amount: To Be Confirmed',
+    award: 'Award amount: to be confirmed',
     copy: 'A special scholarship opportunity for eligible on-campus students who help introduce the Valor experience to a future World Changer.',
     available: 'On Campus',
     programs: 'On Campus',
@@ -78,7 +85,7 @@ const scholarshipCard = (s) => `      <div data-reveal="" style="display:flex;fl
         <div style="position:relative;background:${CARD_GRADIENT};padding:30px 26px 24px;overflow:hidden">
           <i class="fa-solid ${s.icon}" style="position:absolute;right:-14px;bottom:-22px;font-size:104px;color:rgba(255,255,255,.08);transform:rotate(-8deg)"></i>
           <div style="position:relative;display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px">
-            <div style="width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.14);backdrop-filter:blur(2px);display:grid;place-items:center"><i class="fa-solid ${s.icon}" style="color:#fff;font-size:21px"></i></div>
+            <div style="width:50px;height:50px;border-radius:14px;background:#fff;display:grid;place-items:center;padding:9px;overflow:hidden"><img src="${s.iconUrl}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
             <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.45)">${s.num}</div>
           </div>
           <div style="position:relative;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,3vw,38px);line-height:1;color:#fff">${s.stat}</div>
@@ -108,18 +115,33 @@ const stepCard = (s) => `      <div data-reveal="" style="display:flex;flex-dire
         <p style="flex:1;margin:0;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.65)">${s.copy}</p>
       </div>`;
 
-const detailAccordion = (s) => `      <div id="${s.key}" data-reveal="" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:16px;padding:26px 28px;scroll-margin-top:130px">
-        <button type="button" data-view-all="${s.key}-details" data-more-label="${s.title} +" data-less-label="${s.title} –" style="display:flex;align-items:center;gap:18px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left">
-          <div style="flex:none;width:44px;height:44px;border-radius:12px;background:${CARD_GRADIENT};display:grid;place-items:center"><i class="fa-solid ${s.icon}" style="color:#fff;font-size:16px"></i></div>
-          <span data-swap-label="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#100E0D">${s.title} +</span>
-        </button>
-        <div data-more="${s.key}-details" style="display:none;margin-top:22px;padding-top:22px;border-top:1px solid rgba(16,14,13,.08)">
-          <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:16px">
-            <div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:4px">Award</div><div style="font-size:14.5px;font-weight:700;color:#100E0D">${s.award}</div></div>
-            ${s.programs ? `<div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:4px">Programs</div><div style="font-size:14.5px;font-weight:700;color:#100E0D">${s.programs}</div></div>` : ''}
+// Facts-only bullet list — the brief's own placeholder text for this
+// section was literally "Short eligibility summary" (a drafting note,
+// not real copy), so rather than invent plausible-sounding eligibility
+// criteria, each bullet is a confirmed fact already given elsewhere in
+// the brief (award amount, program availability) plus a pointer to the
+// real Terms & Conditions for anything not covered here.
+const detailBullets = (s) => [
+  `Award: ${s.award}`,
+  s.programs ? `Programs: ${s.programs}` : null,
+  'Full eligibility requirements are available in the official Terms & Conditions.',
+].filter(Boolean);
+
+const detailAccordion = (s) => `      <div id="${s.key}" class="acc-row" data-reveal="" style="scroll-margin-top:130px">
+        <button type="button" class="acc-header" data-view-all="${s.key}-details" data-more-label="${s.title}" data-less-label="${s.title}">
+          <div style="display:flex;align-items:center;gap:16px;min-width:0">
+            <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid rgba(16,14,13,.08);display:grid;place-items:center;padding:7px;overflow:hidden"><img src="${s.iconUrl}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain"></div>
+            <span data-swap-label="" class="acc-title">${s.title}</span>
           </div>
-          <p style="margin:0 0 20px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.62);max-width:60ch">Full eligibility requirements to be confirmed — see the official Terms &amp; Conditions for this scholarship.</p>
-          <a href="${TERMS_LINK}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#B3121F" style-hover="color:#E01B2E">View Full Terms &amp; Conditions <i class="fa-solid fa-arrow-right" style="font-size:10px"></i></a>
+          <span class="acc-toggle-btn"><i class="fa-solid fa-chevron-down" style="font-size:13px"></i></span>
+        </button>
+        <div data-more="${s.key}-details" style="display:none">
+          <div class="acc-panel-inner">
+            <div class="acc-bullet-list">
+${detailBullets(s).map((b) => `              <div class="acc-bullet"><span class="acc-bullet-dot"></span>${b}</div>`).join('\n')}
+            </div>
+            <a href="${TERMS_LINK}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#B3121F" style-hover="color:#E01B2E">View Full Terms &amp; Conditions <i class="fa-solid fa-arrow-right" style="font-size:10px"></i></a>
+          </div>
         </div>
       </div>`;
 
@@ -165,7 +187,7 @@ ${STEPS.map(stepCard).join('\n')}
     <div style="max-width:640px;margin:0 auto 44px;text-align:center">
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Scholarship Details &amp; Eligibility</h2>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <div style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
 ${SCHOLARSHIPS.map(detailAccordion).join('\n')}
     </div>
   </section>
