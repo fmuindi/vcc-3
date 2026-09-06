@@ -322,6 +322,9 @@ const BASE_STYLE = `<style>
   .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
   .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
   @media (max-width:1200px){.tilt-tile{transform:none!important}}
+  .reel-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .reel-item{flex:none;scroll-snap-align:start;width:220px;transition:transform .3s ease,box-shadow .3s ease}
+  .reel-item:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(16,14,13,.3)}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
