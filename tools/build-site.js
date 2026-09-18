@@ -56,7 +56,7 @@ const IMG = {
   whyValorPageMinistry: 'https://directus.valorcollege.edu/assets/DD65CFDE-372A-4B5E-A48C-725CFF1E01A4?width=1200&quality=80',
   whyValorPageAcademics: 'https://directus.valorcollege.edu/assets/4027F968-995F-4267-8EAF-C03188A583F5?width=1200&quality=80',
   whyValorPageExperience: 'https://directus.valorcollege.edu/assets/ECBA7319-7829-44BD-8C70-D4E4B97C288E?width=1200&quality=80',
-  degreeProgramsHero: 'https://directus.valorcollege.edu/assets/B901B7A9-6161-417E-B1EA-3CA90B4F16F5?width=1200&quality=80',
+  degreeProgramsHero: 'https://directus.valorcollege.edu/assets/B901B7A9-6161-417E-B1EA-3CA90B4F16F5',
   creditForPriorLearningHero: 'https://directus.valorcollege.edu/assets/23BA4E15-6D6B-44A5-B3F1-7B2D4430D305?width=1200&quality=80',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
