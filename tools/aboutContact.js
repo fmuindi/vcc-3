@@ -149,7 +149,7 @@ ${DIRECTORY.map(directoryColumn).join('\n')}
   <section id="contact-form-section" style="background:#6E0F16;padding:100px 32px">
     <div style="max-width:1000px;margin:0 auto">
       <h2 data-reveal="" style="margin:0 0 56px;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);letter-spacing:.04em;text-transform:uppercase;color:#fff">Contact Form</h2>
-      <form class="contact-form" action="mailto:admissions@valorcollege.edu" method="post" enctype="text/plain">
+      <form id="contact-form" class="contact-form" novalidate>
         <div class="contact-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-bottom:40px">
           <div data-reveal="">
             <label for="contact-first-name" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">First Name*</label>
@@ -172,11 +172,89 @@ ${DIRECTORY.map(directoryColumn).join('\n')}
           <label for="contact-message" style="display:block;font-size:14px;color:#fff;margin-bottom:14px">Message*</label>
           <textarea id="contact-message" name="message" required rows="2" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:15px;padding:0 0 10px;font-family:Archivo,sans-serif;resize:vertical"></textarea>
         </div>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+          <label for="contact-website">Leave this field blank</label>
+          <input id="contact-website" type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <div id="contact-form-status" role="status" style="display:none;margin-bottom:24px;font-size:14px;line-height:1.6;color:#fff"></div>
         <div data-reveal="" style="text-align:right">
-          <button type="submit" style="background:#fff;color:#100E0D;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;border:none;border-radius:4px;cursor:pointer">Submit</button>
+          <button type="button" id="contact-submit-btn" style="background:#fff;color:#100E0D;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;border:none;border-radius:4px;cursor:pointer">Submit</button>
         </div>
       </form>
     </div>
-  </section>`;
+  </section>
+
+  <script>
+  (function () {
+    function showStatus(box, message, isError) {
+      box.textContent = message;
+      box.style.display = 'block';
+      box.style.color = isError ? '#FFD7D7' : '#fff';
+    }
+
+    // This site's runtime (assets/js/de7b7d31...js, mounted on <x-dc>/#dc-root
+    // around the whole page) owns click/submit handling at the root and a
+    // plain listener attached directly to the button at parse time gets lost
+    // once that runtime finishes its own render pass over the page. A
+    // capture-phase delegated listener on document runs before the root can
+    // swallow anything, and looking elements up fresh on every click (instead
+    // of caching references at parse time) survives that runtime re-rendering
+    // the button/form nodes.
+    document.addEventListener('click', function (e) {
+      var submitBtn = e.target.closest && e.target.closest('#contact-submit-btn');
+      if (!submitBtn) return;
+      var form = document.getElementById('contact-form');
+      var statusBox = document.getElementById('contact-form-status');
+      if (!form || !statusBox) return;
+
+      var payload = {
+        first_name: form.firstName.value.trim(),
+        last_name: form.lastName.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        message: form.message.value.trim(),
+      };
+
+      // This runtime strips the "required" attribute from inputs shortly
+      // after load, so native checkValidity()/reportValidity() can't be
+      // trusted here — validate the values directly instead.
+      if (!payload.first_name || !payload.last_name || !payload.email || !payload.phone || !payload.message) {
+        showStatus(statusBox, 'Please fill in every field before submitting.', true);
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+        showStatus(statusBox, 'Please enter a valid email address.', true);
+        return;
+      }
+
+      // Honeypot: bots fill every field, real visitors never see this one.
+      if (form.website.value) {
+        form.reset();
+        showStatus(statusBox, "Thanks — we've received your message and will be in touch soon.", false);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch('https://directus.valorcollege.edu/items/contact_submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          form.reset();
+          form.style.display = 'none';
+          showStatus(statusBox, "Thanks — we've received your message and will be in touch soon.", false);
+        })
+        .catch(function () {
+          showStatus(statusBox, 'Something went wrong sending this form. Please email us directly at admissions@valorcollege.edu and we\\'ll get back to you.', true);
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+        });
+    }, true);
+  })();
+  </script>`;
 
 module.exports = { ABOUT_CONTACT_BODY };
