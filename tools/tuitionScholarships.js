@@ -2,7 +2,12 @@ const { IMG } = require('./build-site');
 
 const ADMISSIONS_COUNSELOR_LINK = 'admissions-speak-with-a-counselor.html';
 const FINANCIAL_AID_LINK = 'tuition-aid-financial-aid.html#need-help';
-// TODO: the scholarship application is a single form covering all 4
+const REQUEST_INFO_LINK = 'admissions.html';
+// No real Populi/application URL exists anywhere on this site yet (same gap
+// noted in admissions-apply-now.html) — the general Admission Application
+// CTA shares that same interim destination until a real one is confirmed.
+const ADMISSION_APPLICATION_LINK = 'admissions-speak-with-a-counselor.html';
+// TODO: the scholarship application is a single form covering all 3
 // scholarships and currently lives on VCC's existing web system
 // (valorcollege.edu/scholarships), not this static site. The client's own
 // brief flagged that rebuilding it needs IT/web-team input first (how the
@@ -11,12 +16,12 @@ const FINANCIAL_AID_LINK = 'tuition-aid-financial-aid.html#need-help';
 // application in the interim rather than a non-functional mockup form.
 const SCHOLARSHIP_APPLY_LINK = 'https://valorcollege.edu/scholarships';
 // TODO: no Directus-hosted Terms & Conditions PDFs were supplied for any
-// of the 4 scholarships — routed to the same interim destination above
+// of the 3 scholarships — routed to the same interim destination above
 // until real document links exist (same migration pattern used for the
 // site's other PDFs).
 const TERMS_LINK = SCHOLARSHIP_APPLY_LINK;
 
-// One unified visual system for all 4 scholarships — same gradient panel,
+// One unified visual system for all 3 scholarships — same gradient panel,
 // same icon tile, same stat hierarchy — replacing the mismatched logo
 // artwork on the old site (built as a coordinated "collection" rather
 // than four separate ads, per the brief's own framing).
@@ -44,19 +49,8 @@ const SCHOLARSHIPS = [
     programs: 'On Campus and Online',
   },
   {
-    key: 'word-network',
-    num: '02',
-    iconUrl: 'https://directus.valorcollege.edu/assets/4176C0DF-9356-4770-8428-47E0D2AB4FF8',
-    title: 'Word Network Scholarship',
-    stat: '20%', statLabel: 'of Tuition',
-    award: 'Up to 20% of tuition',
-    copy: 'A scholarship opportunity helping eligible students take the next step toward their education at Valor Christian College.',
-    available: null,
-    programs: null,
-  },
-  {
     key: 'city-harvest',
-    num: '03',
+    num: '02',
     iconUrl: 'https://directus.valorcollege.edu/assets/34612451-998F-4D68-BE8B-F31CD865B2F3',
     title: 'City Harvest Network Scholarship',
     stat: '25%', statLabel: 'of Tuition',
@@ -67,7 +61,7 @@ const SCHOLARSHIPS = [
   },
   {
     key: 'presidential',
-    num: '04',
+    num: '03',
     iconUrl: 'https://directus.valorcollege.edu/assets/8D439628-AFCF-4B10-B5C9-9D81171BDAE8',
     title: 'Presidential Scholarship',
     stat: 'TBD', statLabel: 'Award Amount',
@@ -151,8 +145,9 @@ const TUITION_SCHOLARSHIPS_BODY = `  <section id="scholarships-hero" style="posi
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(34px,5.5vw,64px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance">Invest in Your Calling.</h1>
       <p data-reveal="" style="margin:0 auto 36px;max-width:58ch;font-size:17px;line-height:1.6;color:rgba(250,245,238,.85)">A Valor education is an investment in who you're called to become. Scholarship opportunities are available to help eligible students make their Valor education more affordable.</p>
       <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-        <a href="#opportunities" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Explore Scholarships <i class="fa-solid fa-arrow-down"></i></a>
-        <a href="${SCHOLARSHIP_APPLY_LINK}" target="_blank" rel="noopener" style="background:#FAF5EE;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Apply for a Scholarship</a>
+        <a href="${SCHOLARSHIP_APPLY_LINK}" target="_blank" rel="noopener" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply for a Scholarship</a>
+        <a href="${ADMISSION_APPLICATION_LINK}" style="background:#FAF5EE;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Admission Application</a>
+        <a href="${REQUEST_INFO_LINK}" style="border:1.5px solid rgba(250,245,238,.4);color:#FAF5EE;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(250,245,238,.1);color:#FAF5EE">Request Info</a>
       </div>
     </div>
   </section>
@@ -163,7 +158,7 @@ const TUITION_SCHOLARSHIPS_BODY = `  <section id="scholarships-hero" style="posi
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Explore Valor Scholarships</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Explore available scholarship opportunities and find the ones that may be right for you. Eligibility requirements and award amounts vary by scholarship.</p>
     </div>
-    <div class="programs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+    <div class="programs-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
 ${SCHOLARSHIPS.map(scholarshipCard).join('\n')}
     </div>
   </section>

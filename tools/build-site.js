@@ -673,7 +673,7 @@ ${BASE_STYLE}
 
 ${renderHeader()}
 
-<a href="admissions-apply-now.html" class="floating-apply">Apply</a>
+<a href="tuition-aid-scholarships.html" class="floating-apply">Apply</a>
 
 ${bodyHtml}
 
