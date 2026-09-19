@@ -4,19 +4,12 @@ const ADMISSIONS_COUNSELOR_LINK = 'admissions-speak-with-a-counselor.html';
 const FINANCIAL_AID_LINK = 'tuition-aid-financial-aid.html#need-help';
 const REQUEST_INFO_LINK = 'admissions.html';
 const ADMISSION_APPLICATION_LINK = 'admissions-application.html';
-// TODO: the scholarship application is a single form covering all 3
-// scholarships and currently lives on VCC's existing web system
-// (valorcollege.edu/scholarships), not this static site. The client's own
-// brief flagged that rebuilding it needs IT/web-team input first (how the
-// new site would submit/store applications, whether it integrates with
-// Populi, etc.) — so every "Apply" CTA below routes to the current live
-// application in the interim rather than a non-functional mockup form.
-const SCHOLARSHIP_APPLY_LINK = 'https://valorcollege.edu/scholarships';
+const SCHOLARSHIP_APPLY_LINK = 'scholarship-application.html';
 // TODO: no Directus-hosted Terms & Conditions PDFs were supplied for any
-// of the 3 scholarships — routed to the same interim destination above
-// until real document links exist (same migration pattern used for the
-// site's other PDFs).
-const TERMS_LINK = SCHOLARSHIP_APPLY_LINK;
+// of the 3 scholarships — routed to the interim live destination until
+// real document links exist (same migration pattern used for the site's
+// other PDFs).
+const TERMS_LINK = 'https://valorcollege.edu/scholarships';
 
 // One unified visual system for all 3 scholarships — same gradient panel,
 // same icon tile, same stat hierarchy — replacing the mismatched logo
@@ -86,7 +79,7 @@ const scholarshipCard = (s) => `      <div data-reveal="" style="display:flex;fl
           <div style="min-height:18px;font-size:12px;color:rgba(16,14,13,.55);margin-bottom:20px">${s.available ? `<strong style="color:#100E0D">Available for:</strong> ${s.available}` : ''}</div>
           <div style="display:flex;flex-direction:column;gap:10px">
             <a href="#${s.key}" style="white-space:nowrap;text-align:center;border:1.5px solid rgba(16,14,13,.2);color:#100E0D;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:13px 16px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">View Details</a>
-            <a href="${SCHOLARSHIP_APPLY_LINK}" target="_blank" rel="noopener" style="white-space:nowrap;text-align:center;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:13px 16px;border-radius:999px" style-hover="background:#F02338;color:#fff">Apply</a>
+            <a href="${SCHOLARSHIP_APPLY_LINK}" style="white-space:nowrap;text-align:center;background:#E01B2E;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:13px 16px;border-radius:999px" style-hover="background:#F02338;color:#fff">Apply</a>
           </div>
         </div>
       </div>`;
@@ -142,7 +135,7 @@ const TUITION_SCHOLARSHIPS_BODY = `  <section id="scholarships-hero" style="posi
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(34px,5.5vw,64px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance">Invest in Your Calling.</h1>
       <p data-reveal="" style="margin:0 auto 36px;max-width:58ch;font-size:17px;line-height:1.6;color:rgba(250,245,238,.85)">A Valor education is an investment in who you're called to become. Scholarship opportunities are available to help eligible students make their Valor education more affordable.</p>
       <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-        <a href="${SCHOLARSHIP_APPLY_LINK}" target="_blank" rel="noopener" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply for a Scholarship</a>
+        <a href="${SCHOLARSHIP_APPLY_LINK}" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply for a Scholarship</a>
         <a href="${ADMISSION_APPLICATION_LINK}" style="background:#FAF5EE;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Admission Application</a>
         <a href="${REQUEST_INFO_LINK}" style="border:1.5px solid rgba(250,245,238,.4);color:#FAF5EE;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(250,245,238,.1);color:#FAF5EE">Request Info</a>
       </div>
@@ -169,7 +162,7 @@ ${SCHOLARSHIPS.map(scholarshipCard).join('\n')}
 ${STEPS.map(stepCard).join('\n')}
     </div>
     <div style="text-align:center">
-      <a data-reveal="" href="${SCHOLARSHIP_APPLY_LINK}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Start Scholarship Application <i class="fa-solid fa-arrow-right"></i></a>
+      <a data-reveal="" href="${SCHOLARSHIP_APPLY_LINK}" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Start Scholarship Application <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </section>
 

@@ -20,6 +20,7 @@ const { ADMISSIONS_APPLY_NOW_BODY } = require('./admissionsApplyNow');
 const { ADMISSIONS_INTERNATIONAL_STUDENTS_BODY } = require('./admissionsInternationalStudents');
 const { ADMISSIONS_FORMS_BODY } = require('./admissionsForms');
 const { ADMISSIONS_APPLICATION_BODY } = require('./admissionsApplication');
+const { SCHOLARSHIP_APPLICATION_BODY } = require('./scholarshipApplication');
 const { TUITION_OVERVIEW_BODY } = require('./tuitionOverview');
 const { TUITION_FEES_BODY } = require('./tuitionFees');
 const { TUITION_INTERNATIONAL_BODY } = require('./tuitionInternational');
@@ -86,6 +87,13 @@ write('admissions-application.html', renderPage({
   bodyHtml: ADMISSIONS_APPLICATION_BODY,
 }));
 
+write('scholarship-application.html', renderPage({
+  title: 'Scholarship Application — Valor Christian College',
+  description: 'Apply for a Valor Christian College scholarship.',
+  socialImage: IMG.social,
+  bodyHtml: SCHOLARSHIP_APPLICATION_BODY,
+}));
+
 write('404.html', renderPage({
   title: 'Page Not Found — Valor Christian College',
   description: 'The page you requested could not be found.',
@@ -93,4 +101,4 @@ write('404.html', renderPage({
   bodyHtml: NOT_FOUND_BODY,
 }));
 
-console.log(`\nDone: ${PAGES.length + 4} pages written.`);
+console.log(`\nDone: ${PAGES.length + 5} pages written.`);

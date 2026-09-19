@@ -307,6 +307,8 @@
   .va-radio-pill:has(input:checked),.va-checkbox-pill:has(input:checked){border-color:#E01B2E;background:rgba(224,27,46,.06)}
   .va-radio-pill input,.va-checkbox-pill input{accent-color:#E01B2E}
   .va-field.is-invalid .va-radio-pill,.va-field.is-invalid .va-checkbox-pill{border-color:rgba(196,21,43,.4)}
+  .va-checkbox-pill.is-disabled{opacity:.5;cursor:not-allowed;background:rgba(16,14,13,.03)}
+  .va-checkbox-pill.is-disabled input{cursor:not-allowed}
   .va-checkbox-single{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;line-height:1.6;color:rgba(16,14,13,.75)}
   .va-checkbox-single input{margin-top:3px;flex:none;accent-color:#E01B2E;width:17px;height:17px}
   .va-checkbox-single a{color:#B3121F;font-weight:700}
@@ -827,6 +829,105 @@ class Component extends DCLogic {
     this.fixAutoplayVideos();
     this.promoPopup();
     this.applicationWizard();
+    this.scholarshipApplicationForm();
+  }
+  scholarshipApplicationForm() {
+    // No-op on every page except the Scholarship Application.
+    const root = document.getElementById('scholarship-application-form');
+    if (!root) return;
+    const form = document.getElementById('scholarship-form');
+    const submitBtn = document.getElementById('scholarship-submit');
+    const confirmation = document.getElementById('scholarship-confirmation');
+
+    // Same runtime bug found on the Contact form and Admissions
+    // Application: hidden gets stripped on load, so assert it via JS.
+    confirmation.hidden = true;
+
+    const isValid = (el) => {
+      if (el.type === 'checkbox') {
+        if (el.closest('.va-checkbox-grid')) {
+          const wrap = el.closest('.va-field');
+          return Array.from(wrap.querySelectorAll('input[type="checkbox"]')).some((c) => c.checked && !c.disabled);
+        }
+        return el.checked;
+      }
+      const val = (el.value || '').trim();
+      if (!val) return false;
+      if (el.type === 'email') return /^[^s@]+@[^s@]+.[^s@]+$/.test(val);
+      return true;
+    };
+
+    const paint = (el, valid) => {
+      const wrap = el.closest('.va-field');
+      if (!wrap) return;
+      wrap.classList.toggle('is-valid', valid);
+      wrap.classList.toggle('is-invalid', !valid);
+      const msg = wrap.querySelector('.va-msg');
+      if (msg) msg.textContent = valid ? 'Good' : 'This field is required';
+    };
+
+    const validateAll = () => {
+      let ok = true;
+      const seen = new Set();
+      Array.from(form.querySelectorAll('[data-required="true"]')).forEach((el) => {
+        if (el.disabled) return;
+        const key = el.closest('.va-field') || el;
+        if (seen.has(key)) return;
+        seen.add(key);
+        const valid = isValid(el);
+        paint(el, valid);
+        if (!valid) ok = false;
+      });
+      return ok;
+    };
+
+    root.addEventListener('blur', (e) => {
+      if (e.target && e.target.matches && e.target.matches('[data-required="true"]')) paint(e.target, isValid(e.target));
+    }, true);
+    root.addEventListener('change', (e) => {
+      if (e.target && e.target.matches && e.target.matches('[data-required="true"]')) paint(e.target, isValid(e.target));
+    });
+
+    // Presidential Scholarship eligibility is a real rule (On-Campus only),
+    // not a static checkbox, per the field map's own rebuild note.
+    const presidentialCheckbox = form.querySelector('input[name="scholarships"][value="Presidential Scholarship"]');
+    const presidentialPill = presidentialCheckbox ? presidentialCheckbox.closest('.va-checkbox-pill') : null;
+    const presidentialLabel = presidentialPill ? presidentialPill.querySelector('span') : null;
+    const programSelect = form.querySelector('[name="program_of_interest"]');
+    const refreshPresidentialEligibility = () => {
+      if (!presidentialCheckbox) return;
+      const eligible = !!programSelect && programSelect.value === 'On-Campus';
+      presidentialCheckbox.disabled = !eligible;
+      if (!eligible) presidentialCheckbox.checked = false;
+      if (presidentialLabel) presidentialLabel.textContent = eligible ? 'Presidential Scholarship' : 'Presidential Scholarship (Not Eligible — On-Campus Only)';
+      if (presidentialPill) presidentialPill.classList.toggle('is-disabled', !eligible);
+    };
+    if (programSelect) {
+      programSelect.addEventListener('change', refreshPresidentialEligibility);
+      refreshPresidentialEligibility();
+    }
+
+    submitBtn.addEventListener('click', () => {
+      if (!validateAll()) {
+        const bad = form.querySelector('.is-invalid');
+        if (bad) bad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (form.website.value) {
+        // Honeypot: bots fill every field, real visitors never see this one.
+        form.reset();
+        confirmation.hidden = false;
+        confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+      setTimeout(() => {
+        form.hidden = true;
+        confirmation.hidden = false;
+        confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 700);
+    });
   }
   applicationWizard() {
     // No-op on every page except the Application form, so this can live in

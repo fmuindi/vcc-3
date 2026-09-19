@@ -47,57 +47,14 @@ function upcomingSemesters(count = 9) {
   return list;
 }
 
-// ---- Field-rendering helpers (componentized per the field map's own
-// "Rebuild Notes": name blocks x6 and address blocks x5 share identical
-// sub-fields, so they're built once here and reused). None of these rely on
-// the native `required` attribute or checkValidity()/reportValidity() — this
-// site's runtime strips `required` from inputs shortly after load (found
-// while fixing the Contact form), so every required check here is done by
-// hand in applicationWizard() via a `data-required="true"` marker instead. ---
+const {
+  textField, selectField, dateField, numberField, textareaField,
+  radioField, checkboxGroupField, conditionalPanel, section,
+} = require('./formFields');
 
-const fieldWrap = (label, required, inputHtml, hint) => `      <div class="va-field">
-        ${label ? `<label class="va-label">${label}${required ? ' <span class="req">*</span>' : ''}</label>` : ''}
-        ${inputHtml}
-        ${hint ? `<div class="va-hint">${hint}</div>` : ''}
-        <div class="va-msg" aria-live="polite"></div>
-      </div>`;
-
-const textField = ({ name, label, type = 'text', required = false, placeholder = '', hint }) =>
-  fieldWrap(label, required, `<input type="${type}" name="${name}" class="va-input" ${required ? 'data-required="true"' : ''} placeholder="${placeholder}">`, hint);
-
-const selectField = ({ name, label, required = false, options, selected = '', placeholder = 'Select…', hint }) => {
-  // data-default marks the intended default for applicationWizard() to set
-  // via JS at init: this runtime ignores the selected attribute on options
-  // the same way it strips required/checked (found while building this page).
-  const opts = options.map((o) => {
-    const val = typeof o === 'string' ? o : o.value;
-    const lab = typeof o === 'string' ? o : o.label;
-    return `<option value="${val}"${val === selected ? ' selected data-default="true"' : ''}>${lab}</option>`;
-  }).join('');
-  return fieldWrap(label, required, `<select name="${name}" class="va-input" ${required ? 'data-required="true"' : ''}><option value="">${placeholder}</option>${opts}</select>`, hint);
-};
-
-const dateField = ({ name, label, required = false, hint }) =>
-  fieldWrap(label, required, `<input type="date" name="${name}" class="va-input" ${required ? 'data-required="true"' : ''}>`, hint);
-
-const numberField = ({ name, label, required = false, value }) =>
-  fieldWrap(label, required, `<input type="number" name="${name}" class="va-input" min="0" ${value != null ? `value="${value}"` : ''} ${required ? 'data-required="true"' : ''}>`);
-
-const textareaField = ({ name, label, required = false }) =>
-  fieldWrap(label, required, `<textarea name="${name}" class="va-input" rows="3" ${required ? 'data-required="true"' : ''}></textarea>`);
-
-const radioField = ({ name, label, required = false, options, defaultValue, hint }) => {
-  // `checked` alone isn't enough: this site's runtime strips it (same class
-  // of bug as the required attribute, found while building this page) —
-  // data-default="true" is read by applicationWizard() to set it via JS instead.
-  const pills = options.map((o) => `<label class="va-radio-pill"><input type="radio" name="${name}" value="${o}" ${required ? 'data-required="true"' : ''} ${o === defaultValue ? 'checked data-default="true"' : ''}><span>${o}</span></label>`).join('');
-  return fieldWrap(label, required, `<div class="va-radio-row">${pills}</div>`, hint);
-};
-
-const checkboxGroupField = ({ name, label, required = false, options, hint }) => {
-  const pills = options.map((o) => `<label class="va-checkbox-pill"><input type="checkbox" name="${name}" value="${o}" ${required ? 'data-required="true"' : ''}><span>${o}</span></label>`).join('');
-  return fieldWrap(label, required, `<div class="va-checkbox-grid">${pills}</div>`, hint);
-};
+// ---- Field-rendering helpers specific to this page (componentized per the
+// field map's own "Rebuild Notes": name blocks x6 and address blocks x5
+// share identical sub-fields). -----------------------------------------
 
 const nameBlock = (prefix, { firstRequired = false, lastRequired = false } = {}) => `      <div class="va-row va-row-5">
 ${selectField({ name: `${prefix}_salutation`, label: 'Salutation', options: SALUTATIONS })}
@@ -125,16 +82,6 @@ ${textField({ name: `${prefix}_phone`, label: 'Phone', type: 'tel' })}
       </div>
 ${addressBlock(prefix)}
 ${selectField({ name: `${prefix}_relationship`, label: 'Relationship', options: RELATIONSHIPS })}`;
-
-const conditionalPanel = (showIfName, showIfValue, innerHtml, { id } = {}) =>
-  `      <div class="va-conditional" data-show-if-name="${showIfName}" data-show-if-value="${showIfValue}" hidden${id ? ` id="${id}"` : ''}>
-${innerHtml}
-      </div>`;
-
-const section = (title, bodyHtml, { sub } = {}) => `    <div class="va-section">
-      <h3 class="va-section-title">${title}</h3>
-${sub ? `      <p class="va-section-sub">${sub}</p>\n` : ''}${bodyHtml}
-    </div>`;
 
 // ---- Page 1 — Personal ----------------------------------------------------
 
