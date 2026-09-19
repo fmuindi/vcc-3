@@ -3,10 +3,7 @@ const { IMG } = require('./build-site');
 const ADMISSIONS_COUNSELOR_LINK = 'admissions-speak-with-a-counselor.html';
 const FINANCIAL_AID_LINK = 'tuition-aid-financial-aid.html#need-help';
 const REQUEST_INFO_LINK = 'admissions.html';
-// No real Populi/application URL exists anywhere on this site yet (same gap
-// noted in admissions-apply-now.html) — the general Admission Application
-// CTA shares that same interim destination until a real one is confirmed.
-const ADMISSION_APPLICATION_LINK = 'admissions-speak-with-a-counselor.html';
+const ADMISSION_APPLICATION_LINK = 'admissions-application.html';
 // TODO: the scholarship application is a single form covering all 3
 // scholarships and currently lives on VCC's existing web system
 // (valorcollege.edu/scholarships), not this static site. The client's own

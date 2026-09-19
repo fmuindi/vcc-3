@@ -166,4 +166,4 @@ ${LEARNING_PATHS.map(learningCard).join('\n')}
     </div>
   </section>`;
 
-module.exports = { ACADEMICS_DEGREE_PROGRAMS_BODY };
+module.exports = { ACADEMICS_DEGREE_PROGRAMS_BODY, BACHELOR_DEGREES, ASSOCIATE_DEGREES, CERTIFICATE_PROGRAMS };

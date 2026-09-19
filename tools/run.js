@@ -19,6 +19,7 @@ const { ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY } = require('./admissionsSpeakWithC
 const { ADMISSIONS_APPLY_NOW_BODY } = require('./admissionsApplyNow');
 const { ADMISSIONS_INTERNATIONAL_STUDENTS_BODY } = require('./admissionsInternationalStudents');
 const { ADMISSIONS_FORMS_BODY } = require('./admissionsForms');
+const { ADMISSIONS_APPLICATION_BODY } = require('./admissionsApplication');
 const { TUITION_OVERVIEW_BODY } = require('./tuitionOverview');
 const { TUITION_FEES_BODY } = require('./tuitionFees');
 const { TUITION_INTERNATIONAL_BODY } = require('./tuitionInternational');
@@ -78,6 +79,13 @@ write('about-meet-our-president.html', renderPage({
   bodyHtml: ABOUT_PRESIDENT_BODY,
 }));
 
+write('admissions-application.html', renderPage({
+  title: 'Application — Valor Christian College',
+  description: 'Start your official application to Valor Christian College.',
+  socialImage: IMG.social,
+  bodyHtml: ADMISSIONS_APPLICATION_BODY,
+}));
+
 write('404.html', renderPage({
   title: 'Page Not Found — Valor Christian College',
   description: 'The page you requested could not be found.',
@@ -85,4 +93,4 @@ write('404.html', renderPage({
   bodyHtml: NOT_FOUND_BODY,
 }));
 
-console.log(`\nDone: ${PAGES.length + 3} pages written.`);
+console.log(`\nDone: ${PAGES.length + 4} pages written.`);

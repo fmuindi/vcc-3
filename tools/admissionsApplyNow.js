@@ -1,12 +1,6 @@
 const { IMG } = require('./build-site');
 
-// TODO: no real application URL has been provided anywhere in this project
-// (the Student Portal page is likewise still waiting on its Populi deep
-// link). Every "Apply" button below points to Speak with a Counselor as a
-// safe, functioning interim destination — swap in the real Populi/
-// application link(s) as soon as they're confirmed. Per the brief: if
-// every path shares one application, all buttons can share one URL.
-const APPLY_LINK = 'admissions-speak-with-a-counselor.html';
+const APPLY_LINK = 'admissions-application.html';
 const REQUEST_INFO_LINK = 'admissions.html';
 const TALK_TO_ADMISSIONS_LINK = 'admissions-speak-with-a-counselor.html';
 
