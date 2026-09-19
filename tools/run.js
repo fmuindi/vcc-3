@@ -36,6 +36,7 @@ write('index.html', renderPage({
   description: "At Valor Christian College, you'll be challenged academically, strengthened spiritually, and equipped to lead. Explore degree programs on campus, online, or in a cohort.",
   socialImage: IMG.social,
   bodyHtml: HOME_BODY,
+  showPromoPopup: true,
 }));
 
 PAGES.forEach((p) => {
@@ -60,11 +61,13 @@ PAGES.forEach((p) => {
   if (p.href === 'tuition-aid-international.html') bodyHtml = TUITION_INTERNATIONAL_BODY;
   if (p.href === 'tuition-aid-financial-aid.html') bodyHtml = TUITION_FINANCIAL_AID_BODY;
   if (p.href === 'tuition-aid-scholarships.html') bodyHtml = TUITION_SCHOLARSHIPS_BODY;
+  const showPromoPopup = p.section === 'Admissions' || p.href === 'tuition-aid-scholarships.html';
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
     description: p.blurb,
     socialImage: IMG.social,
     bodyHtml,
+    showPromoPopup,
   }));
 });
 

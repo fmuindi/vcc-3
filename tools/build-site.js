@@ -57,6 +57,7 @@ const IMG = {
   whyValorPageAcademics: 'https://directus.valorcollege.edu/assets/4027F968-995F-4267-8EAF-C03188A583F5?width=1200&quality=80',
   whyValorPageExperience: 'https://directus.valorcollege.edu/assets/ECBA7319-7829-44BD-8C70-D4E4B97C288E?width=1200&quality=80',
   degreeProgramsHero: 'https://directus.valorcollege.edu/assets/B901B7A9-6161-417E-B1EA-3CA90B4F16F5',
+  scholarshipPromoPopup: 'https://directus.valorcollege.edu/assets/2D4A08BB-38FC-4185-AF58-5949D0468EC1',
   creditForPriorLearningHero: 'https://directus.valorcollege.edu/assets/23BA4E15-6D6B-44A5-B3F1-7B2D4430D305?width=1200&quality=80',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
@@ -359,6 +360,20 @@ const BASE_STYLE = `<style>
   .mega-sublink:hover i{color:#E01B2E}
   .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
   .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
+  .promo-popup-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.75);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .25s ease}
+  .promo-popup-overlay.is-open{display:flex}
+  .promo-popup-overlay.is-visible{opacity:1}
+  .promo-popup{position:relative;max-width:520px;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:translateY(14px) scale(.96);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+  .promo-popup-overlay.is-visible .promo-popup{transform:translateY(0) scale(1)}
+  .promo-popup-link{display:block;line-height:0}
+  .promo-popup-link img{display:block;width:100%;height:auto}
+  .promo-popup-close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;background:rgba(16,14,13,.72);color:#fff;border:none;display:grid;place-items:center;cursor:pointer;font-size:15px;line-height:1;transition:background .15s ease,transform .15s ease;z-index:2}
+  .promo-popup-close:hover{background:#100E0D;transform:scale(1.08)}
+  @media (max-width:640px){
+    .promo-popup-overlay{padding:16px}
+    .promo-popup{max-width:100%;border-radius:16px}
+    .promo-popup-close{width:32px;height:32px;font-size:13px;top:8px;right:8px}
+  }
   .quote-stage{position:relative;min-height:200px}
   .quote-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1s ease}
   .quote-slide.is-active{position:relative;opacity:1;visibility:visible}
@@ -456,6 +471,35 @@ class Component extends DCLogic {
     this.quoteRotators();
     this.viewAllToggles();
     this.fixAutoplayVideos();
+    this.promoPopup();
+  }
+  promoPopup() {
+    // No-op on pages that don't render the popup markup (renderPage's
+    // showPromoPopup flag), so this can live in the shared runtime script.
+    const overlay = document.getElementById('promo-popup-overlay');
+    if (!overlay) return;
+    const SEEN_KEY = 'valorScholarshipPromoSeen';
+    let seen = false;
+    try { seen = sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) {}
+    if (seen) { overlay.remove(); return; }
+    const markSeen = () => { try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {} };
+    const close = () => {
+      overlay.classList.remove('is-visible');
+      markSeen();
+      setTimeout(() => overlay.classList.remove('is-open'), 300);
+    };
+    setTimeout(() => {
+      overlay.classList.add('is-open');
+      requestAnimationFrame(() => overlay.classList.add('is-visible'));
+    }, 900);
+    const closeBtn = document.getElementById('promo-popup-close');
+    if (closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); close(); });
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
+    const link = document.getElementById('promo-popup-link');
+    if (link) link.addEventListener('click', markSeen);
   }
   fixAutoplayVideos() {
     document.querySelectorAll('video[autoplay]').forEach(v => {
@@ -641,7 +685,23 @@ class Component extends DCLogic {
 
 const RESOURCE_MAP_SCRIPT = `<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/js/b4fcacef-2f6b-444c-8341-6d4e3eb29e09.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/js/234e7365-9799-4c80-83bd-25f9d31be6b8.js"};</script>`;
 
-function renderPage({ title, description, socialImage, bodyHtml }) {
+// Shown once per browser session (sessionStorage) on the homepage, every
+// Admissions page, and the Scholarships page — see promoPopup() in
+// RUNTIME_SCRIPT for the open/close/dismiss behavior. Its markup only
+// renders on pages that opt in via renderPage({ showPromoPopup: true }),
+// but promoPopup() itself is a no-op (guarded by `if (!overlay) return`)
+// on every other page, so it's safe to leave in the shared runtime script.
+const PROMO_POPUP_HTML = `  <div id="promo-popup-overlay" class="promo-popup-overlay" role="dialog" aria-modal="true" aria-label="Scholarship opportunities at Valor Christian College">
+    <div class="promo-popup">
+      <button type="button" id="promo-popup-close" class="promo-popup-close" aria-label="Close">✕</button>
+      <a href="tuition-aid-scholarships.html" id="promo-popup-link" class="promo-popup-link">
+        <img src="${IMG.scholarshipPromoPopup}" alt="Scholarship opportunities at Valor Christian College — explore scholarships" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+`;
+
+function renderPage({ title, description, socialImage, bodyHtml, showPromoPopup }) {
   return `<!DOCTYPE html>
 <html lang="en"><head>
 ${RESOURCE_MAP_SCRIPT}
@@ -674,7 +734,7 @@ ${BASE_STYLE}
 ${renderHeader()}
 
 <a href="tuition-aid-scholarships.html" class="floating-apply">Apply</a>
-
+${showPromoPopup ? PROMO_POPUP_HTML : ''}
 ${bodyHtml}
 
 ${renderFooter()}
