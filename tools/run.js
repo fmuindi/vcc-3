@@ -26,6 +26,14 @@ const { TUITION_FEES_BODY } = require('./tuitionFees');
 const { TUITION_INTERNATIONAL_BODY } = require('./tuitionInternational');
 const { TUITION_FINANCIAL_AID_BODY } = require('./tuitionFinancialAid');
 const { TUITION_SCHOLARSHIPS_BODY } = require('./tuitionScholarships');
+const { STUDENT_LIFE_EVENTS_CALENDAR_BODY } = require('./studentLifeEventsCalendar');
+const { STUDENT_LIFE_SUPPORT_BODY } = require('./studentLifeSupport');
+const { STUDENT_LIFE_ACCESSIBILITY_BODY } = require('./studentLifeAccessibility');
+const { STUDENT_LIFE_MAC_CAFE_BODY } = require('./studentLifeMacCafe');
+const { STUDENT_LIFE_HANDBOOK_BODY } = require('./studentLifeHandbook');
+const { STUDENT_LIFE_PORTAL_BODY } = require('./studentLifePortal');
+const { ALUMNI_OVERVIEW_BODY } = require('./alumniOverview');
+const { ALUMNI_STORIES_BODY } = require('./alumniStories');
 const { NOT_FOUND_BODY } = require('./notFound');
 
 function write(file, html) {
@@ -63,6 +71,14 @@ PAGES.forEach((p) => {
   if (p.href === 'tuition-aid-international.html') bodyHtml = TUITION_INTERNATIONAL_BODY;
   if (p.href === 'tuition-aid-financial-aid.html') bodyHtml = TUITION_FINANCIAL_AID_BODY;
   if (p.href === 'tuition-aid-scholarships.html') bodyHtml = TUITION_SCHOLARSHIPS_BODY;
+  if (p.href === 'student-life-events-calendar.html') bodyHtml = STUDENT_LIFE_EVENTS_CALENDAR_BODY;
+  if (p.href === 'student-life-support.html') bodyHtml = STUDENT_LIFE_SUPPORT_BODY;
+  if (p.href === 'student-life-accessibility.html') bodyHtml = STUDENT_LIFE_ACCESSIBILITY_BODY;
+  if (p.href === 'student-life-mac-cafe.html') bodyHtml = STUDENT_LIFE_MAC_CAFE_BODY;
+  if (p.href === 'student-life-handbook.html') bodyHtml = STUDENT_LIFE_HANDBOOK_BODY;
+  if (p.href === 'student-life-portal.html') bodyHtml = STUDENT_LIFE_PORTAL_BODY;
+  if (p.href === 'alumni.html') bodyHtml = ALUMNI_OVERVIEW_BODY;
+  if (p.href === 'alumni-stories.html') bodyHtml = ALUMNI_STORIES_BODY;
   const showPromoPopup = p.section === 'Admissions' || p.href === 'tuition-aid-scholarships.html';
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,
