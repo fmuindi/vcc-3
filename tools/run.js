@@ -34,6 +34,11 @@ const { STUDENT_LIFE_HANDBOOK_BODY } = require('./studentLifeHandbook');
 const { STUDENT_LIFE_PORTAL_BODY } = require('./studentLifePortal');
 const { ALUMNI_OVERVIEW_BODY } = require('./alumniOverview');
 const { ALUMNI_STORIES_BODY } = require('./alumniStories');
+const { ALUMNI_STAY_CONNECTED_BODY } = require('./alumniStayConnected');
+const { ALUMNI_CITY_HARVEST_NETWORK_BODY } = require('./alumniCityHarvestNetwork');
+const { ALUMNI_CONTINUE_YOUR_CALLING_BODY } = require('./alumniContinueYourCalling');
+const { ALUMNI_CAREER_MINISTRY_BODY } = require('./alumniCareerMinistry');
+const { ALUMNI_SHARE_YOUR_STORY_BODY } = require('./alumniShareYourStory');
 const { NOT_FOUND_BODY } = require('./notFound');
 
 function write(file, html) {
@@ -79,6 +84,11 @@ PAGES.forEach((p) => {
   if (p.href === 'student-life-portal.html') bodyHtml = STUDENT_LIFE_PORTAL_BODY;
   if (p.href === 'alumni.html') bodyHtml = ALUMNI_OVERVIEW_BODY;
   if (p.href === 'alumni-stories.html') bodyHtml = ALUMNI_STORIES_BODY;
+  if (p.href === 'alumni-stay-connected.html') bodyHtml = ALUMNI_STAY_CONNECTED_BODY;
+  if (p.href === 'alumni-city-harvest-network.html') bodyHtml = ALUMNI_CITY_HARVEST_NETWORK_BODY;
+  if (p.href === 'alumni-continue-your-calling.html') bodyHtml = ALUMNI_CONTINUE_YOUR_CALLING_BODY;
+  if (p.href === 'alumni-career-ministry.html') bodyHtml = ALUMNI_CAREER_MINISTRY_BODY;
+  if (p.href === 'alumni-share-your-story.html') bodyHtml = ALUMNI_SHARE_YOUR_STORY_BODY;
   const showPromoPopup = p.section === 'Admissions' || p.href === 'tuition-aid-scholarships.html';
   write(p.href, renderPage({
     title: `${p.title} — Valor Christian College`,

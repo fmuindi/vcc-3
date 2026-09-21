@@ -6,13 +6,8 @@ const { IMG } = require('./build-site');
 // which exist on the IMG object (whyValor1 was renamed to whyValorMain at
 // some point; gallery1/gallery2 never existed after the gallery became
 // IMG.studentLifeGallery). That silently produced src="undefined" on any
-// page landing on one of those 3 rotation slots — about-contact,
-// admissions-international-students (then still admissions-complete-your-
-// enrollment), admissions-forms, tuition-aid, tuition-aid-scholarships,
-// student-life-work-study, student-life-handbook, and alumni-city-harvest-
-// network (the first 4 happen to be custom-built pages that don't use this
-// template, so it was invisible there, but the other 4 shipped a broken
-// hero background image).
+// custom-built page (invisible there) or any still-generic placeholder page
+// (a broken hero background image) landing on one of those 3 rotation slots.
 const IMAGE_ROTATION = [
   IMG.onCampus, IMG.online, IMG.cohort, IMG.whyValorMain, IMG.whyValor2,
   IMG.testimonial, IMG.prog1, IMG.prog2, IMG.prog3, IMG.prog4, IMG.prog5,
@@ -43,10 +38,9 @@ const PAGES = [
   { href: 'student-life-events-calendar.html', section: 'Student Life', title: 'Student Events & Calendar', blurb: 'Upcoming campus events and the academic calendar.' },
   { href: 'student-life-support.html', section: 'Student Life', title: 'Student Support', blurb: 'Support resources available to every Valor student.' },
   { href: 'student-life-accessibility.html', section: 'Student Life', title: 'Academic Support & Accessibility', blurb: 'Disability services and academic accommodations.' },
-  { href: 'student-life-work-study.html', section: 'Student Life', title: 'Work-Study Program', blurb: 'How the work-study program works and how to apply.' },
   { href: 'student-life-mac-cafe.html', section: 'Student Life', title: 'Mac Café & Meal Menu', blurb: 'Meal plans, hours, and the menu at Mac Café.' },
   { href: 'student-life-handbook.html', section: 'Student Life', title: 'Student Handbook', blurb: 'Campus policies and expectations for Valor students.' },
-  { href: 'student-life-portal.html', section: 'Student Life', title: 'Student Portal', blurb: 'Sign in to Populi, the system that powers the Valor student portal, to manage classes, grades, and billing.', isPortal: true },
+  { href: 'student-life-portal.html', section: 'Student Life', title: 'Student Portal', blurb: 'Sign in to Populi or Campus Ivy to manage classes, grades, billing, and financial aid.', isPortal: true },
   { href: 'alumni.html', section: 'Alumni', title: 'Alumni Overview', blurb: "Your Valor journey doesn't end at graduation — alumni stories, City Harvest Network, and ways to stay connected." },
   { href: 'alumni-stories.html', section: 'Alumni', title: 'Alumni Stories', blurb: 'Stories of Valor graduates serving in ministry, missions, business, and media.' },
   { href: 'alumni-stay-connected.html', section: 'Alumni', title: 'Stay Connected', blurb: 'Ways to stay connected to Valor after graduation.' },

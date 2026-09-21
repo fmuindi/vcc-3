@@ -166,7 +166,6 @@ const NAV = [
       { label: 'Student Support', href: 'student-life-support.html', children: [
         { label: 'Academic Support & Accessibility', href: 'student-life-accessibility.html' },
       ] },
-      { label: 'Work-Study Program', href: 'student-life-work-study.html' },
       { label: 'Mac Café & Meal Menu', href: 'student-life-mac-cafe.html' },
       { label: 'Student Handbook', href: 'student-life-handbook.html' },
     ],
