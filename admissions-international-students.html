@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
 <link rel="preload" as="image" href="https://directus.valorcollege.edu/assets/BDF23190-E5A9-4479-909E-8226AE9102B4?width=1200&quality=80" fetchpriority="high">
+<link rel="preload" as="image" href="https://directus.valorcollege.edu/assets/2D4A08BB-38FC-4185-AF58-5949D0468EC1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fcb01a3d-49b1-4f6f-a634-7c16cd1ea3a9.woff2" crossorigin="anonymous">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/4f4c1e77-709d-474f-bf96-392753485ee5.woff2" crossorigin="anonymous">
@@ -256,14 +257,18 @@
   .mega-sublink:hover i{color:#E01B2E}
   .floating-apply{position:fixed;bottom:24px;right:24px;z-index:85;width:74px;height:74px;border-radius:50%;background:#E01B2E;color:#fff!important;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(224,27,46,.5);transition:transform .18s ease}
   .floating-apply:hover{transform:translateY(-2px) scale(1.05);color:#fff!important}
-  .promo-popup-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.75);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .25s ease}
+  .promo-popup-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.75);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease}
   .promo-popup-overlay.is-open{display:flex}
   .promo-popup-overlay.is-visible{opacity:1}
-  .promo-popup{position:relative;max-width:520px;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:translateY(14px) scale(.96);transition:transform .3s cubic-bezier(.16,1,.3,1)}
-  .promo-popup-overlay.is-visible .promo-popup{transform:translateY(0) scale(1)}
+  .promo-popup{position:relative;max-width:680px;width:100%;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#fff;opacity:0;transform:translateX(90px);transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s ease}
+  .promo-popup-overlay.is-visible .promo-popup{transform:translateX(0);opacity:1}
   .promo-popup-link{display:block;line-height:0}
-  .promo-popup-link img{display:block;width:100%;height:auto}
-  .promo-popup-close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;background:rgba(16,14,13,.72);color:#fff;border:none;display:grid;place-items:center;cursor:pointer;font-size:15px;line-height:1;transition:background .15s ease,transform .15s ease;z-index:2}
+  .promo-popup-link img{display:block;width:100%;height:auto;aspect-ratio:2.35;object-fit:cover;background:#100E0D}
+  .promo-popup-body{padding:22px 30px 28px;text-align:center}
+  .promo-popup-text{margin:0 0 18px;font-size:14.5px;line-height:1.55;color:rgba(16,14,13,.62)}
+  .promo-popup-cta{display:inline-flex;align-items:center;gap:9px;background:#E01B2E;color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:15px 30px;border-radius:999px;box-shadow:0 10px 26px rgba(224,27,46,.4);transition:transform .18s ease,background .18s ease}
+  .promo-popup-cta:hover{transform:translateY(-2px);background:#F02338;color:#fff}
+  .promo-popup-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(16,14,13,.72);color:#fff;border:none;display:grid;place-items:center;cursor:pointer;font-size:15px;line-height:1;transition:background .15s ease,transform .15s ease;z-index:2}
   .promo-popup-close:hover{background:#100E0D;transform:scale(1.08)}
   .va-hero{background:#100E0D;padding:150px 32px 60px;text-align:center}
   .va-hero-motto{margin-top:18px;font-size:11px;font-weight:700;letter-spacing:.3em;color:rgba(250,245,238,.5)}
@@ -332,7 +337,10 @@
   .va-confirmation i{font-size:44px;color:#1a7a3c;margin-bottom:20px}
   @media (max-width:640px){
     .promo-popup-overlay{padding:16px}
-    .promo-popup{max-width:100%;border-radius:16px}
+    .promo-popup{max-width:100%;border-radius:16px;transform:translateY(40px);opacity:0}
+    .promo-popup-overlay.is-visible .promo-popup{transform:translateY(0)}
+    .promo-popup-body{padding:18px 20px 24px}
+    .promo-popup-cta{width:100%;text-align:center;justify-content:center;padding:15px 20px}
     .promo-popup-close{width:32px;height:32px;font-size:13px;top:8px;right:8px}
   }
   .quote-stage{position:relative;min-height:200px}
@@ -640,8 +648,12 @@
     <div class="promo-popup">
       <button type="button" id="promo-popup-close" class="promo-popup-close" aria-label="Close">✕</button>
       <a href="tuition-aid-scholarships.html" id="promo-popup-link" class="promo-popup-link">
-        <img src="https://directus.valorcollege.edu/assets/2D4A08BB-38FC-4185-AF58-5949D0468EC1" alt="Scholarship opportunities at Valor Christian College — explore scholarships" loading="lazy" decoding="async">
+        <img id="promo-popup-img" src="https://directus.valorcollege.edu/assets/2D4A08BB-38FC-4185-AF58-5949D0468EC1" alt="Need a scholarship? We've got you — World Changer, City Harvest Network, and Presidential Scholarships available at Valor Christian College" width="1200" height="510" loading="eager" fetchpriority="high" decoding="async">
       </a>
+      <div class="promo-popup-body">
+        <p class="promo-popup-text">Three scholarship opportunities are open right now. See which ones you qualify for and start your application in minutes.</p>
+        <a href="tuition-aid-scholarships.html" id="promo-popup-cta" class="promo-popup-cta">Explore Scholarships <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
     </div>
   </div>
 
@@ -1271,20 +1283,45 @@ class Component extends DCLogic {
     const close = () => {
       overlay.classList.remove('is-visible');
       markSeen();
-      setTimeout(() => overlay.classList.remove('is-open'), 300);
+      setTimeout(() => overlay.classList.remove('is-open'), 400);
     };
-    setTimeout(() => {
+
+    const reveal = () => {
       overlay.classList.add('is-open');
       requestAnimationFrame(() => overlay.classList.add('is-visible'));
-    }, 900);
+    };
+    // Wait for the promo graphic to actually finish loading before showing
+    // the popup (instead of a flat timer), so it never appears mid-download.
+    // A minimum delay keeps it from flashing in instantly on a fast/cached
+    // load, and a max-wait fallback keeps a slow/blocked image from leaving
+    // the popup permanently hidden.
+    const img = document.getElementById('promo-popup-img');
+    const MIN_DELAY = 600;
+    const MAX_WAIT = 4000;
+    let revealed = false;
+    const revealOnce = () => { if (revealed) return; revealed = true; reveal(); };
+    const start = Date.now();
+    if (img) {
+      const whenReady = () => setTimeout(revealOnce, Math.max(0, MIN_DELAY - (Date.now() - start)));
+      if (img.complete && img.naturalWidth > 0) whenReady();
+      else {
+        img.addEventListener('load', whenReady, { once: true });
+        img.addEventListener('error', whenReady, { once: true });
+      }
+      setTimeout(revealOnce, MAX_WAIT);
+    } else {
+      setTimeout(revealOnce, MIN_DELAY);
+    }
+
     const closeBtn = document.getElementById('promo-popup-close');
     if (closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); close(); });
     overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
     });
-    const link = document.getElementById('promo-popup-link');
-    if (link) link.addEventListener('click', markSeen);
+    [document.getElementById('promo-popup-link'), document.getElementById('promo-popup-cta')].forEach((el) => {
+      if (el) el.addEventListener('click', markSeen);
+    });
   }
   fixAutoplayVideos() {
     document.querySelectorAll('video[autoplay]').forEach(v => {
