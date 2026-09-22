@@ -250,7 +250,7 @@ const ADMISSIONS_APPLICATION_BODY = `  <section class="va-hero">
 
   <div class="va-wrap" id="application-wizard">
     <div class="va-progress">
-      <div class="va-progress-label"><span>Application Progress</span><span class="va-progress-percent" id="wizard-progress-percent">0%</span></div>
+      <div class="va-progress-label"><span>Progress</span><span class="va-progress-percent" id="wizard-progress-percent">0%</span></div>
       <div class="va-progress-bar"><div class="va-progress-fill" id="wizard-progress-fill"></div></div>
     </div>
     <div class="va-tracker">

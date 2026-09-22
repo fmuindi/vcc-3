@@ -282,7 +282,8 @@
   .va-tracker-step.is-done .va-tracker-num{background:#100E0D;color:#fff}
   .va-tracker-step.is-done .va-tracker-label{color:#100E0D}
   .va-tracker-line{flex:none;width:56px;height:2px;background:rgba(16,14,13,.12);margin:0 4px 22px}
-  .va-progress{margin-bottom:20px}
+  .va-progress{margin-bottom:20px;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(16,14,13,.1);padding:14px 20px;box-sizing:border-box}
+  .va-progress.is-stuck{position:fixed;z-index:20;box-shadow:0 14px 34px rgba(16,14,13,.18)}
   .va-progress-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(16,14,13,.55)}
   .va-progress-percent{color:#E01B2E;font-weight:800;font-variant-numeric:tabular-nums}
   .va-progress-bar{position:relative;height:9px;border-radius:999px;background:rgba(16,14,13,.08);overflow:hidden}
@@ -772,6 +773,59 @@ class Component extends DCLogic {
     this.promoPopup();
     this.applicationWizard();
     this.scholarshipApplicationForm();
+    this.stickyProgress();
+  }
+  stickyProgress() {
+    // No-op on pages without a .va-progress bar. CSS position:sticky does
+    // not work here because #page-top (an ancestor of every .va-progress
+    // bar) has overflow-x:hidden — verified empirically that this silently
+    // breaks position:sticky in this runtime even though only the x-axis
+    // is affected — so this pins the bar with position:fixed by hand
+    // instead, with a spacer left behind so the page doesn't jump.
+    const bars = Array.from(document.querySelectorAll('.va-progress'));
+    if (!bars.length) return;
+    const headerOffset = () => (window.innerWidth <= 1200 ? 64 : 92);
+    bars.forEach((bar) => {
+      const spacer = document.createElement('div');
+      spacer.className = 'va-progress-spacer';
+      spacer.style.height = '0px';
+      bar.parentElement.insertBefore(spacer, bar);
+      let stuck = false;
+      let originalTop = bar.getBoundingClientRect().top + window.scrollY;
+      const syncRect = () => {
+        const rect = spacer.getBoundingClientRect();
+        bar.style.left = rect.left + 'px';
+        bar.style.width = rect.width + 'px';
+      };
+      const stick = () => {
+        const rect = bar.getBoundingClientRect();
+        spacer.style.height = rect.height + 'px';
+        syncRect();
+        bar.style.top = headerOffset() + 'px';
+        bar.classList.add('is-stuck');
+        stuck = true;
+      };
+      const unstick = () => {
+        bar.style.top = '';
+        bar.style.left = '';
+        bar.style.width = '';
+        bar.classList.remove('is-stuck');
+        spacer.style.height = '0px';
+        stuck = false;
+        originalTop = bar.getBoundingClientRect().top + window.scrollY;
+      };
+      const onScroll = () => {
+        if (bar.hidden) return;
+        const off = headerOffset();
+        const shouldStick = window.scrollY >= originalTop - off;
+        if (shouldStick && !stuck) stick();
+        else if (!shouldStick && stuck) unstick();
+        else if (stuck) { bar.style.top = off + 'px'; syncRect(); }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', () => { if (stuck) { syncRect(); bar.style.top = headerOffset() + 'px'; } else { originalTop = bar.getBoundingClientRect().top + window.scrollY; } });
+      onScroll();
+    });
   }
   scholarshipApplicationForm() {
     // No-op on every page except the Scholarship Application.
@@ -895,7 +949,9 @@ class Component extends DCLogic {
       setTimeout(() => {
         form.hidden = true;
         const progress = root.querySelector('.va-progress');
-        if (progress) progress.hidden = true;
+        if (progress) { progress.hidden = true; progress.classList.remove('is-stuck'); }
+        const progressSpacer = root.querySelector('.va-progress-spacer');
+        if (progressSpacer) progressSpacer.hidden = true;
         confirmation.hidden = false;
         confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 700);
@@ -1061,7 +1117,9 @@ class Component extends DCLogic {
         form.hidden = true;
         root.querySelector('.va-tracker').hidden = true;
         const progress = root.querySelector('.va-progress');
-        if (progress) progress.hidden = true;
+        if (progress) { progress.hidden = true; progress.classList.remove('is-stuck'); }
+        const progressSpacer = root.querySelector('.va-progress-spacer');
+        if (progressSpacer) progressSpacer.hidden = true;
         confirmation.hidden = false;
         confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 700);
