@@ -282,6 +282,11 @@
   .va-tracker-step.is-done .va-tracker-num{background:#100E0D;color:#fff}
   .va-tracker-step.is-done .va-tracker-label{color:#100E0D}
   .va-tracker-line{flex:none;width:56px;height:2px;background:rgba(16,14,13,.12);margin:0 4px 22px}
+  .va-progress{margin-bottom:20px}
+  .va-progress-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(16,14,13,.55)}
+  .va-progress-percent{color:#E01B2E;font-weight:800;font-variant-numeric:tabular-nums}
+  .va-progress-bar{position:relative;height:9px;border-radius:999px;background:rgba(16,14,13,.08);overflow:hidden}
+  .va-progress-fill{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,#E01B2E,#F02338);transition:width .35s ease}
   .va-page{background:#fff;border-radius:20px;box-shadow:0 20px 50px rgba(16,14,13,.08);padding:44px 40px;margin-bottom:24px}
   .va-page-intro{margin:0 0 32px;font-size:14.5px;line-height:1.6;color:rgba(16,14,13,.6)}
   .va-section{padding-top:32px;margin-top:32px;border-top:1px solid rgba(16,14,13,.08)}
@@ -758,6 +763,8 @@ class Component extends DCLogic {
     const form = document.getElementById('scholarship-form');
     const submitBtn = document.getElementById('scholarship-submit');
     const confirmation = document.getElementById('scholarship-confirmation');
+    const progressFill = document.getElementById('scholarship-progress-fill');
+    const progressPercent = document.getElementById('scholarship-progress-percent');
 
     // Same runtime bug found on the Contact form and Admissions
     // Application: hidden gets stripped on load, so assert it via JS.
@@ -801,12 +808,35 @@ class Component extends DCLogic {
       return ok;
     };
 
+    // Percentage progress bar: share of required fields (unique per
+    // va-field, so radio/checkbox groups only count once) currently valid.
+    const updateProgress = () => {
+      if (!progressFill && !progressPercent) return;
+      let total = 0;
+      let done = 0;
+      const seen = new Set();
+      Array.from(form.querySelectorAll('[data-required="true"]')).forEach((el) => {
+        if (el.disabled) return;
+        const key = el.closest('.va-field') || el;
+        if (seen.has(key)) return;
+        seen.add(key);
+        total += 1;
+        if (isValid(el)) done += 1;
+      });
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      if (progressFill) progressFill.style.width = pct + '%';
+      if (progressPercent) progressPercent.textContent = pct + '%';
+    };
+
     root.addEventListener('blur', (e) => {
       if (e.target && e.target.matches && e.target.matches('[data-required="true"]')) paint(e.target, isValid(e.target));
+      updateProgress();
     }, true);
     root.addEventListener('change', (e) => {
       if (e.target && e.target.matches && e.target.matches('[data-required="true"]')) paint(e.target, isValid(e.target));
+      updateProgress();
     });
+    root.addEventListener('input', updateProgress);
 
     // Presidential Scholarship eligibility is a real rule (On-Campus only),
     // not a static checkbox, per the field map's own rebuild note.
@@ -821,11 +851,14 @@ class Component extends DCLogic {
       if (!eligible) presidentialCheckbox.checked = false;
       if (presidentialLabel) presidentialLabel.textContent = eligible ? 'Presidential Scholarship' : 'Presidential Scholarship (Not Eligible — On-Campus Only)';
       if (presidentialPill) presidentialPill.classList.toggle('is-disabled', !eligible);
+      updateProgress();
     };
     if (programSelect) {
       programSelect.addEventListener('change', refreshPresidentialEligibility);
       refreshPresidentialEligibility();
     }
+
+    updateProgress();
 
     submitBtn.addEventListener('click', () => {
       if (!validateAll()) {
@@ -844,6 +877,8 @@ class Component extends DCLogic {
       submitBtn.textContent = 'Submitting…';
       setTimeout(() => {
         form.hidden = true;
+        const progress = root.querySelector('.va-progress');
+        if (progress) progress.hidden = true;
         confirmation.hidden = false;
         confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 700);
@@ -866,6 +901,8 @@ class Component extends DCLogic {
     const nextBtn = document.getElementById('wizard-next');
     const submitBtn = document.getElementById('wizard-submit');
     const confirmation = document.getElementById('application-confirmation');
+    const progressFill = document.getElementById('wizard-progress-fill');
+    const progressPercent = document.getElementById('wizard-progress-percent');
     let current = 0;
 
     // This runtime also strips the hidden attribute on load (same bug class
@@ -928,6 +965,38 @@ class Component extends DCLogic {
       return true;
     };
 
+    // Same visibility walk as isVisible, but ignores the .va-page hidden
+    // flag: progress is tracked across all 3 steps at once (not just the
+    // current one), while still excluding fields hidden by a conditional
+    // panel or a program-catalog toggle.
+    const isVisibleForProgress = (el) => {
+      let node = el;
+      while (node && node !== root) {
+        if (node.hidden && !node.classList.contains('va-page')) return false;
+        node = node.parentElement;
+      }
+      return true;
+    };
+
+    const updateProgress = () => {
+      if (!progressFill && !progressPercent) return;
+      let total = 0;
+      let done = 0;
+      const seen = new Set();
+      Array.from(form.querySelectorAll('[data-required="true"]')).forEach((el) => {
+        if (el.disabled) return;
+        if (!isVisibleForProgress(el)) return;
+        const key = el.closest('.va-field') || el;
+        if (seen.has(key)) return;
+        seen.add(key);
+        total += 1;
+        if (isValid(el)) done += 1;
+      });
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      if (progressFill) progressFill.style.width = pct + '%';
+      if (progressPercent) progressPercent.textContent = pct + '%';
+    };
+
     const validatePage = (page) => {
       let ok = true;
       const seen = new Set();
@@ -945,10 +1014,13 @@ class Component extends DCLogic {
 
     root.addEventListener('blur', (e) => {
       if (e.target && e.target.matches && e.target.matches('[data-required="true"]')) paint(e.target, isValid(e.target));
+      updateProgress();
     }, true);
     root.addEventListener('change', (e) => {
       if (e.target && e.target.matches && e.target.matches('[data-required="true"]')) paint(e.target, isValid(e.target));
+      updateProgress();
     });
+    root.addEventListener('input', updateProgress);
 
     const jumpToFirstInvalid = (page) => {
       const bad = page.querySelector('.is-invalid');
@@ -971,6 +1043,8 @@ class Component extends DCLogic {
       setTimeout(() => {
         form.hidden = true;
         root.querySelector('.va-tracker').hidden = true;
+        const progress = root.querySelector('.va-progress');
+        if (progress) progress.hidden = true;
         confirmation.hidden = false;
         confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 700);
@@ -987,6 +1061,7 @@ class Component extends DCLogic {
         else value = c.value;
       });
       panel.hidden = value !== want;
+      updateProgress();
     };
     Array.from(root.querySelectorAll('.va-conditional')).forEach((panel) => {
       const name = panel.getAttribute('data-show-if-name');
@@ -1034,6 +1109,7 @@ class Component extends DCLogic {
         if (haveBoth) programOther.setAttribute('data-required', 'true'); else programOther.removeAttribute('data-required');
         if (programHint) programHint.hidden = !haveBoth;
       }
+      updateProgress();
     };
     if (degreeSelect && campusSelect) {
       degreeSelect.addEventListener('change', refreshProgramOptions);
@@ -1059,6 +1135,7 @@ class Component extends DCLogic {
             dst.disabled = false;
           }
         });
+        updateProgress();
       });
     }
 
@@ -1075,8 +1152,9 @@ class Component extends DCLogic {
       const wrapper = document.createElement('div');
       wrapper.innerHTML = rowHtml;
       const item = wrapper.firstElementChild;
-      item.querySelector('.va-repeater-remove').addEventListener('click', () => item.remove());
+      item.querySelector('.va-repeater-remove').addEventListener('click', () => { item.remove(); updateProgress(); });
       repeaterList.appendChild(item);
+      updateProgress();
     };
     if (repeaterAddBtn) {
       repeaterAddBtn.addEventListener('click', addCollegeRow);
@@ -1089,6 +1167,7 @@ class Component extends DCLogic {
     if (dateDisplay) dateDisplay.value = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
     showPage(0);
+    updateProgress();
   }
   promoPopup() {
     // No-op on pages that don't render the popup markup (renderPage's

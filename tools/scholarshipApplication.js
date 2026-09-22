@@ -51,6 +51,11 @@ ${SCHOLARSHIPS.map(referenceCard).join('\n')}
       </div>
     </div>
 
+    <div class="va-progress">
+      <div class="va-progress-label"><span>Form Progress</span><span class="va-progress-percent" id="scholarship-progress-percent">0%</span></div>
+      <div class="va-progress-bar"><div class="va-progress-fill" id="scholarship-progress-fill"></div></div>
+    </div>
+
     <form id="scholarship-form" novalidate>
       <div class="va-page">
 ${section('Academic Interest', `      <div class="va-row va-row-2">
