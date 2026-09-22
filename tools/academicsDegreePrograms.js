@@ -44,7 +44,7 @@ const CERTIFICATE_PROGRAMS = [
   'General Studies', 'Organizational Communication',
 ];
 
-const requestInfoLink = (program) => `admissions.html?program=${encodeURIComponent(program)}`;
+const requestInfoLink = (program) => `mailto:admissions@valorcollege.edu?subject=${encodeURIComponent(`Request Info: ${program}`)}`;
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 const badge = (f) => `<span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B3121F;background:rgba(224,27,46,.08);padding:5px 10px;border-radius:999px">${f}</span>`;
@@ -97,7 +97,7 @@ const ACADEMICS_DEGREE_PROGRAMS_BODY = `  <section id="degree-hero" style="posit
       <p data-reveal="" style="margin:0 0 36px;max-width:60ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Your education should prepare you for more than a career. Explore degree programs designed to strengthen your faith, develop your gifts, and equip you to pursue the purpose God has placed on your life.</p>
       <div data-reveal="" class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px">
         <a href="#degree-programs" style="background:#FAF5EE;color:#100E0D;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Explore Programs</a>
-        <a href="admissions.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
+        <a href="mailto:admissions@valorcollege.edu" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
       </div>
     </div>
   </section>
@@ -160,7 +160,7 @@ ${LEARNING_PATHS.map(learningCard).join('\n')}
       <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,58px);line-height:1.05;letter-spacing:-.03em">Not Sure Which Program Is Right for You?</h2>
       <p data-reveal="" style="margin:22px auto 34px;max-width:52ch;font-size:17px;line-height:1.55;color:rgba(255,255,255,.85)">Our Admissions team is ready to help you explore your options and find the program that best fits your goals, interests, and calling.</p>
       <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-        <a data-reveal="" href="admissions.html" style="background:#100E0D;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:20px 38px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-3px);background:#000;color:#fff">Request Info</a>
+        <a data-reveal="" href="mailto:admissions@valorcollege.edu" style="background:#100E0D;color:#fff;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:20px 38px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-3px);background:#000;color:#fff">Request Info</a>
         <a data-reveal="" href="admissions-speak-with-a-counselor.html" style="border:1.5px solid rgba(255,255,255,.6);color:#fff;font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:19px 32px;border-radius:999px;transition:background .18s ease" style-hover="background:rgba(255,255,255,.16);color:#fff">Speak with Admissions</a>
       </div>
     </div>

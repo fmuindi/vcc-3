@@ -1,7 +1,7 @@
 const { IMG } = require('./build-site');
 
 const APPLY_LINK = 'admissions-application.html';
-const REQUEST_INFO_LINK = 'admissions.html';
+const REQUEST_INFO_LINK = 'mailto:admissions@valorcollege.edu';
 const TALK_TO_ADMISSIONS_LINK = 'admissions-speak-with-a-counselor.html';
 
 const PATHWAYS = [

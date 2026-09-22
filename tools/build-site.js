@@ -270,7 +270,7 @@ function renderHeader() {
     <nav id="site-nav" style="display:flex;gap:22px;margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">
           ${items}
     </nav>
-    <a href="admissions.html" class="header-request-info" style="flex:none;background:#FAF5EE;color:#100E0D;font-size:13px;font-weight:700;padding:13px 20px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Request Info</a>
+    <a href="mailto:admissions@valorcollege.edu" class="header-request-info" style="flex:none;background:#FAF5EE;color:#100E0D;font-size:13px;font-weight:700;padding:13px 20px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#fff;color:#100E0D">Request Info</a>
     <a href="student-life-portal.html" class="header-student-portal" style="flex:none;background:#E01B2E;color:#fff;font-size:13px;font-weight:700;padding:13px 20px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.45);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Student Portal</a>
     <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="menu-toggle-btn">☰</button>
   </header>`;

@@ -1,6 +1,7 @@
 const { IMG } = require('./build-site');
 
-const REQUEST_INFO_LINK = 'admissions-speak-with-a-counselor.html';
+const REQUEST_INFO_LINK = 'mailto:admissions@valorcollege.edu';
+const SPEAK_WITH_COUNSELOR_LINK = 'admissions-speak-with-a-counselor.html';
 
 const PATHWAYS = [
   { label: 'On Campus', img: IMG.onCampus, copy: 'Experience college life in a Spirit-filled community with classes, chapel, ministry opportunities, and relationships that go beyond the classroom.' },
@@ -65,7 +66,7 @@ ${STEPS.map(stepCard).join('\n')}
     </div>
     <div class="help-cta-buttons" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
       <a data-reveal="" href="admissions-apply-now.html" style="background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Apply Now</a>
-      <a data-reveal="" href="${REQUEST_INFO_LINK}" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Talk to Admissions</a>
+      <a data-reveal="" href="${SPEAK_WITH_COUNSELOR_LINK}" style="border:1.5px solid rgba(16,14,13,.25);color:#100E0D;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">Talk to Admissions</a>
     </div>
   </section>
 

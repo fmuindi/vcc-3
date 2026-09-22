@@ -2,7 +2,7 @@ const { IMG } = require('./build-site');
 
 const ADMISSIONS_COUNSELOR_LINK = 'admissions-speak-with-a-counselor.html';
 const FINANCIAL_AID_LINK = 'tuition-aid-financial-aid.html#need-help';
-const REQUEST_INFO_LINK = 'admissions.html';
+const REQUEST_INFO_LINK = 'mailto:admissions@valorcollege.edu';
 const ADMISSION_APPLICATION_LINK = 'admissions-application.html';
 const SCHOLARSHIP_APPLY_LINK = 'scholarship-application.html';
 // TODO: no Directus-hosted Terms & Conditions PDFs were supplied for any

@@ -21,7 +21,7 @@ const ADMISSIONS_SPEAK_WITH_COUNSELOR_BODY = `  <section id="counselor-hero" sty
       <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(36px,6vw,72px);line-height:1.03;letter-spacing:-.03em;max-width:16ch;text-wrap:balance">Let's Talk About Your Future.</h1>
       <p data-reveal="" style="margin:0 0 14px;max-width:60ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Have questions about Valor? Our Admissions Team is here to help you explore your options, understand the admissions process, and determine your next step.</p>
       <p data-reveal="" style="margin:0 0 36px;max-width:60ch;font-size:18px;line-height:1.6;color:rgba(250,245,238,.85)">Whether you are interested in studying on campus, online, or through a cohort, we are ready to help.</p>
-      <a data-reveal="" href="#connect" style="display:inline-block;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
+      <a data-reveal="" href="mailto:admissions@valorcollege.edu" style="display:inline-block;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 8px 26px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Request Info</a>
     </div>
   </section>
 
