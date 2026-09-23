@@ -220,13 +220,27 @@
   .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
   .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
   @media (max-width:1200px){.tilt-tile{transform:none!important}}
-  .reel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,200px));justify-content:center;gap:18px}
-  .reel-item{position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2);border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+  .reel-scroller{position:relative;padding:0 56px}
+  .reel-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;padding:10px 2px 16px}
+  .reel-track::-webkit-scrollbar{display:none;height:0}
+  .reel-item{position:relative;display:block;flex:none;width:190px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2);border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
   .reel-item:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(16,14,13,.3)}
   .reel-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .reel-item::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.6),rgba(16,14,13,0) 45%)}
   .reel-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#E01B2E;display:grid;place-items:center;color:#fff;font-size:18px;box-shadow:0 8px 22px rgba(224,27,46,.55);z-index:2;transition:transform .2s ease}
   .reel-item:hover .reel-play-btn{transform:translate(-50%,-50%) scale(1.08)}
+  .reel-scroll-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:#fff;color:#100E0D;border:1.5px solid rgba(16,14,13,.12);display:grid;place-items:center;font-size:17px;cursor:pointer;box-shadow:0 10px 26px rgba(16,14,13,.18);z-index:5;transition:background .18s ease,color .18s ease,transform .18s ease,opacity .18s ease}
+  .reel-scroll-btn:hover{background:#E01B2E;color:#fff;border-color:#E01B2E;transform:translateY(-50%) scale(1.06)}
+  .reel-scroll-prev{left:0}
+  .reel-scroll-next{right:0}
+  .reel-scroll-btn:disabled{opacity:.3;cursor:default;pointer-events:none}
+  @media (max-width:640px){.reel-scroller{padding:0 44px}.reel-item{width:150px}.reel-scroll-btn{width:40px;height:40px;font-size:14px}}
+  .social-follow-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px}
+  .social-follow-btn{display:flex;flex-direction:column;align-items:center;gap:14px;width:112px;color:#100E0D}
+  .social-follow-icon{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:32px;box-shadow:0 16px 34px rgba(16,14,13,.2);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
+  .social-follow-btn:hover .social-follow-icon{transform:translateY(-8px) scale(1.07);box-shadow:0 22px 46px rgba(16,14,13,.3)}
+  .social-follow-label{font-size:13px;font-weight:700;letter-spacing:.03em;color:rgba(16,14,13,.68)}
+  @media (max-width:640px){.social-follow-grid{gap:16px}.social-follow-btn{width:78px}.social-follow-icon{width:60px;height:60px;font-size:23px}.social-follow-label{font-size:11px}}
   .reel-lightbox-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.86);display:none;align-items:center;justify-content:center;padding:60px 24px;opacity:0;transition:opacity .25s ease;overflow-y:auto}
   .reel-lightbox-overlay.is-open{display:flex}
   .reel-lightbox-overlay.is-visible{opacity:1}
@@ -928,6 +942,26 @@ class Component extends DCLogic {
     this.scholarshipApplicationForm();
     this.stickyProgress();
     this.videoReelLightbox();
+    this.reelScroller();
+  }
+  reelScroller() {
+    // No-op on pages without a video reel. Native scrollbar is hidden via
+    // CSS (scrollbar-width:none / ::-webkit-scrollbar{display:none}) —
+    // scrolling is driven entirely by these two arrow buttons instead.
+    const track = document.getElementById('reel-track');
+    const prevBtn = document.getElementById('reel-scroll-prev');
+    const nextBtn = document.getElementById('reel-scroll-next');
+    if (!track || !prevBtn || !nextBtn) return;
+    const step = () => Math.min(track.clientWidth * 0.8, 420);
+    const update = () => {
+      prevBtn.disabled = track.scrollLeft <= 4;
+      nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+    };
+    prevBtn.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   }
   videoReelLightbox() {
     // No-op on pages without a video reel (currently only Get Involved).

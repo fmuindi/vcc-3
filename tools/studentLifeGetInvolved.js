@@ -30,6 +30,20 @@ const shortEmbed = (id) => `      <button type="button" class="reel-item" data-v
         <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
       </button>`;
 
+// Same real handles used sitewide in the footer (renderFooter in
+// build-site.js) — not inventing new links, just reusing them here.
+const SOCIAL_LINKS = [
+  { href: 'https://www.instagram.com/valorcollege/', label: 'Instagram', icon: 'fa-instagram', bg: 'linear-gradient(135deg,#F58529,#DD2A7B,#8134AF,#515BD4)' },
+  { href: 'https://www.youtube.com/@ValorCollege', label: 'YouTube', icon: 'fa-youtube', bg: '#FF0000' },
+  { href: 'https://www.tiktok.com/@valorcollege', label: 'TikTok', icon: 'fa-tiktok', bg: '#100E0D' },
+  { href: 'https://www.facebook.com/valorcollege/', label: 'Facebook', icon: 'fa-facebook-f', bg: '#1877F2' },
+];
+
+const socialButton = (s) => `        <a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}" class="social-follow-btn" data-reveal="">
+          <span class="social-follow-icon" style="background:${s.bg}"><i class="fa-brands ${s.icon}"></i></span>
+          <span class="social-follow-label">${s.label}</span>
+        </a>`;
+
 const STUDENT_LIFE_GET_INVOLVED_BODY = `  <section id="get-involved-hero" style="position:relative;min-height:60vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.studentLifeGallery[9]}" alt="Valor Christian College students" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5">
     <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.5) 45%,rgba(16,14,13,.96) 100%)"></div>
@@ -65,14 +79,17 @@ ${WAYS_TO_GET_INVOLVED.map(wayCard).join('\n')}
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Community Starts With Showing Up.</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Some of the best parts of college happen between classes. Show up, meet people, try something new, and make the most of your time at Valor.</p>
     </div>
-    <div class="reel-grid">
+    <div class="reel-scroller">
+      <button type="button" class="reel-scroll-btn reel-scroll-prev" id="reel-scroll-prev" aria-label="Scroll videos left"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="reel-track" id="reel-track">
 ${SHORTS.map(shortEmbed).join('\n')}
+      </div>
+      <button type="button" class="reel-scroll-btn reel-scroll-next" id="reel-scroll-next" aria-label="Scroll videos right"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
-    <div style="text-align:center;margin-top:20px">
-      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:16px">Follow Us on Social Media</div>
-      <div style="display:flex;gap:12px;justify-content:center">
-        <a href="https://www.instagram.com/valorcollege/" target="_blank" rel="noopener" aria-label="Instagram" style="display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(16,14,13,.18);color:#100E0D" style-hover="background:#E01B2E;border-color:#E01B2E;color:#fff"><i class="fa-brands fa-instagram" style="font-size:19px"></i></a>
-        <a href="https://www.youtube.com/@ValorCollege" target="_blank" rel="noopener" aria-label="YouTube" style="display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(16,14,13,.18);color:#100E0D" style-hover="background:#E01B2E;border-color:#E01B2E;color:#fff"><i class="fa-brands fa-youtube" style="font-size:19px"></i></a>
+    <div style="text-align:center;margin-top:64px">
+      <div data-reveal="" style="font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:28px">Follow Us on Social Media</div>
+      <div class="social-follow-grid">
+${SOCIAL_LINKS.map(socialButton).join('\n')}
       </div>
     </div>
   </section>
