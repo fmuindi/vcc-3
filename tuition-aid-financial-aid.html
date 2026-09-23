@@ -220,9 +220,20 @@
   .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
   .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
   @media (max-width:1200px){.tilt-tile{transform:none!important}}
-  .reel-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-  .reel-item{flex:none;scroll-snap-align:start;width:220px;transition:transform .3s ease,box-shadow .3s ease}
+  .reel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,200px));justify-content:center;gap:18px}
+  .reel-item{position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2);border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
   .reel-item:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(16,14,13,.3)}
+  .reel-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .reel-item::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.6),rgba(16,14,13,0) 45%)}
+  .reel-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#E01B2E;display:grid;place-items:center;color:#fff;font-size:18px;box-shadow:0 8px 22px rgba(224,27,46,.55);z-index:2;transition:transform .2s ease}
+  .reel-item:hover .reel-play-btn{transform:translate(-50%,-50%) scale(1.08)}
+  .reel-lightbox-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.86);display:none;align-items:center;justify-content:center;padding:60px 24px;opacity:0;transition:opacity .25s ease;overflow-y:auto}
+  .reel-lightbox-overlay.is-open{display:flex}
+  .reel-lightbox-overlay.is-visible{opacity:1}
+  .reel-lightbox-card{position:relative;width:100%;max-width:340px;margin:auto}
+  .reel-lightbox-frame{position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .reel-lightbox-close{position:absolute;top:-46px;right:0;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;border:none;display:grid;place-items:center;cursor:pointer;font-size:20px;line-height:1;transition:background .15s ease}
+  .reel-lightbox-close:hover{background:rgba(255,255,255,.26)}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -838,6 +849,44 @@ class Component extends DCLogic {
     this.applicationWizard();
     this.scholarshipApplicationForm();
     this.stickyProgress();
+    this.videoReelLightbox();
+  }
+  videoReelLightbox() {
+    // No-op on pages without a video reel (currently only Get Involved).
+    // Reel tiles are static thumbnails, not live embedded iframes — a
+    // cross-origin YouTube iframe's own internal play-button click can't be
+    // observed from the parent page, so a live iframe per tile would make
+    // "open a lightbox on play" and "only one video at a time" impossible
+    // to implement. Using one shared lightbox with a single iframe instead
+    // means only one video can ever be loaded/playing at once, by
+    // construction — no separate "stop the others" bookkeeping needed.
+    const overlay = document.getElementById('reel-lightbox');
+    if (!overlay) return;
+    const iframe = document.getElementById('reel-lightbox-iframe');
+    const closeBtn = document.getElementById('reel-lightbox-close');
+    const triggers = Array.from(document.querySelectorAll('.reel-item[data-video-id]'));
+    if (!triggers.length) return;
+
+    const open = (id) => {
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      overlay.classList.add('is-open');
+      requestAnimationFrame(() => overlay.classList.add('is-visible'));
+    };
+    const close = () => {
+      overlay.classList.remove('is-visible');
+      setTimeout(() => {
+        overlay.classList.remove('is-open');
+        iframe.src = ''; // stop playback/audio once the lightbox is closed
+      }, 250);
+    };
+    triggers.forEach((el) => {
+      el.addEventListener('click', () => open(el.getAttribute('data-video-id')));
+    });
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
   }
   stickyProgress() {
     // No-op on pages without a .va-progress bar. CSS position:sticky does

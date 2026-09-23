@@ -25,11 +25,10 @@ const SHORTS = [
   'T6wSSv7jUmQ', 'LNXikOmHIxY', 'ulCOeBCAIhI',
 ];
 
-const shortEmbed = (id) => `      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/${id}?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>`;
+const shortEmbed = (id) => `      <button type="button" class="reel-item" data-video-id="${id}" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>`;
 
 const STUDENT_LIFE_GET_INVOLVED_BODY = `  <section id="get-involved-hero" style="position:relative;min-height:60vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
     <img src="${IMG.studentLifeGallery[9]}" alt="Valor Christian College students" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5">
@@ -66,7 +65,7 @@ ${WAYS_TO_GET_INVOLVED.map(wayCard).join('\n')}
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Community Starts With Showing Up.</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Some of the best parts of college happen between classes. Show up, meet people, try something new, and make the most of your time at Valor.</p>
     </div>
-    <div class="reel-wrap">
+    <div class="reel-grid">
 ${SHORTS.map(shortEmbed).join('\n')}
     </div>
     <div style="text-align:center;margin-top:20px">
@@ -83,6 +82,15 @@ ${SHORTS.map(shortEmbed).join('\n')}
     <h2 data-reveal="" style="margin:0 0 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Find Your Place at Valor.</h2>
     <p data-reveal="" style="margin:0 0 32px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Looking for a way to serve, connect, or get involved but not sure where to start? Student Life can help point you in the right direction.</p>
     <a data-reveal="" href="mailto:${DEAN_OF_STUDENTS_EMAIL}" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Contact Student Life <i class="fa-solid fa-arrow-right"></i></a>
-  </section>`;
+  </section>
+
+  <div class="reel-lightbox-overlay" id="reel-lightbox">
+    <div class="reel-lightbox-card">
+      <button type="button" class="reel-lightbox-close" id="reel-lightbox-close" aria-label="Close video">&times;</button>
+      <div class="reel-lightbox-frame">
+        <iframe id="reel-lightbox-iframe" src="" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>`;
 
 module.exports = { STUDENT_LIFE_GET_INVOLVED_BODY };

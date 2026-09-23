@@ -220,9 +220,20 @@
   .tilt-tile{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;will-change:transform}
   .tilt-tile:hover{transform:rotate(0deg) scale(1.06)!important;box-shadow:0 24px 50px rgba(16,14,13,.28);z-index:5}
   @media (max-width:1200px){.tilt-tile{transform:none!important}}
-  .reel-wrap{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-  .reel-item{flex:none;scroll-snap-align:start;width:220px;transition:transform .3s ease,box-shadow .3s ease}
+  .reel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,200px));justify-content:center;gap:18px}
+  .reel-item{position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2);border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
   .reel-item:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(16,14,13,.3)}
+  .reel-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .reel-item::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.6),rgba(16,14,13,0) 45%)}
+  .reel-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#E01B2E;display:grid;place-items:center;color:#fff;font-size:18px;box-shadow:0 8px 22px rgba(224,27,46,.55);z-index:2;transition:transform .2s ease}
+  .reel-item:hover .reel-play-btn{transform:translate(-50%,-50%) scale(1.08)}
+  .reel-lightbox-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.86);display:none;align-items:center;justify-content:center;padding:60px 24px;opacity:0;transition:opacity .25s ease;overflow-y:auto}
+  .reel-lightbox-overlay.is-open{display:flex}
+  .reel-lightbox-overlay.is-visible{opacity:1}
+  .reel-lightbox-card{position:relative;width:100%;max-width:340px;margin:auto}
+  .reel-lightbox-frame{position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .reel-lightbox-close{position:absolute;top:-46px;right:0;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;border:none;display:grid;place-items:center;cursor:pointer;font-size:20px;line-height:1;transition:background .15s ease}
+  .reel-lightbox-close:hover{background:rgba(255,255,255,.26)}
   .menu-toggle-btn{display:none;background:none;border:none;color:#FAF5EE;font-size:22px;line-height:1;cursor:pointer;padding:6px;margin-left:auto}
   .site-header{transition:background .25s ease,box-shadow .25s ease}
   .site-header.scrolled{background:#100E0D!important;box-shadow:0 6px 24px rgba(0,0,0,.3)}
@@ -704,42 +715,35 @@
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Community Starts With Showing Up.</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Some of the best parts of college happen between classes. Show up, meet people, try something new, and make the most of your time at Valor.</p>
     </div>
-    <div class="reel-wrap">
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/Bprie6VN76c?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/r-OJ7NNCEuE?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/5QnkiMFNH8Y?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/3TqOqRWKJR8?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/T6wSSv7jUmQ?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/LNXikOmHIxY?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="reel-item" data-reveal="">
-        <div style="position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#100E0D;box-shadow:0 14px 34px rgba(16,14,13,.2)">
-          <iframe src="https://www.youtube.com/embed/ulCOeBCAIhI?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
+    <div class="reel-grid">
+      <button type="button" class="reel-item" data-video-id="Bprie6VN76c" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/Bprie6VN76c/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+      <button type="button" class="reel-item" data-video-id="r-OJ7NNCEuE" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/r-OJ7NNCEuE/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+      <button type="button" class="reel-item" data-video-id="5QnkiMFNH8Y" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/5QnkiMFNH8Y/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+      <button type="button" class="reel-item" data-video-id="3TqOqRWKJR8" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/3TqOqRWKJR8/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+      <button type="button" class="reel-item" data-video-id="T6wSSv7jUmQ" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/T6wSSv7jUmQ/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+      <button type="button" class="reel-item" data-video-id="LNXikOmHIxY" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/LNXikOmHIxY/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+      <button type="button" class="reel-item" data-video-id="ulCOeBCAIhI" data-reveal="" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/ulCOeBCAIhI/hqdefault.jpg" alt="Life at Valor Christian College" loading="lazy" decoding="async">
+        <span class="reel-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
     </div>
     <div style="text-align:center;margin-top:20px">
       <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:16px">Follow Us on Social Media</div>
@@ -756,6 +760,15 @@
     <p data-reveal="" style="margin:0 0 32px;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Looking for a way to serve, connect, or get involved but not sure where to start? Student Life can help point you in the right direction.</p>
     <a data-reveal="" href="mailto:deanofstudents@valorcollege.edu" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Contact Student Life <i class="fa-solid fa-arrow-right"></i></a>
   </section>
+
+  <div class="reel-lightbox-overlay" id="reel-lightbox">
+    <div class="reel-lightbox-card">
+      <button type="button" class="reel-lightbox-close" id="reel-lightbox-close" aria-label="Close video">&times;</button>
+      <div class="reel-lightbox-frame">
+        <iframe id="reel-lightbox-iframe" src="" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Life at Valor Christian College" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <footer style="background:#100E0D;color:#FAF5EE;padding:68px 32px 34px">
     <div class="footer-grid" style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.3fr repeat(6,1fr);gap:28px">
@@ -846,6 +859,44 @@ class Component extends DCLogic {
     this.applicationWizard();
     this.scholarshipApplicationForm();
     this.stickyProgress();
+    this.videoReelLightbox();
+  }
+  videoReelLightbox() {
+    // No-op on pages without a video reel (currently only Get Involved).
+    // Reel tiles are static thumbnails, not live embedded iframes — a
+    // cross-origin YouTube iframe's own internal play-button click can't be
+    // observed from the parent page, so a live iframe per tile would make
+    // "open a lightbox on play" and "only one video at a time" impossible
+    // to implement. Using one shared lightbox with a single iframe instead
+    // means only one video can ever be loaded/playing at once, by
+    // construction — no separate "stop the others" bookkeeping needed.
+    const overlay = document.getElementById('reel-lightbox');
+    if (!overlay) return;
+    const iframe = document.getElementById('reel-lightbox-iframe');
+    const closeBtn = document.getElementById('reel-lightbox-close');
+    const triggers = Array.from(document.querySelectorAll('.reel-item[data-video-id]'));
+    if (!triggers.length) return;
+
+    const open = (id) => {
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      overlay.classList.add('is-open');
+      requestAnimationFrame(() => overlay.classList.add('is-visible'));
+    };
+    const close = () => {
+      overlay.classList.remove('is-visible');
+      setTimeout(() => {
+        overlay.classList.remove('is-open');
+        iframe.src = ''; // stop playback/audio once the lightbox is closed
+      }, 250);
+    };
+    triggers.forEach((el) => {
+      el.addEventListener('click', () => open(el.getAttribute('data-video-id')));
+    });
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
   }
   stickyProgress() {
     // No-op on pages without a .va-progress bar. CSS position:sticky does
