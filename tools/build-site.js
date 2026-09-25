@@ -59,6 +59,7 @@ const IMG = {
   degreeProgramsHero: 'https://directus.valorcollege.edu/assets/B901B7A9-6161-417E-B1EA-3CA90B4F16F5',
   scholarshipPromoPopup: 'https://directus.valorcollege.edu/assets/2D4A08BB-38FC-4185-AF58-5949D0468EC1',
   creditForPriorLearningHero: 'https://directus.valorcollege.edu/assets/23BA4E15-6D6B-44A5-B3F1-7B2D4430D305?width=1200&quality=80',
+  vipWeekendGraphic: 'https://directus.valorcollege.edu/assets/B3C6B8D5-75C1-4FBA-A2ED-769035946FAD?width=1600&quality=85',
   prog1: IK('DSC00837.jpg'),
   prog2: IK('A7301807.jpg'),
   prog3: IK('DSC09572.jpg'),
