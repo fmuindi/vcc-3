@@ -79,12 +79,12 @@ ${WAYS_TO_GET_INVOLVED.map(wayCard).join('\n')}
       <h2 data-reveal="" style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Community Starts With Showing Up.</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Some of the best parts of college happen between classes. Show up, meet people, try something new, and make the most of your time at Valor.</p>
     </div>
-    <div class="reel-scroller">
-      <button type="button" class="reel-scroll-btn reel-scroll-prev" id="reel-scroll-prev" aria-label="Scroll videos left"><i class="fa-solid fa-chevron-left"></i></button>
-      <div class="reel-track" id="reel-track">
+    <div class="reel-scroller" data-scroller>
+      <button type="button" class="reel-scroll-btn reel-scroll-prev" data-scroll-prev aria-label="Scroll videos left"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="reel-track" data-scroll-track>
 ${SHORTS.map(shortEmbed).join('\n')}
       </div>
-      <button type="button" class="reel-scroll-btn reel-scroll-next" id="reel-scroll-next" aria-label="Scroll videos right"><i class="fa-solid fa-chevron-right"></i></button>
+      <button type="button" class="reel-scroll-btn reel-scroll-next" data-scroll-next aria-label="Scroll videos right"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div style="text-align:center;margin-top:64px">
       <div data-reveal="" style="font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(16,14,13,.5);margin-bottom:28px">Follow Us on Social Media</div>

@@ -241,6 +241,41 @@
   .social-follow-btn:hover .social-follow-icon{transform:translateY(-8px) scale(1.07);box-shadow:0 22px 46px rgba(16,14,13,.3)}
   .social-follow-label{font-size:13px;font-weight:700;letter-spacing:.03em;color:rgba(16,14,13,.68)}
   @media (max-width:640px){.social-follow-grid{gap:16px}.social-follow-btn{width:78px}.social-follow-icon{width:60px;height:60px;font-size:23px}.social-follow-label{font-size:11px}}
+  .event-card{position:relative;display:block;flex:none;width:230px;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 14px 34px rgba(16,14,13,.16);text-decoration:none;color:inherit;transition:transform .3s ease,box-shadow .3s ease}
+  .event-card:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(16,14,13,.26)}
+  .event-card-img{position:relative;height:150px;background:#100E0D}
+  .event-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .event-card-date{position:absolute;top:12px;left:12px;background:#fff;border-radius:10px;padding:7px 12px;text-align:center;box-shadow:0 6px 16px rgba(16,14,13,.22)}
+  .event-card-date .mon{display:block;font-size:10px;font-weight:800;letter-spacing:.06em;color:#E01B2E;text-transform:uppercase}
+  .event-card-date .day{display:block;font-size:16px;font-weight:800;color:#100E0D;font-family:'Bricolage Grotesque',sans-serif;line-height:1.1}
+  .event-card-body{padding:16px 16px 18px}
+  .event-card-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:#100E0D;margin-bottom:4px}
+  .event-card-detail{font-size:12.5px;color:rgba(16,14,13,.55);margin-bottom:10px;min-height:16px}
+  .event-card-meta{display:flex;flex-direction:column;gap:4px;font-size:12px;color:rgba(16,14,13,.5)}
+  @media (max-width:640px){.event-card{width:190px}.event-card-img{height:126px}}
+  .events-search-row{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .events-search-input{flex:1;min-width:180px;padding:14px 18px;border-radius:12px;border:1.5px solid rgba(16,14,13,.15);font-size:14px;font-family:inherit;background:#fff}
+  .events-view-toggle{display:flex;border-radius:12px;overflow:hidden;border:1.5px solid rgba(16,14,13,.15);flex:none}
+  .events-view-btn{padding:0 18px;background:#fff;border:0;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:rgba(16,14,13,.55);cursor:pointer;display:flex;align-items:center;gap:8px}
+  .events-view-btn.is-active{background:#100E0D;color:#fff}
+  .events-filter-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .events-filter-pill{padding:9px 18px;border-radius:999px;border:1.5px solid rgba(16,14,13,.15);background:#fff;font-size:12px;font-weight:700;letter-spacing:.03em;color:rgba(16,14,13,.6);cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}
+  .events-filter-pill.is-active{background:#100E0D;color:#fff;border-color:#100E0D}
+  .events-list-row{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid rgba(16,14,13,.08)}
+  .events-list-date{flex:none;width:60px;text-align:center}
+  .events-list-date .dow{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:rgba(16,14,13,.45)}
+  .events-list-date .dom{display:block;font-size:15px;font-weight:800;color:#100E0D;font-family:'Bricolage Grotesque',sans-serif}
+  .events-list-time{flex:none;width:84px;font-size:13px;color:rgba(16,14,13,.55)}
+  .events-list-info{flex:1;min-width:0}
+  .events-list-title{font-weight:700;font-size:15px;color:#100E0D;margin-bottom:2px}
+  .events-list-loc{font-size:13px;color:rgba(16,14,13,.5)}
+  .events-list-link{flex:none;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#E01B2E;white-space:nowrap}
+  .events-empty{padding:44px 0;text-align:center;color:rgba(16,14,13,.5);font-size:14px}
+  @media (max-width:640px){.events-list-time{display:none}.events-list-link{display:none}}
+  .key-date-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(16,14,13,.08)}
+  .key-date-icon{flex:none;width:36px;height:36px;border-radius:10px;background:rgba(224,27,46,.08);display:grid;place-items:center;color:#E01B2E;font-size:14px}
+  .key-date-label{font-weight:700;font-size:14px;color:#100E0D;margin-bottom:2px}
+  .key-date-value{font-size:13px;color:rgba(16,14,13,.55)}
   .reel-lightbox-overlay{position:fixed;inset:0;z-index:200;background:rgba(16,14,13,.86);display:none;align-items:center;justify-content:center;padding:60px 24px;opacity:0;transition:opacity .25s ease;overflow-y:auto}
   .reel-lightbox-overlay.is-open{display:flex}
   .reel-lightbox-overlay.is-visible{opacity:1}
@@ -675,20 +710,250 @@
 
 <a href="tuition-aid-scholarships.html" class="floating-apply">Apply</a>
 
-  <section id="calendar-hero" class="about-grid" style="max-width:1320px;margin:0 auto;padding:150px 32px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center">
-    <div>
-      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:16px">Student Life &nbsp;&middot;&nbsp; Events &amp; Calendar</div>
-      <h1 data-reveal="" style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,56px);line-height:1.06;letter-spacing:-.03em;color:#100E0D;text-wrap:balance">Mark Your Calendar.</h1>
-      <p data-reveal="" style="margin:0 0 32px;font-size:17px;line-height:1.6;color:rgba(16,14,13,.68);max-width:56ch">Key academic dates for the 2026–2027 school year — registration windows, breaks, withdrawal deadlines, and graduation.</p>
-    </div>
-    <div data-reveal="" class="about-collage" style="height:420px;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(16,14,13,.2)">
-      <img src="https://directus.valorcollege.edu/assets/3C54B9CF-68BB-4B6E-B7D3-3EC0585284C4?width=1200&quality=80" alt="Valor Christian College students on campus" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+  <section id="calendar-hero" style="position:relative;min-height:56vh;display:flex;align-items:center;overflow:hidden;background:#100E0D;padding-top:110px">
+    <img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Worship gathering at Valor Christian College" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5">
+    <div style="position:absolute;inset:0;background:linear-gradient(200deg,rgba(224,27,46,.28) 0%,rgba(16,14,13,.5) 45%,rgba(16,14,13,.96) 100%)"></div>
+    <div style="position:relative;width:100%;max-width:900px;margin:0 auto;padding:60px 32px;text-align:center">
+      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:16px">Student Life</div>
+      <h1 data-reveal="" style="margin:0 0 20px;font-family:'Bricolage Grotesque',Archivo,sans-serif;font-weight:800;color:#FAF5EE;font-size:clamp(34px,5.5vw,68px);line-height:1.03;letter-spacing:-.03em;text-wrap:balance">What's Happening at Valor?</h1>
+      <p data-reveal="" style="margin:0 auto;max-width:58ch;font-size:17px;line-height:1.6;color:rgba(250,245,238,.85)">Stay connected to campus life with upcoming student events, activities, chapel gatherings, important dates, and opportunities to be part of the Valor community.</p>
     </div>
   </section>
 
-  <section id="academic-calendar" style="max-width:1000px;margin:0 auto;padding:80px 32px 120px">
+  <section id="featured-event" style="max-width:1320px;margin:0 auto;padding:80px 32px 0">
+    <div data-reveal="" style="position:relative;border-radius:24px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;box-shadow:0 30px 70px rgba(16,14,13,.2)">
+      <img src="https://directus.valorcollege.edu/assets/D89D4CD6-C9C9-4B0E-8EE3-A8D441E12669?width=1200&quality=80" alt="Valor Christian College campus" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92) 10%,rgba(16,14,13,.15) 70%)"></div>
+      <div style="position:relative;padding:40px 44px;max-width:640px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#FF8A93;margin-bottom:14px">Featured Event</div>
+        <h2 style="margin:0 0 10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.05;letter-spacing:-.03em;color:#FAF5EE">VIP Weekend 2027</h2>
+        <div style="font-size:14px;font-weight:700;color:rgba(250,245,238,.85);margin-bottom:16px">April 2027 &middot; exact dates to be announced</div>
+        <p style="margin:0 0 24px;font-size:15.5px;line-height:1.6;color:rgba(250,245,238,.82);max-width:52ch">A weekend designed to experience Valor, connect with our community, and see what life as a World Changer could look like.</p>
+        <a href="mailto:admissions@valorcollege.edu?subject=VIP%20Weekend%202027" style="display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;box-shadow:0 10px 30px rgba(224,27,46,.4);transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Learn More / Register <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="coming-up" style="max-width:1320px;margin:0 auto;padding:90px 32px 0">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap">
+      <div>
+        <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Coming Up</div>
+        <h2 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Don't Miss What's Next.</h2>
+      </div>
+      <a data-reveal="" href="#events-finder" style="font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#E01B2E;white-space:nowrap">View All Events →</a>
+    </div>
+    <div class="reel-scroller" data-scroller>
+      <button type="button" class="reel-scroll-btn reel-scroll-prev" data-scroll-prev aria-label="Scroll events left"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="reel-track" data-scroll-track>
+        <a href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Sep%2024%2C%202026)" class="event-card" data-reveal="">
+          <div class="event-card-img">
+            <img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Valor Chapel at Valor Christian College" loading="lazy" decoding="async">
+            <div class="event-card-date"><span class="mon">SEP</span><span class="day">24</span></div>
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-title">Valor Chapel</div>
+            <div class="event-card-detail">Featuring Evans & Ashley Kariuki</div>
+            <div class="event-card-meta">
+              <span><i class="fa-regular fa-clock" style="width:14px"></i> 10:00 AM</span>
+              <span><i class="fa-solid fa-location-dot" style="width:14px"></i> Valor Chapel</span>
+            </div>
+          </div>
+        </a>
+        <a href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Oct%201%2C%202026)" class="event-card" data-reveal="">
+          <div class="event-card-img">
+            <img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Valor Chapel at Valor Christian College" loading="lazy" decoding="async">
+            <div class="event-card-date"><span class="mon">OCT</span><span class="day">1</span></div>
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-title">Valor Chapel</div>
+            <div class="event-card-detail">Featuring Davi Edwards</div>
+            <div class="event-card-meta">
+              <span><i class="fa-regular fa-clock" style="width:14px"></i> 10:00 AM</span>
+              <span><i class="fa-solid fa-location-dot" style="width:14px"></i> Valor Chapel</span>
+            </div>
+          </div>
+        </a>
+        <a href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Alumni%20Chapel%20(Oct%208%2C%202026)" class="event-card" data-reveal="">
+          <div class="event-card-img">
+            <img src="https://directus.valorcollege.edu/assets/6A3C8B6E-A7EE-4A78-9B31-BD4983DD7886?width=1200&quality=80" alt="Alumni Chapel at Valor Christian College" loading="lazy" decoding="async">
+            <div class="event-card-date"><span class="mon">OCT</span><span class="day">8</span></div>
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-title">Alumni Chapel</div>
+            <div class="event-card-detail">Valor Chapel</div>
+            <div class="event-card-meta">
+              <span><i class="fa-regular fa-clock" style="width:14px"></i> 10:00 AM</span>
+              <span><i class="fa-solid fa-location-dot" style="width:14px"></i> Valor Chapel</span>
+            </div>
+          </div>
+        </a>
+        <a href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Oct%2022%2C%202026)" class="event-card" data-reveal="">
+          <div class="event-card-img">
+            <img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Valor Chapel at Valor Christian College" loading="lazy" decoding="async">
+            <div class="event-card-date"><span class="mon">OCT</span><span class="day">22</span></div>
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-title">Valor Chapel</div>
+            <div class="event-card-detail">Featuring Debra George</div>
+            <div class="event-card-meta">
+              <span><i class="fa-regular fa-clock" style="width:14px"></i> 10:00 AM</span>
+              <span><i class="fa-solid fa-location-dot" style="width:14px"></i> Valor Chapel</span>
+            </div>
+          </div>
+        </a>
+        <a href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Oct%2029%2C%202026)" class="event-card" data-reveal="">
+          <div class="event-card-img">
+            <img src="https://directus.valorcollege.edu/assets/1FB45362-814A-40D5-831B-C4F1892E0B51?width=1200&quality=80" alt="Valor Chapel at Valor Christian College" loading="lazy" decoding="async">
+            <div class="event-card-date"><span class="mon">OCT</span><span class="day">29</span></div>
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-title">Valor Chapel</div>
+            <div class="event-card-detail">Featuring Joel Bobbitt</div>
+            <div class="event-card-meta">
+              <span><i class="fa-regular fa-clock" style="width:14px"></i> 10:00 AM</span>
+              <span><i class="fa-solid fa-location-dot" style="width:14px"></i> Valor Chapel</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <button type="button" class="reel-scroll-btn reel-scroll-next" data-scroll-next aria-label="Scroll events right"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <section id="events-finder" class="about-grid" style="max-width:1320px;margin:0 auto;padding:90px 32px 0;display:grid;grid-template-columns:1.6fr .9fr;gap:44px;align-items:start;scroll-margin-top:120px">
+    <div>
+      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Find an Event</div>
+      <h2 data-reveal="" style="margin:0 0 28px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Find an Event.</h2>
+      <div class="events-search-row" data-reveal="">
+        <input type="text" class="events-search-input" id="events-search-input" placeholder="Search events…">
+        <div class="events-view-toggle">
+          <button type="button" class="events-view-btn is-active" id="events-view-list"><i class="fa-solid fa-list"></i> List</button>
+          <button type="button" class="events-view-btn" id="events-view-month"><i class="fa-solid fa-calendar"></i> Month</button>
+        </div>
+      </div>
+      <div class="events-filter-row" data-reveal="">
+        <button type="button" class="events-filter-pill is-active" data-category="All">ALL</button>
+        <button type="button" class="events-filter-pill" data-category="Chapel">CHAPEL</button>
+        <button type="button" class="events-filter-pill" data-category="Student Life">STUDENT LIFE</button>
+        <button type="button" class="events-filter-pill" data-category="Academics">ACADEMICS</button>
+        <button type="button" class="events-filter-pill" data-category="Outreach">OUTREACH</button>
+        <button type="button" class="events-filter-pill" data-category="Special Events">SPECIAL EVENTS</button>
+      </div>
+      <div id="events-list-panel">
+          <div class="events-list-row" data-category="Chapel" data-search="valor chapel featuring evans & ashley kariuki valor chapel">
+            <div class="events-list-date"><span class="dow">THU</span><span class="dom">SEP 24</span></div>
+            <div class="events-list-time">10:00 AM</div>
+            <div class="events-list-info">
+              <div class="events-list-title">Valor Chapel</div>
+              <div class="events-list-loc">Featuring Evans & Ashley Kariuki &middot; Valor Chapel</div>
+            </div>
+            <a class="events-list-link" href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Sep%2024%2C%202026)">View Details →</a>
+          </div>
+          <div class="events-list-row" data-category="Chapel" data-search="valor chapel featuring davi edwards valor chapel">
+            <div class="events-list-date"><span class="dow">THU</span><span class="dom">OCT 1</span></div>
+            <div class="events-list-time">10:00 AM</div>
+            <div class="events-list-info">
+              <div class="events-list-title">Valor Chapel</div>
+              <div class="events-list-loc">Featuring Davi Edwards &middot; Valor Chapel</div>
+            </div>
+            <a class="events-list-link" href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Oct%201%2C%202026)">View Details →</a>
+          </div>
+          <div class="events-list-row" data-category="Chapel" data-search="alumni chapel valor chapel valor chapel">
+            <div class="events-list-date"><span class="dow">THU</span><span class="dom">OCT 8</span></div>
+            <div class="events-list-time">10:00 AM</div>
+            <div class="events-list-info">
+              <div class="events-list-title">Alumni Chapel</div>
+              <div class="events-list-loc">Valor Chapel &middot; Valor Chapel</div>
+            </div>
+            <a class="events-list-link" href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Alumni%20Chapel%20(Oct%208%2C%202026)">View Details →</a>
+          </div>
+          <div class="events-list-row" data-category="Chapel" data-search="valor chapel featuring debra george valor chapel">
+            <div class="events-list-date"><span class="dow">THU</span><span class="dom">OCT 22</span></div>
+            <div class="events-list-time">10:00 AM</div>
+            <div class="events-list-info">
+              <div class="events-list-title">Valor Chapel</div>
+              <div class="events-list-loc">Featuring Debra George &middot; Valor Chapel</div>
+            </div>
+            <a class="events-list-link" href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Oct%2022%2C%202026)">View Details →</a>
+          </div>
+          <div class="events-list-row" data-category="Chapel" data-search="valor chapel featuring joel bobbitt valor chapel">
+            <div class="events-list-date"><span class="dow">THU</span><span class="dom">OCT 29</span></div>
+            <div class="events-list-time">10:00 AM</div>
+            <div class="events-list-info">
+              <div class="events-list-title">Valor Chapel</div>
+              <div class="events-list-loc">Featuring Joel Bobbitt &middot; Valor Chapel</div>
+            </div>
+            <a class="events-list-link" href="mailto:deanofstudents@valorcollege.edu?subject=Question%20about%20Valor%20Chapel%20(Oct%2029%2C%202026)">View Details →</a>
+          </div>
+        <div class="events-empty" id="events-empty-state">No events in this category right now — check back soon, or browse all upcoming events above.</div>
+      </div>
+      <div id="events-month-placeholder" class="events-empty" style="border:1.5px dashed rgba(16,14,13,.15);border-radius:16px">Month view is coming soon. Browse the list above in the meantime.</div>
+    </div>
+
+    <div>
+      <div style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;padding:28px 26px;margin-bottom:24px">
+        <div data-reveal="" style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#E01B2E;margin-bottom:12px">Important Academic Dates</div>
+        <h3 data-reveal="" style="margin:0 0 8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;color:#100E0D">Key Dates to Know.</h3>
+        <div style="margin-top:16px">
+        <div class="key-date-item" data-reveal="">
+          <div class="key-date-icon"><i class="fa-solid fa-calendar-day"></i></div>
+          <div>
+            <div class="key-date-label">Fall Semester Begins</div>
+            <div class="key-date-value">August 2026 (exact date TBD)</div>
+          </div>
+        </div>
+        <div class="key-date-item" data-reveal="">
+          <div class="key-date-icon"><i class="fa-solid fa-calendar-day"></i></div>
+          <div>
+            <div class="key-date-label">Online Session One Ends</div>
+            <div class="key-date-value">October 11, 2026</div>
+          </div>
+        </div>
+        <div class="key-date-item" data-reveal="">
+          <div class="key-date-icon"><i class="fa-solid fa-calendar-day"></i></div>
+          <div>
+            <div class="key-date-label">Online Session Two Begins</div>
+            <div class="key-date-value">October 12, 2026</div>
+          </div>
+        </div>
+        <div class="key-date-item" data-reveal="">
+          <div class="key-date-icon"><i class="fa-solid fa-calendar-day"></i></div>
+          <div>
+            <div class="key-date-label">Fall Semester Ends</div>
+            <div class="key-date-value">December 6, 2026</div>
+          </div>
+        </div>
+        </div>
+        <a data-reveal="" href="#full-academic-calendar" style="display:block;text-align:center;margin-top:20px;border:1.5px solid rgba(16,14,13,.18);color:#100E0D;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:14px 20px;border-radius:999px" style-hover="background:rgba(16,14,13,.06)">View Full Academic Calendar →</a>
+      </div>
+      <a data-reveal="" href="student-life-get-involved.html" style="position:relative;display:block;border-radius:20px;overflow:hidden;min-height:220px;color:#fff">
+        <img src="https://directus.valorcollege.edu/assets/0D12328F-7271-4D8F-BA91-C4B991AE8AFB?width=1200&quality=80" alt="Student life at Valor Christian College" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,13,.92) 15%,rgba(16,14,13,.25) 70%)"></div>
+        <div style="position:relative;padding:24px">
+          <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,238,.75);margin-bottom:10px">See Student Life in Action</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;margin-bottom:18px">Experience Valor.</div>
+          <span style="display:inline-flex;align-items:center;gap:10px;background:rgba(250,245,238,.95);color:#100E0D;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:12px 18px;border-radius:999px"><i class="fa-solid fa-play" style="color:#E01B2E"></i> Explore Student Life</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section style="max-width:1320px;margin:100px auto 0;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#FAF5EE;border-radius:24px;padding:36px 40px">
+    <div style="display:flex;align-items:center;gap:20px">
+      <div style="flex:none;width:52px;height:52px;border-radius:50%;background:rgba(224,27,46,.1);display:grid;place-items:center"><i class="fa-solid fa-comment-dots" style="color:#E01B2E;font-size:20px"></i></div>
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#E01B2E;margin-bottom:6px">Have a Question?</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;color:#100E0D;margin-bottom:4px">Can't Find What You're Looking For?</div>
+        <p style="margin:0;font-size:14px;line-height:1.5;color:rgba(16,14,13,.62);max-width:52ch">We're here to help. Reach out to Student Life and we'll help you find the information or event you need.</p>
+      </div>
+    </div>
+    <a href="mailto:deanofstudents@valorcollege.edu" style="flex:none;display:inline-flex;align-items:center;gap:10px;background:#E01B2E;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 30px;border-radius:999px;transition:transform .18s ease" style-hover="transform:translateY(-2px);background:#F02338;color:#fff">Contact Student Life <i class="fa-solid fa-arrow-right"></i></a>
+  </section>
+
+  <section id="full-academic-calendar" style="max-width:1000px;margin:0 auto;padding:120px 32px 120px;scroll-margin-top:130px">
     <div style="max-width:640px;margin:0 auto 44px;text-align:center">
-      <h2 data-reveal="" style="margin:0 0 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">2026–2027 Academic Calendar</h2>
+      <div data-reveal="" style="font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E01B2E;margin-bottom:14px">Important Dates</div>
+      <h2 data-reveal="" style="margin:0 0 16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.03em;color:#100E0D">Full 2026–2027 Academic Calendar</h2>
       <p data-reveal="" style="margin:0;font-size:16px;line-height:1.6;color:rgba(16,14,13,.65)">Dates apply to both on-campus and online students unless noted otherwise. Confirm exact dates with the Registrar before making travel or work plans.</p>
     </div>
     <div class="acc-group" style="background:#fff;border:1px solid rgba(16,14,13,.08);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(16,14,13,.06)">
@@ -989,26 +1254,91 @@ class Component extends DCLogic {
     this.scholarshipApplicationForm();
     this.stickyProgress();
     this.videoReelLightbox();
-    this.reelScroller();
+    this.scrollerControls();
+    this.eventsFinder();
   }
-  reelScroller() {
-    // No-op on pages without a video reel. Native scrollbar is hidden via
-    // CSS (scrollbar-width:none / ::-webkit-scrollbar{display:none}) —
-    // scrolling is driven entirely by these two arrow buttons instead.
-    const track = document.getElementById('reel-track');
-    const prevBtn = document.getElementById('reel-scroll-prev');
-    const nextBtn = document.getElementById('reel-scroll-next');
-    if (!track || !prevBtn || !nextBtn) return;
-    const step = () => Math.min(track.clientWidth * 0.8, 420);
-    const update = () => {
-      prevBtn.disabled = track.scrollLeft <= 4;
-      nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+  scrollerControls() {
+    // Generic arrow-button horizontal scroller: works for any
+    // [data-scroller] wrapper containing [data-scroll-track] +
+    // [data-scroll-prev]/[data-scroll-next] buttons (currently the Get
+    // Involved video reel and the Events & Calendar "Coming Up" carousel).
+    // Native scrollbar is hidden via CSS (scrollbar-width:none /
+    // ::-webkit-scrollbar{display:none}) — scrolling is driven entirely by
+    // these arrow buttons instead.
+    const scrollers = Array.from(document.querySelectorAll('[data-scroller]'));
+    if (!scrollers.length) return;
+    scrollers.forEach((root) => {
+      const track = root.querySelector('[data-scroll-track]');
+      const prevBtn = root.querySelector('[data-scroll-prev]');
+      const nextBtn = root.querySelector('[data-scroll-next]');
+      if (!track || !prevBtn || !nextBtn) return;
+      const step = () => Math.min(track.clientWidth * 0.8, 420);
+      const update = () => {
+        prevBtn.disabled = track.scrollLeft <= 4;
+        nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+      };
+      prevBtn.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+      nextBtn.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    });
+  }
+  eventsFinder() {
+    // No-op on pages without the Events & Calendar "Find an Event" widget.
+    const root = document.getElementById('events-finder');
+    if (!root) return;
+    const searchInput = document.getElementById('events-search-input');
+    const pills = Array.from(root.querySelectorAll('.events-filter-pill'));
+    const rows = Array.from(root.querySelectorAll('.events-list-row'));
+    const emptyState = document.getElementById('events-empty-state');
+    const listPanel = document.getElementById('events-list-panel');
+    const monthPanel = document.getElementById('events-month-placeholder');
+    const listBtn = document.getElementById('events-view-list');
+    const monthBtn = document.getElementById('events-view-month');
+    // Same hidden-attribute-stripping bug as everywhere else on this site
+    // -- assert the initial state by hand instead of trusting the server-
+    // rendered hidden attribute to survive.
+    if (emptyState) emptyState.hidden = true;
+    if (monthPanel) monthPanel.hidden = true;
+
+    let activeCategory = 'All';
+    const applyFilters = () => {
+      const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+      let visibleCount = 0;
+      rows.forEach((row) => {
+        const cat = row.getAttribute('data-category');
+        const text = row.getAttribute('data-search') || '';
+        const show = (activeCategory === 'All' || cat === activeCategory) && (!q || text.includes(q));
+        row.hidden = !show;
+        if (show) visibleCount += 1;
+      });
+      if (emptyState) emptyState.hidden = visibleCount > 0;
     };
-    prevBtn.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-    nextBtn.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
-    track.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        pills.forEach((p) => p.classList.remove('is-active'));
+        pill.classList.add('is-active');
+        activeCategory = pill.getAttribute('data-category');
+        applyFilters();
+      });
+    });
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+    applyFilters();
+
+    // Month view is a placeholder for now -- there's only ever one real
+    // category (Chapel) of events to plot on a calendar grid today, so
+    // toggling it swaps in a friendly message instead of a full month grid.
+    if (listBtn && monthBtn && listPanel && monthPanel) {
+      listBtn.addEventListener('click', () => {
+        listBtn.classList.add('is-active'); monthBtn.classList.remove('is-active');
+        listPanel.hidden = false; monthPanel.hidden = true;
+      });
+      monthBtn.addEventListener('click', () => {
+        monthBtn.classList.add('is-active'); listBtn.classList.remove('is-active');
+        monthPanel.hidden = false; listPanel.hidden = true;
+      });
+    }
   }
   videoReelLightbox() {
     // No-op on pages without a video reel (currently only Get Involved).
